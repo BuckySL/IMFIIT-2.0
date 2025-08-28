@@ -1,0 +1,5584 @@
+{
+  "chatbot_training_data": [
+    {
+      "conversation_id": "conv_001",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "weight_loss",
+          "hypertrophy"
+        ],
+        "age": 36,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "My squat feels off, back rounding at bottom :/",
+          "intent": "form_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Back rounding often means depth + core bracing need work. Can you film from 45° angle next session?",
+          "intent": "assessment_request",
+          "suggestions": [
+            "film angle",
+            "brace cue",
+            "reduce depth"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Sure. what cues should I think abt?",
+          "intent": "ask_cues"
+        },
+        {
+          "role": "assistant",
+          "content": "Think 'big breath into belt', 'ribs down', and 'sit between hips'. Reduce load by 10% temporarily.",
+          "intent": "coaching_cues",
+          "suggestions": [
+            "brace",
+            "ribs_down",
+            "load_reduce"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "ok will try. how many sets?",
+          "intent": "volume_question"
+        },
+        {
+          "role": "assistant",
+          "content": "3–4 sets of 5 reps with RPE 7 is fine this week. Report back with the video.",
+          "intent": "progression"
+        }
+      ],
+      "topics": [
+        "technique",
+        "injury_prevention"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_002",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "weight_loss"
+        ],
+        "age": 40,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_003",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "general_health"
+        ],
+        "age": 39,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "My squat feels off, back rounding at bottom :/",
+          "intent": "form_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Back rounding often means depth + core bracing need work. Can you film from 45° angle next session?",
+          "intent": "assessment_request",
+          "suggestions": [
+            "film angle",
+            "brace cue",
+            "reduce depth"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Sure. what cues should I think abt?",
+          "intent": "ask_cues"
+        },
+        {
+          "role": "assistant",
+          "content": "Think 'big breath into belt', 'ribs down', and 'sit between hips'. Reduce load by 10% temporarily.",
+          "intent": "coaching_cues",
+          "suggestions": [
+            "brace",
+            "ribs_down",
+            "load_reduce"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "ok will try. how many sets?",
+          "intent": "volume_question"
+        },
+        {
+          "role": "assistant",
+          "content": "3–4 sets of 5 reps with RPE 7 is fine this week. Report back with the video.",
+          "intent": "progression"
+        }
+      ],
+      "topics": [
+        "technique",
+        "injury_prevention"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_004",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "weight_loss"
+        ],
+        "age": 16,
+        "injuries": [
+          "wrist_pain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_005",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "marathon_prep",
+          "recomp"
+        ],
+        "age": 65,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_006",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "hypertrophy"
+        ],
+        "age": 35,
+        "injuries": [
+          "lower_back_strain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've hit a plateau. feels demotivating tbh.",
+          "intent": "motivation_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Plateaus are normal. Let's identify a controllable target for this week: sleep 7+ hrs, 8k steps/day, and 3 workouts. Deal?",
+          "intent": "reframe_and_targets"
+        },
+        {
+          "role": "user",
+          "content": "yea I can do that. any trick to enjoy workouts more?",
+          "intent": "adherence"
+        },
+        {
+          "role": "assistant",
+          "content": "Use a 10‑min rule: start for 10 minutes; if it still feels off, switch to a lighter session. Create a pump playlist.",
+          "intent": "adherence_tools",
+          "suggestions": [
+            "10_min_rule",
+            "playlist",
+            "light_session"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "sounds good. thx coach",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Report back Sunday with a quick check‑in.",
+          "intent": "accountability"
+        }
+      ],
+      "topics": [
+        "mindset",
+        "habit_building"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_007",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "endurance",
+          "muscle_gain"
+        ],
+        "age": 21,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I finished running, my knee hurts like 5/10",
+          "intent": "injury_concern"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear that. Is the pain sharp or dull, and does it worsen on stairs? Consider resting if it's >4.",
+          "intent": "injury_assessment",
+          "suggestions": [
+            "rest",
+            "ice",
+            "stretching"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Dull, worse when i sit for long. I skipped warmup",
+          "intent": "injury_details"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely patellofemoral irritation. For now: 15 min ice, quad/hip stretches, and a 10‑min warm-up next time. Reduce downhill volume.",
+          "intent": "advice_and_prevention",
+          "suggestions": [
+            "ice_treatment",
+            "stretching_routine",
+            "warmup_protocol"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Should I stop running?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Switch to cycling or brisk walking for 5–7 days, monitor symptoms. If pain persists, consult a clinician.",
+          "intent": "modified_activity"
+        }
+      ],
+      "topics": [
+        "injury_prevention",
+        "rehab",
+        "warm_up"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_008",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "general_health"
+        ],
+        "age": 26,
+        "injuries": [
+          "knee_pain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've hit a plateau. feels demotivating tbh.",
+          "intent": "motivation_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Plateaus are normal. Let's identify a controllable target for this week: sleep 7+ hrs, 8k steps/day, and 3 workouts. Deal?",
+          "intent": "reframe_and_targets"
+        },
+        {
+          "role": "user",
+          "content": "yea I can do that. any trick 2 enjoy workouts more?",
+          "intent": "adherence"
+        },
+        {
+          "role": "assistant",
+          "content": "Use a 10‑min rule: start for 10 minutes; if it still feels off, switch to a lighter session. Create a pump playlist.",
+          "intent": "adherence_tools",
+          "suggestions": [
+            "10_min_rule",
+            "playlist",
+            "light_session"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "sounds good. thx coach",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Report back Sunday with a quick check‑in.",
+          "intent": "accountability"
+        }
+      ],
+      "topics": [
+        "mindset",
+        "habit_building"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_009",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "marathon_prep"
+        ],
+        "age": 44,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I have $500 to upgrade my home gym. what should I buy?",
+          "intent": "equipment_budget"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. Prioritize versatility: adjustable dumbbells, a bench, and a set of mini bands. If budget allows, add a door anchor.",
+          "intent": "recommendation_overview"
+        },
+        {
+          "role": "user",
+          "content": "What about a kettlebell?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Excellent choice. A 12–20 kg bell for swings, goblet squats, and presses fits most trainees.",
+          "intent": "specific_recommendation"
+        },
+        {
+          "role": "user",
+          "content": "cool, thx",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "Anytime. I can also share a 3‑day kettlebell plan if you want.",
+          "intent": "offer_followup"
+        }
+      ],
+      "topics": [
+        "equipment",
+        "home_gym",
+        "budget"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_010",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "general_health",
+          "endurance"
+        ],
+        "age": 64,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "My squat feels off, back rounding at bottom :/",
+          "intent": "form_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Back rounding often means depth + core bracing need work. Can you film from 45° angle next session?",
+          "intent": "assessment_request",
+          "suggestions": [
+            "film angle",
+            "brace cue",
+            "reduce depth"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Sure. what cues should I think abt?",
+          "intent": "ask_cues"
+        },
+        {
+          "role": "assistant",
+          "content": "Think 'big breath into belt', 'ribs down', and 'sit between hips'. Reduce load by 10% temporarily.",
+          "intent": "coaching_cues",
+          "suggestions": [
+            "brace",
+            "ribs_down",
+            "load_reduce"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "ok will try. how many sets?",
+          "intent": "volume_question"
+        },
+        {
+          "role": "assistant",
+          "content": "3–4 sets of 5 reps with RPE 7 is fine this week. Report back with the video.",
+          "intent": "progression"
+        }
+      ],
+      "topics": [
+        "technique",
+        "injury_prevention"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_011",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "flexibility"
+        ],
+        "age": 44,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_012",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "flexibility"
+        ],
+        "age": 20,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I have $100 to upgrade my home gym. what should I buy?",
+          "intent": "equipment_budget"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. Prioritize versatility: adjustable dumbbells, a bench, and a set of mini bands. If budget allows, add a door anchor.",
+          "intent": "recommendation_overview"
+        },
+        {
+          "role": "user",
+          "content": "What about a kettlebell?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Excellent choice. A 12–20 kg bell for swings, goblet squats, and presses fits most trainees.",
+          "intent": "specific_recommendation"
+        },
+        {
+          "role": "user",
+          "content": "cool, thx",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "Anytime. I can also share a 3‑day kettlebell plan if you want.",
+          "intent": "offer_followup"
+        }
+      ],
+      "topics": [
+        "equipment",
+        "home_gym",
+        "budget"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_013",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "general_health"
+        ],
+        "age": 30,
+        "injuries": [
+          "shoulder_impingement"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_014",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "recomp"
+        ],
+        "age": 28,
+        "injuries": [
+          "shoulder_impingement"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Yo! down 3 kilos in 4 weeks!!",
+          "intent": "progress_update"
+        },
+        {
+          "role": "assistant",
+          "content": "Amazing work! Which habits made the biggest impact?",
+          "intent": "reflect_success"
+        },
+        {
+          "role": "user",
+          "content": "steps + tracking food, and I slept earlier",
+          "intent": "habit_report"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. Let's lock those in and add one new habit: a 10‑min mobility block post‑workout.",
+          "intent": "habit_progression"
+        },
+        {
+          "role": "user",
+          "content": "done!",
+          "intent": "commitment"
+        },
+        {
+          "role": "assistant",
+          "content": "Proud of you. Keep going!",
+          "intent": "celebration"
+        }
+      ],
+      "topics": [
+        "progress_tracking",
+        "positive_reinforcement"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_015",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "flexibility",
+          "weight_loss"
+        ],
+        "age": 22,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I finished running, my knee hurts like 4/10",
+          "intent": "injury_concern"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear that. Is the pain sharp or dull, and does it worsen on stairs? Consider resting if it's >4.",
+          "intent": "injury_assessment",
+          "suggestions": [
+            "rest",
+            "ice",
+            "stretching"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Dull, worse when i sit for long. I skipped warmup",
+          "intent": "injury_details"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely patellofemoral irritation. For now: 15 min ice, quad/hip stretches, and a 10‑min warm-up next time. Reduce downhill volume.",
+          "intent": "advice_and_prevention",
+          "suggestions": [
+            "ice_treatment",
+            "stretching_routine",
+            "warmup_protocol"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Should I stop running?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Switch to cycling or brisk walking for 5–7 days, monitor symptoms. If pain persists, consult a clinician.",
+          "intent": "modified_activity"
+        }
+      ],
+      "topics": [
+        "injury_prevention",
+        "rehab",
+        "warm_up"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_016",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "hypertrophy"
+        ],
+        "age": 54,
+        "injuries": [
+          "lower_back_strain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Need help with diet. I stall on fat loss.",
+          "intent": "nutrition_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. What’s your average daily calories and protein lately?",
+          "intent": "clarify_intake"
+        },
+        {
+          "role": "user",
+          "content": "Around 2018 & not sure about protein, maybe 60g",
+          "intent": "current_intake"
+        },
+        {
+          "role": "assistant",
+          "content": "Aim for 1.6–2.2 g/kg protein. Increase veggies, swap caloric drinks for water, and pre-log meals. Want a 7‑day sample menu?",
+          "intent": "macro_guidance",
+          "suggestions": [
+            "protein_target",
+            "meal_logging",
+            "hydration"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "yes pls. i also crave sweets at night",
+          "intent": "adherence_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Add a high‑protein dessert (Greek yogurt + berries), brush teeth after dinner, and set a caffeine cutoff at 2 pm.",
+          "intent": "habit_strategies"
+        }
+      ],
+      "topics": [
+        "nutrition",
+        "macros",
+        "hydration"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_017",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "muscle_gain",
+          "flexibility"
+        ],
+        "age": 18,
+        "injuries": [
+          "wrist_pain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Need help with diet. I stall on fat loss.",
+          "intent": "nutrition_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. What’s your average daily calories and protein lately?",
+          "intent": "clarify_intake"
+        },
+        {
+          "role": "user",
+          "content": "Around 1703 and not sure about protein, maybe 60g",
+          "intent": "current_intake"
+        },
+        {
+          "role": "assistant",
+          "content": "Aim for 1.6–2.2 g/kg protein. Increase veggies, swap caloric drinks for water, and pre-log meals. Want a 7‑day sample menu?",
+          "intent": "macro_guidance",
+          "suggestions": [
+            "protein_target",
+            "meal_logging",
+            "hydration"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "yes pls. i also crave sweets at night",
+          "intent": "adherence_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Add a high‑protein dessert (Greek yogurt + berries), brush teeth after dinner, and set a caffeine cutoff at 2 pm.",
+          "intent": "habit_strategies"
+        }
+      ],
+      "topics": [
+        "nutrition",
+        "macros",
+        "hydration"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_018",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "marathon_prep",
+          "endurance"
+        ],
+        "age": 21,
+        "injuries": [
+          "plantar_fasciitis"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_019",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "weight_loss",
+          "marathon_prep"
+        ],
+        "age": 52,
+        "injuries": [
+          "plantar_fasciitis"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've hit a plateau. feels demotivating tbh.",
+          "intent": "motivation_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Plateaus are normal. Let's identify a controllable target for this week: sleep 7+ hrs, 8k steps/day, and 3 workouts. Deal?",
+          "intent": "reframe_and_targets"
+        },
+        {
+          "role": "user",
+          "content": "yea I can do that. any trick to enjoy workouts more?",
+          "intent": "adherence"
+        },
+        {
+          "role": "assistant",
+          "content": "Use a 10‑min rule: start for 10 minutes; if it still feels off, switch to a lighter session. Create a pump playlist.",
+          "intent": "adherence_tools",
+          "suggestions": [
+            "10_min_rule",
+            "playlist",
+            "light_session"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "sounds good. thx coach",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Report back Sunday with a quick check‑in.",
+          "intent": "accountability"
+        }
+      ],
+      "topics": [
+        "mindset",
+        "habit_building"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_020",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "marathon_prep"
+        ],
+        "age": 62,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Need help with diet. I stall on fat loss.",
+          "intent": "nutrition_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. What’s your average daily calories and protein lately?",
+          "intent": "clarify_intake"
+        },
+        {
+          "role": "user",
+          "content": "Around 2523 & not sure about protein, maybe 60g",
+          "intent": "current_intake"
+        },
+        {
+          "role": "assistant",
+          "content": "Aim for 1.6–2.2 g/kg protein. Increase veggies, swap caloric drinks for water, and pre-log meals. Want a 7‑day sample menu?",
+          "intent": "macro_guidance",
+          "suggestions": [
+            "protein_target",
+            "meal_logging",
+            "hydration"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "yes pls. i also crave sweets at night",
+          "intent": "adherence_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Add a high‑protein dessert (Greek yogurt + berries), brush teeth after dinner, and set a caffeine cutoff at 2 pm.",
+          "intent": "habit_strategies"
+        }
+      ],
+      "topics": [
+        "nutrition",
+        "macros",
+        "hydration"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_021",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "endurance"
+        ],
+        "age": 39,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've hit a plateau. feels demotivating tbh.",
+          "intent": "motivation_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Plateaus are normal. Let's identify a controllable target for this week: sleep 7+ hrs, 8k steps/day, and 3 workouts. Deal?",
+          "intent": "reframe_and_targets"
+        },
+        {
+          "role": "user",
+          "content": "yea I can do that. any trick to enjoy workouts more?",
+          "intent": "adherence"
+        },
+        {
+          "role": "assistant",
+          "content": "Use a 10‑min rule: start for 10 minutes; if it still feels off, switch to a lighter session. Create a pump playlist.",
+          "intent": "adherence_tools",
+          "suggestions": [
+            "10_min_rule",
+            "playlist",
+            "light_session"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "sounds good. thx coach",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Report back Sunday with a quick check‑in.",
+          "intent": "accountability"
+        }
+      ],
+      "topics": [
+        "mindset",
+        "habit_building"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_022",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "endurance",
+          "muscle_gain"
+        ],
+        "age": 21,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I finished running, my knee hurts like 4/10",
+          "intent": "injury_concern"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear that. Is the pain sharp or dull, and does it worsen on stairs? Consider resting if it's >4.",
+          "intent": "injury_assessment",
+          "suggestions": [
+            "rest",
+            "ice",
+            "stretching"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Dull, worse when i sit for long. I skipped warmup",
+          "intent": "injury_details"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely patellofemoral irritation. For now: 15 min ice, quad/hip stretches, and a 10‑min warm-up next time. Reduce downhill volume.",
+          "intent": "advice_and_prevention",
+          "suggestions": [
+            "ice_treatment",
+            "stretching_routine",
+            "warmup_protocol"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Should I stop running?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Switch to cycling or brisk walking for 5–7 days, monitor symptoms. If pain persists, consult a clinician.",
+          "intent": "modified_activity"
+        }
+      ],
+      "topics": [
+        "injury_prevention",
+        "rehab",
+        "warm_up"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_023",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "general_health"
+        ],
+        "age": 40,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I finished running, my knee hurts like 3/10",
+          "intent": "injury_concern"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear that. Is the pain sharp or dull, and does it worsen on stairs? Consider resting if it's >4.",
+          "intent": "injury_assessment",
+          "suggestions": [
+            "rest",
+            "ice",
+            "stretching"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Dull, worse when i sit for long. I skipped warmup",
+          "intent": "injury_details"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely patellofemoral irritation. For now: 15 min ice, quad/hip stretches, and a 10‑min warm-up next time. Reduce downhill volume.",
+          "intent": "advice_and_prevention",
+          "suggestions": [
+            "ice_treatment",
+            "stretching_routine",
+            "warmup_protocol"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Should I stop running?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Switch to cycling or brisk walking for 5–7 days, monitor symptoms. If pain persists, consult a clinician.",
+          "intent": "modified_activity"
+        }
+      ],
+      "topics": [
+        "injury_prevention",
+        "rehab",
+        "warm_up"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_024",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "muscle_gain",
+          "hypertrophy"
+        ],
+        "age": 19,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Need help with diet. I stall on fat loss.",
+          "intent": "nutrition_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. What’s your average daily calories and protein lately?",
+          "intent": "clarify_intake"
+        },
+        {
+          "role": "user",
+          "content": "Around 2235 and not sure about protein, maybe 60g",
+          "intent": "current_intake"
+        },
+        {
+          "role": "assistant",
+          "content": "Aim for 1.6–2.2 g/kg protein. Increase veggies, swap caloric drinks for water, and pre-log meals. Want a 7‑day sample menu?",
+          "intent": "macro_guidance",
+          "suggestions": [
+            "protein_target",
+            "meal_logging",
+            "hydration"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "yes pls. i also crave sweets at night",
+          "intent": "adherence_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Add a high‑protein dessert (Greek yogurt + berries), brush teeth after dinner, and set a caffeine cutoff at 2 pm.",
+          "intent": "habit_strategies"
+        }
+      ],
+      "topics": [
+        "nutrition",
+        "macros",
+        "hydration"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_025",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "recomp"
+        ],
+        "age": 55,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've hit a plateau. feels demotivating tbh.",
+          "intent": "motivation_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Plateaus are normal. Let's identify a controllable target for this week: sleep 7+ hrs, 8k steps/day, and 3 workouts. Deal?",
+          "intent": "reframe_and_targets"
+        },
+        {
+          "role": "user",
+          "content": "yea I can do that. any trick 2 enjoy workouts more?",
+          "intent": "adherence"
+        },
+        {
+          "role": "assistant",
+          "content": "Use a 10‑min rule: start for 10 minutes; if it still feels off, switch to a lighter session. Create a pump playlist.",
+          "intent": "adherence_tools",
+          "suggestions": [
+            "10_min_rule",
+            "playlist",
+            "light_session"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "sounds good. thx coach",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Report back Sunday with a quick check‑in.",
+          "intent": "accountability"
+        }
+      ],
+      "topics": [
+        "mindset",
+        "habit_building"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_026",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "endurance"
+        ],
+        "age": 26,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "My squat feels off, back rounding at bottom :/",
+          "intent": "form_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Back rounding often means depth + core bracing need work. Can you film from 45° angle next session?",
+          "intent": "assessment_request",
+          "suggestions": [
+            "film angle",
+            "brace cue",
+            "reduce depth"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Sure. what cues should I think abt?",
+          "intent": "ask_cues"
+        },
+        {
+          "role": "assistant",
+          "content": "Think 'big breath into belt', 'ribs down', and 'sit between hips'. Reduce load by 10% temporarily.",
+          "intent": "coaching_cues",
+          "suggestions": [
+            "brace",
+            "ribs_down",
+            "load_reduce"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "ok will try. how many sets?",
+          "intent": "volume_question"
+        },
+        {
+          "role": "assistant",
+          "content": "3–4 sets of 5 reps with RPE 7 is fine this week. Report back with the video.",
+          "intent": "progression"
+        }
+      ],
+      "topics": [
+        "technique",
+        "injury_prevention"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_027",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "muscle_gain",
+          "flexibility"
+        ],
+        "age": 51,
+        "injuries": [
+          "knee_pain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Yo! down 3 kilos in 4 weeks!!",
+          "intent": "progress_update"
+        },
+        {
+          "role": "assistant",
+          "content": "Amazing work! Which habits made the biggest impact?",
+          "intent": "reflect_success"
+        },
+        {
+          "role": "user",
+          "content": "steps + tracking food, and I slept earlier",
+          "intent": "habit_report"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. Let's lock those in and add one new habit: a 10‑min mobility block post‑workout.",
+          "intent": "habit_progression"
+        },
+        {
+          "role": "user",
+          "content": "done!",
+          "intent": "commitment"
+        },
+        {
+          "role": "assistant",
+          "content": "Proud of you. Keep going!",
+          "intent": "celebration"
+        }
+      ],
+      "topics": [
+        "progress_tracking",
+        "positive_reinforcement"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_028",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "marathon_prep"
+        ],
+        "age": 57,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I finished running, my knee hurts like 5/10",
+          "intent": "injury_concern"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear that. Is the pain sharp or dull, and does it worsen on stairs? Consider resting if it's >4.",
+          "intent": "injury_assessment",
+          "suggestions": [
+            "rest",
+            "ice",
+            "stretching"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Dull, worse when i sit for long. I skipped warmup",
+          "intent": "injury_details"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely patellofemoral irritation. For now: 15 min ice, quad/hip stretches, and a 10‑min warm-up next time. Reduce downhill volume.",
+          "intent": "advice_and_prevention",
+          "suggestions": [
+            "ice_treatment",
+            "stretching_routine",
+            "warmup_protocol"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Should I stop running?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Switch to cycling or brisk walking for 5–7 days, monitor symptoms. If pain persists, consult a clinician.",
+          "intent": "modified_activity"
+        }
+      ],
+      "topics": [
+        "injury_prevention",
+        "rehab",
+        "warm_up"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_029",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "recomp",
+          "muscle_gain"
+        ],
+        "age": 16,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've hit a plateau. feels demotivating tbh.",
+          "intent": "motivation_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Plateaus are normal. Let's identify a controllable target for this week: sleep 7+ hrs, 8k steps/day, and 3 workouts. Deal?",
+          "intent": "reframe_and_targets"
+        },
+        {
+          "role": "user",
+          "content": "yea I can do that. any trick to enjoy workouts more?",
+          "intent": "adherence"
+        },
+        {
+          "role": "assistant",
+          "content": "Use a 10‑min rule: start for 10 minutes; if it still feels off, switch to a lighter session. Create a pump playlist.",
+          "intent": "adherence_tools",
+          "suggestions": [
+            "10_min_rule",
+            "playlist",
+            "light_session"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "sounds good. thx coach",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Report back Sunday with a quick check‑in.",
+          "intent": "accountability"
+        }
+      ],
+      "topics": [
+        "mindset",
+        "habit_building"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_030",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "endurance"
+        ],
+        "age": 46,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I finished running, my knee hurts like 4/10",
+          "intent": "injury_concern"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear that. Is the pain sharp or dull, and does it worsen on stairs? Consider resting if it's >4.",
+          "intent": "injury_assessment",
+          "suggestions": [
+            "rest",
+            "ice",
+            "stretching"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Dull, worse when i sit for long. I skipped warmup",
+          "intent": "injury_details"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely patellofemoral irritation. For now: 15 min ice, quad/hip stretches, and a 10‑min warm-up next time. Reduce downhill volume.",
+          "intent": "advice_and_prevention",
+          "suggestions": [
+            "ice_treatment",
+            "stretching_routine",
+            "warmup_protocol"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Should I stop running?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Switch to cycling or brisk walking for 5–7 days, monitor symptoms. If pain persists, consult a clinician.",
+          "intent": "modified_activity"
+        }
+      ],
+      "topics": [
+        "injury_prevention",
+        "rehab",
+        "warm_up"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_031",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "muscle_gain"
+        ],
+        "age": 58,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I finished running, my knee hurts like 7/10",
+          "intent": "injury_concern"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear that. Is the pain sharp or dull, and does it worsen on stairs? Consider resting if it's >4.",
+          "intent": "injury_assessment",
+          "suggestions": [
+            "rest",
+            "ice",
+            "stretching"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Dull, worse when i sit for long. I skipped warmup",
+          "intent": "injury_details"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely patellofemoral irritation. For now: 15 min ice, quad/hip stretches, and a 10‑min warm-up next time. Reduce downhill volume.",
+          "intent": "advice_and_prevention",
+          "suggestions": [
+            "ice_treatment",
+            "stretching_routine",
+            "warmup_protocol"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Should I stop running?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Switch to cycling or brisk walking for 5–7 days, monitor symptoms. If pain persists, consult a clinician.",
+          "intent": "modified_activity"
+        }
+      ],
+      "topics": [
+        "injury_prevention",
+        "rehab",
+        "warm_up"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_032",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "muscle_gain"
+        ],
+        "age": 40,
+        "injuries": [
+          "lower_back_strain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I have $100 2 upgrade my home gym. what should I buy?",
+          "intent": "equipment_budget"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. Prioritize versatility: adjustable dumbbells, a bench, and a set of mini bands. If budget allows, add a door anchor.",
+          "intent": "recommendation_overview"
+        },
+        {
+          "role": "user",
+          "content": "What about a kettlebell?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Excellent choice. A 12–20 kg bell for swings, goblet squats, and presses fits most trainees.",
+          "intent": "specific_recommendation"
+        },
+        {
+          "role": "user",
+          "content": "cool, thx",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "Anytime. I can also share a 3‑day kettlebell plan if you want.",
+          "intent": "offer_followup"
+        }
+      ],
+      "topics": [
+        "equipment",
+        "home_gym",
+        "budget"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_033",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "hypertrophy"
+        ],
+        "age": 59,
+        "injuries": [
+          "lower_back_strain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've hit a plateau. feels demotivating tbh.",
+          "intent": "motivation_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Plateaus are normal. Let's identify a controllable target for this week: sleep 7+ hrs, 8k steps/day, and 3 workouts. Deal?",
+          "intent": "reframe_and_targets"
+        },
+        {
+          "role": "user",
+          "content": "yea I can do that. any trick to enjoy workouts more?",
+          "intent": "adherence"
+        },
+        {
+          "role": "assistant",
+          "content": "Use a 10‑min rule: start for 10 minutes; if it still feels off, switch to a lighter session. Create a pump playlist.",
+          "intent": "adherence_tools",
+          "suggestions": [
+            "10_min_rule",
+            "playlist",
+            "light_session"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "sounds good. thx coach",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Report back Sunday with a quick check‑in.",
+          "intent": "accountability"
+        }
+      ],
+      "topics": [
+        "mindset",
+        "habit_building"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_034",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "general_health"
+        ],
+        "age": 33,
+        "injuries": [
+          "plantar_fasciitis"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've hit a plateau. feels demotivating tbh.",
+          "intent": "motivation_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Plateaus are normal. Let's identify a controllable target for this week: sleep 7+ hrs, 8k steps/day, and 3 workouts. Deal?",
+          "intent": "reframe_and_targets"
+        },
+        {
+          "role": "user",
+          "content": "yea I can do that. any trick to enjoy workouts more?",
+          "intent": "adherence"
+        },
+        {
+          "role": "assistant",
+          "content": "Use a 10‑min rule: start for 10 minutes; if it still feels off, switch to a lighter session. Create a pump playlist.",
+          "intent": "adherence_tools",
+          "suggestions": [
+            "10_min_rule",
+            "playlist",
+            "light_session"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "sounds good. thx coach",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Report back Sunday with a quick check‑in.",
+          "intent": "accountability"
+        }
+      ],
+      "topics": [
+        "mindset",
+        "habit_building"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_035",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "hypertrophy",
+          "weight_loss"
+        ],
+        "age": 55,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Yo! down 3 kilos in 4 weeks!!",
+          "intent": "progress_update"
+        },
+        {
+          "role": "assistant",
+          "content": "Amazing work! Which habits made the biggest impact?",
+          "intent": "reflect_success"
+        },
+        {
+          "role": "user",
+          "content": "steps + tracking food, and I slept earlier",
+          "intent": "habit_report"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. Let's lock those in and add one new habit: a 10‑min mobility block post‑workout.",
+          "intent": "habit_progression"
+        },
+        {
+          "role": "user",
+          "content": "done!",
+          "intent": "commitment"
+        },
+        {
+          "role": "assistant",
+          "content": "Proud of you. Keep going!",
+          "intent": "celebration"
+        }
+      ],
+      "topics": [
+        "progress_tracking",
+        "positive_reinforcement"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_036",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "endurance",
+          "marathon_prep"
+        ],
+        "age": 59,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_037",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "general_health"
+        ],
+        "age": 39,
+        "injuries": [
+          "plantar_fasciitis"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "My squat feels off, back rounding at bottom :/",
+          "intent": "form_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Back rounding often means depth + core bracing need work. Can you film from 45° angle next session?",
+          "intent": "assessment_request",
+          "suggestions": [
+            "film angle",
+            "brace cue",
+            "reduce depth"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Sure. what cues should I think abt?",
+          "intent": "ask_cues"
+        },
+        {
+          "role": "assistant",
+          "content": "Think 'big breath into belt', 'ribs down', and 'sit between hips'. Reduce load by 10% temporarily.",
+          "intent": "coaching_cues",
+          "suggestions": [
+            "brace",
+            "ribs_down",
+            "load_reduce"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "ok will try. how many sets?",
+          "intent": "volume_question"
+        },
+        {
+          "role": "assistant",
+          "content": "3–4 sets of 5 reps with RPE 7 is fine this week. Report back with the video.",
+          "intent": "progression"
+        }
+      ],
+      "topics": [
+        "technique",
+        "injury_prevention"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_038",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "endurance",
+          "recomp"
+        ],
+        "age": 32,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I have $300 to upgrade my home gym. what should I buy?",
+          "intent": "equipment_budget"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. Prioritize versatility: adjustable dumbbells, a bench, and a set of mini bands. If budget allows, add a door anchor.",
+          "intent": "recommendation_overview"
+        },
+        {
+          "role": "user",
+          "content": "What about a kettlebell?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Excellent choice. A 12–20 kg bell for swings, goblet squats, and presses fits most trainees.",
+          "intent": "specific_recommendation"
+        },
+        {
+          "role": "user",
+          "content": "cool, thx",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "Anytime. I can also share a 3‑day kettlebell plan if you want.",
+          "intent": "offer_followup"
+        }
+      ],
+      "topics": [
+        "equipment",
+        "home_gym",
+        "budget"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_039",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "general_health",
+          "hypertrophy"
+        ],
+        "age": 19,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_040",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "flexibility"
+        ],
+        "age": 62,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_041",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "flexibility",
+          "general_health"
+        ],
+        "age": 39,
+        "injuries": [
+          "lower_back_strain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "My squat feels off, back rounding at bottom :/",
+          "intent": "form_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Back rounding often means depth + core bracing need work. Can you film from 45° angle next session?",
+          "intent": "assessment_request",
+          "suggestions": [
+            "film angle",
+            "brace cue",
+            "reduce depth"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Sure. what cues should I think abt?",
+          "intent": "ask_cues"
+        },
+        {
+          "role": "assistant",
+          "content": "Think 'big breath into belt', 'ribs down', and 'sit between hips'. Reduce load by 10% temporarily.",
+          "intent": "coaching_cues",
+          "suggestions": [
+            "brace",
+            "ribs_down",
+            "load_reduce"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "ok will try. how many sets?",
+          "intent": "volume_question"
+        },
+        {
+          "role": "assistant",
+          "content": "3–4 sets of 5 reps with RPE 7 is fine this week. Report back with the video.",
+          "intent": "progression"
+        }
+      ],
+      "topics": [
+        "technique",
+        "injury_prevention"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_042",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "flexibility",
+          "recomp"
+        ],
+        "age": 35,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've hit a plateau. feels demotivating tbh.",
+          "intent": "motivation_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Plateaus are normal. Let's identify a controllable target for this week: sleep 7+ hrs, 8k steps/day, and 3 workouts. Deal?",
+          "intent": "reframe_and_targets"
+        },
+        {
+          "role": "user",
+          "content": "yea I can do that. any trick to enjoy workouts more?",
+          "intent": "adherence"
+        },
+        {
+          "role": "assistant",
+          "content": "Use a 10‑min rule: start for 10 minutes; if it still feels off, switch to a lighter session. Create a pump playlist.",
+          "intent": "adherence_tools",
+          "suggestions": [
+            "10_min_rule",
+            "playlist",
+            "light_session"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "sounds good. thx coach",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Report back Sunday with a quick check‑in.",
+          "intent": "accountability"
+        }
+      ],
+      "topics": [
+        "mindset",
+        "habit_building"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_043",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "flexibility"
+        ],
+        "age": 46,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Yo! down 3 kilos in 4 weeks!!",
+          "intent": "progress_update"
+        },
+        {
+          "role": "assistant",
+          "content": "Amazing work! Which habits made the biggest impact?",
+          "intent": "reflect_success"
+        },
+        {
+          "role": "user",
+          "content": "steps + tracking food, and I slept earlier",
+          "intent": "habit_report"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. Let's lock those in and add one new habit: a 10‑min mobility block post‑workout.",
+          "intent": "habit_progression"
+        },
+        {
+          "role": "user",
+          "content": "done!",
+          "intent": "commitment"
+        },
+        {
+          "role": "assistant",
+          "content": "Proud of you. Keep going!",
+          "intent": "celebration"
+        }
+      ],
+      "topics": [
+        "progress_tracking",
+        "positive_reinforcement"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_044",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "weight_loss",
+          "recomp"
+        ],
+        "age": 58,
+        "injuries": [
+          "plantar_fasciitis"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_045",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "flexibility",
+          "muscle_gain"
+        ],
+        "age": 53,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I have $100 2 upgrade my home gym. what should I buy?",
+          "intent": "equipment_budget"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. Prioritize versatility: adjustable dumbbells, a bench, and a set of mini bands. If budget allows, add a door anchor.",
+          "intent": "recommendation_overview"
+        },
+        {
+          "role": "user",
+          "content": "What about a kettlebell?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Excellent choice. A 12–20 kg bell for swings, goblet squats, and presses fits most trainees.",
+          "intent": "specific_recommendation"
+        },
+        {
+          "role": "user",
+          "content": "cool, thx",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "Anytime. I can also share a 3‑day kettlebell plan if you want.",
+          "intent": "offer_followup"
+        }
+      ],
+      "topics": [
+        "equipment",
+        "home_gym",
+        "budget"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_046",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "weight_loss"
+        ],
+        "age": 26,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I finished running, my knee hurts like 6/10",
+          "intent": "injury_concern"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear that. Is the pain sharp or dull, and does it worsen on stairs? Consider resting if it's >4.",
+          "intent": "injury_assessment",
+          "suggestions": [
+            "rest",
+            "ice",
+            "stretching"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Dull, worse when i sit for long. I skipped warmup",
+          "intent": "injury_details"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely patellofemoral irritation. For now: 15 min ice, quad/hip stretches, and a 10‑min warm-up next time. Reduce downhill volume.",
+          "intent": "advice_and_prevention",
+          "suggestions": [
+            "ice_treatment",
+            "stretching_routine",
+            "warmup_protocol"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Should I stop running?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Switch to cycling or brisk walking for 5–7 days, monitor symptoms. If pain persists, consult a clinician.",
+          "intent": "modified_activity"
+        }
+      ],
+      "topics": [
+        "injury_prevention",
+        "rehab",
+        "warm_up"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_047",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "endurance",
+          "general_health"
+        ],
+        "age": 49,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Need help with diet. I stall on fat loss.",
+          "intent": "nutrition_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. What’s your average daily calories and protein lately?",
+          "intent": "clarify_intake"
+        },
+        {
+          "role": "user",
+          "content": "Around 1916 and not sure about protein, maybe 60g",
+          "intent": "current_intake"
+        },
+        {
+          "role": "assistant",
+          "content": "Aim for 1.6–2.2 g/kg protein. Increase veggies, swap caloric drinks for water, and pre-log meals. Want a 7‑day sample menu?",
+          "intent": "macro_guidance",
+          "suggestions": [
+            "protein_target",
+            "meal_logging",
+            "hydration"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "yes pls. i also crave sweets at night",
+          "intent": "adherence_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Add a high‑protein dessert (Greek yogurt + berries), brush teeth after dinner, and set a caffeine cutoff at 2 pm.",
+          "intent": "habit_strategies"
+        }
+      ],
+      "topics": [
+        "nutrition",
+        "macros",
+        "hydration"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_048",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "marathon_prep",
+          "hypertrophy"
+        ],
+        "age": 46,
+        "injuries": [
+          "knee_pain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've hit a plateau. feels demotivating tbh.",
+          "intent": "motivation_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Plateaus are normal. Let's identify a controllable target for this week: sleep 7+ hrs, 8k steps/day, and 3 workouts. Deal?",
+          "intent": "reframe_and_targets"
+        },
+        {
+          "role": "user",
+          "content": "yea I can do that. any trick 2 enjoy workouts more?",
+          "intent": "adherence"
+        },
+        {
+          "role": "assistant",
+          "content": "Use a 10‑min rule: start for 10 minutes; if it still feels off, switch to a lighter session. Create a pump playlist.",
+          "intent": "adherence_tools",
+          "suggestions": [
+            "10_min_rule",
+            "playlist",
+            "light_session"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "sounds good. thx coach",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Report back Sunday with a quick check‑in.",
+          "intent": "accountability"
+        }
+      ],
+      "topics": [
+        "mindset",
+        "habit_building"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_049",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "weight_loss"
+        ],
+        "age": 30,
+        "injuries": [
+          "shoulder_impingement"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Yo! down 3 kilos in 4 weeks!!",
+          "intent": "progress_update"
+        },
+        {
+          "role": "assistant",
+          "content": "Amazing work! Which habits made the biggest impact?",
+          "intent": "reflect_success"
+        },
+        {
+          "role": "user",
+          "content": "steps + tracking food, and I slept earlier",
+          "intent": "habit_report"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. Let's lock those in and add one new habit: a 10‑min mobility block post‑workout.",
+          "intent": "habit_progression"
+        },
+        {
+          "role": "user",
+          "content": "done!",
+          "intent": "commitment"
+        },
+        {
+          "role": "assistant",
+          "content": "Proud of you. Keep going!",
+          "intent": "celebration"
+        }
+      ],
+      "topics": [
+        "progress_tracking",
+        "positive_reinforcement"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_050",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "general_health",
+          "endurance"
+        ],
+        "age": 61,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Need help with diet. I stall on fat loss.",
+          "intent": "nutrition_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. What’s your average daily calories and protein lately?",
+          "intent": "clarify_intake"
+        },
+        {
+          "role": "user",
+          "content": "Around 2257 and not sure about protein, maybe 60g",
+          "intent": "current_intake"
+        },
+        {
+          "role": "assistant",
+          "content": "Aim for 1.6–2.2 g/kg protein. Increase veggies, swap caloric drinks for water, and pre-log meals. Want a 7‑day sample menu?",
+          "intent": "macro_guidance",
+          "suggestions": [
+            "protein_target",
+            "meal_logging",
+            "hydration"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "yes pls. i also crave sweets at night",
+          "intent": "adherence_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Add a high‑protein dessert (Greek yogurt + berries), brush teeth after dinner, and set a caffeine cutoff at 2 pm.",
+          "intent": "habit_strategies"
+        }
+      ],
+      "topics": [
+        "nutrition",
+        "macros",
+        "hydration"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_051",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "flexibility"
+        ],
+        "age": 16,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_052",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "recomp",
+          "flexibility"
+        ],
+        "age": 37,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've hit a plateau. feels demotivating tbh.",
+          "intent": "motivation_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Plateaus are normal. Let's identify a controllable target for this week: sleep 7+ hrs, 8k steps/day, and 3 workouts. Deal?",
+          "intent": "reframe_and_targets"
+        },
+        {
+          "role": "user",
+          "content": "yea I can do that. any trick to enjoy workouts more?",
+          "intent": "adherence"
+        },
+        {
+          "role": "assistant",
+          "content": "Use a 10‑min rule: start for 10 minutes; if it still feels off, switch to a lighter session. Create a pump playlist.",
+          "intent": "adherence_tools",
+          "suggestions": [
+            "10_min_rule",
+            "playlist",
+            "light_session"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "sounds good. thx coach",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Report back Sunday with a quick check‑in.",
+          "intent": "accountability"
+        }
+      ],
+      "topics": [
+        "mindset",
+        "habit_building"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_053",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "flexibility",
+          "recomp"
+        ],
+        "age": 62,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Need help with diet. I stall on fat loss.",
+          "intent": "nutrition_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. What’s your average daily calories and protein lately?",
+          "intent": "clarify_intake"
+        },
+        {
+          "role": "user",
+          "content": "Around 2237 and not sure about protein, maybe 60g",
+          "intent": "current_intake"
+        },
+        {
+          "role": "assistant",
+          "content": "Aim for 1.6–2.2 g/kg protein. Increase veggies, swap caloric drinks for water, and pre-log meals. Want a 7‑day sample menu?",
+          "intent": "macro_guidance",
+          "suggestions": [
+            "protein_target",
+            "meal_logging",
+            "hydration"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "yes pls. i also crave sweets at night",
+          "intent": "adherence_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Add a high‑protein dessert (Greek yogurt + berries), brush teeth after dinner, and set a caffeine cutoff at 2 pm.",
+          "intent": "habit_strategies"
+        }
+      ],
+      "topics": [
+        "nutrition",
+        "macros",
+        "hydration"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_054",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "hypertrophy"
+        ],
+        "age": 17,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've hit a plateau. feels demotivating tbh.",
+          "intent": "motivation_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Plateaus are normal. Let's identify a controllable target for this week: sleep 7+ hrs, 8k steps/day, and 3 workouts. Deal?",
+          "intent": "reframe_and_targets"
+        },
+        {
+          "role": "user",
+          "content": "yea I can do that. any trick to enjoy workouts more?",
+          "intent": "adherence"
+        },
+        {
+          "role": "assistant",
+          "content": "Use a 10‑min rule: start for 10 minutes; if it still feels off, switch to a lighter session. Create a pump playlist.",
+          "intent": "adherence_tools",
+          "suggestions": [
+            "10_min_rule",
+            "playlist",
+            "light_session"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "sounds good. thx coach",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Report back Sunday with a quick check‑in.",
+          "intent": "accountability"
+        }
+      ],
+      "topics": [
+        "mindset",
+        "habit_building"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_055",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "muscle_gain"
+        ],
+        "age": 60,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_056",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "marathon_prep"
+        ],
+        "age": 28,
+        "injuries": [
+          "wrist_pain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I finished running, my knee hurts like 2/10",
+          "intent": "injury_concern"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear that. Is the pain sharp or dull, and does it worsen on stairs? Consider resting if it's >4.",
+          "intent": "injury_assessment",
+          "suggestions": [
+            "rest",
+            "ice",
+            "stretching"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Dull, worse when i sit for long. I skipped warmup",
+          "intent": "injury_details"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely patellofemoral irritation. For now: 15 min ice, quad/hip stretches, and a 10‑min warm-up next time. Reduce downhill volume.",
+          "intent": "advice_and_prevention",
+          "suggestions": [
+            "ice_treatment",
+            "stretching_routine",
+            "warmup_protocol"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Should I stop running?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Switch to cycling or brisk walking for 5–7 days, monitor symptoms. If pain persists, consult a clinician.",
+          "intent": "modified_activity"
+        }
+      ],
+      "topics": [
+        "injury_prevention",
+        "rehab",
+        "warm_up"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_057",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "muscle_gain",
+          "recomp"
+        ],
+        "age": 21,
+        "injuries": [
+          "shoulder_impingement"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_058",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "hypertrophy"
+        ],
+        "age": 37,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I finished running, my knee hurts like 4/10",
+          "intent": "injury_concern"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear that. Is the pain sharp or dull, and does it worsen on stairs? Consider resting if it's >4.",
+          "intent": "injury_assessment",
+          "suggestions": [
+            "rest",
+            "ice",
+            "stretching"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Dull, worse when i sit for long. I skipped warmup",
+          "intent": "injury_details"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely patellofemoral irritation. For now: 15 min ice, quad/hip stretches, and a 10‑min warm-up next time. Reduce downhill volume.",
+          "intent": "advice_and_prevention",
+          "suggestions": [
+            "ice_treatment",
+            "stretching_routine",
+            "warmup_protocol"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Should I stop running?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Switch to cycling or brisk walking for 5–7 days, monitor symptoms. If pain persists, consult a clinician.",
+          "intent": "modified_activity"
+        }
+      ],
+      "topics": [
+        "injury_prevention",
+        "rehab",
+        "warm_up"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_059",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "general_health",
+          "recomp"
+        ],
+        "age": 65,
+        "injuries": [
+          "wrist_pain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Need help with diet. I stall on fat loss.",
+          "intent": "nutrition_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. What’s your average daily calories and protein lately?",
+          "intent": "clarify_intake"
+        },
+        {
+          "role": "user",
+          "content": "Around 2363 and not sure about protein, maybe 60g",
+          "intent": "current_intake"
+        },
+        {
+          "role": "assistant",
+          "content": "Aim for 1.6–2.2 g/kg protein. Increase veggies, swap caloric drinks for water, and pre-log meals. Want a 7‑day sample menu?",
+          "intent": "macro_guidance",
+          "suggestions": [
+            "protein_target",
+            "meal_logging",
+            "hydration"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "yes pls. i also crave sweets at night",
+          "intent": "adherence_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Add a high‑protein dessert (Greek yogurt + berries), brush teeth after dinner, and set a caffeine cutoff at 2 pm.",
+          "intent": "habit_strategies"
+        }
+      ],
+      "topics": [
+        "nutrition",
+        "macros",
+        "hydration"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_060",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "flexibility"
+        ],
+        "age": 38,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've hit a plateau. feels demotivating tbh.",
+          "intent": "motivation_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Plateaus are normal. Let's identify a controllable target for this week: sleep 7+ hrs, 8k steps/day, and 3 workouts. Deal?",
+          "intent": "reframe_and_targets"
+        },
+        {
+          "role": "user",
+          "content": "yea I can do that. any trick to enjoy workouts more?",
+          "intent": "adherence"
+        },
+        {
+          "role": "assistant",
+          "content": "Use a 10‑min rule: start for 10 minutes; if it still feels off, switch to a lighter session. Create a pump playlist.",
+          "intent": "adherence_tools",
+          "suggestions": [
+            "10_min_rule",
+            "playlist",
+            "light_session"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "sounds good. thx coach",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Report back Sunday with a quick check‑in.",
+          "intent": "accountability"
+        }
+      ],
+      "topics": [
+        "mindset",
+        "habit_building"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_061",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "general_health"
+        ],
+        "age": 26,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "My squat feels off, back rounding at bottom :/",
+          "intent": "form_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Back rounding often means depth + core bracing need work. Can you film from 45° angle next session?",
+          "intent": "assessment_request",
+          "suggestions": [
+            "film angle",
+            "brace cue",
+            "reduce depth"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Sure. what cues should I think abt?",
+          "intent": "ask_cues"
+        },
+        {
+          "role": "assistant",
+          "content": "Think 'big breath into belt', 'ribs down', and 'sit between hips'. Reduce load by 10% temporarily.",
+          "intent": "coaching_cues",
+          "suggestions": [
+            "brace",
+            "ribs_down",
+            "load_reduce"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "ok will try. how many sets?",
+          "intent": "volume_question"
+        },
+        {
+          "role": "assistant",
+          "content": "3–4 sets of 5 reps with RPE 7 is fine this week. Report back with the video.",
+          "intent": "progression"
+        }
+      ],
+      "topics": [
+        "technique",
+        "injury_prevention"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_062",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "recomp"
+        ],
+        "age": 22,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_063",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "flexibility"
+        ],
+        "age": 26,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Need help with diet. I stall on fat loss.",
+          "intent": "nutrition_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. What’s your average daily calories and protein lately?",
+          "intent": "clarify_intake"
+        },
+        {
+          "role": "user",
+          "content": "Around 2110 and not sure about protein, maybe 60g",
+          "intent": "current_intake"
+        },
+        {
+          "role": "assistant",
+          "content": "Aim for 1.6–2.2 g/kg protein. Increase veggies, swap caloric drinks for water, and pre-log meals. Want a 7‑day sample menu?",
+          "intent": "macro_guidance",
+          "suggestions": [
+            "protein_target",
+            "meal_logging",
+            "hydration"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "yes pls. i also crave sweets at night",
+          "intent": "adherence_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Add a high‑protein dessert (Greek yogurt + berries), brush teeth after dinner, and set a caffeine cutoff at 2 pm.",
+          "intent": "habit_strategies"
+        }
+      ],
+      "topics": [
+        "nutrition",
+        "macros",
+        "hydration"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_064",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "hypertrophy"
+        ],
+        "age": 60,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "My squat feels off, back rounding at bottom :/",
+          "intent": "form_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Back rounding often means depth + core bracing need work. Can you film from 45° angle next session?",
+          "intent": "assessment_request",
+          "suggestions": [
+            "film angle",
+            "brace cue",
+            "reduce depth"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Sure. what cues should I think abt?",
+          "intent": "ask_cues"
+        },
+        {
+          "role": "assistant",
+          "content": "Think 'big breath into belt', 'ribs down', and 'sit between hips'. Reduce load by 10% temporarily.",
+          "intent": "coaching_cues",
+          "suggestions": [
+            "brace",
+            "ribs_down",
+            "load_reduce"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "ok will try. how many sets?",
+          "intent": "volume_question"
+        },
+        {
+          "role": "assistant",
+          "content": "3–4 sets of 5 reps with RPE 7 is fine this week. Report back with the video.",
+          "intent": "progression"
+        }
+      ],
+      "topics": [
+        "technique",
+        "injury_prevention"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_065",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "hypertrophy"
+        ],
+        "age": 21,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've hit a plateau. feels demotivating tbh.",
+          "intent": "motivation_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Plateaus are normal. Let's identify a controllable target for this week: sleep 7+ hrs, 8k steps/day, and 3 workouts. Deal?",
+          "intent": "reframe_and_targets"
+        },
+        {
+          "role": "user",
+          "content": "yea I can do that. any trick to enjoy workouts more?",
+          "intent": "adherence"
+        },
+        {
+          "role": "assistant",
+          "content": "Use a 10‑min rule: start for 10 minutes; if it still feels off, switch to a lighter session. Create a pump playlist.",
+          "intent": "adherence_tools",
+          "suggestions": [
+            "10_min_rule",
+            "playlist",
+            "light_session"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "sounds good. thx coach",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Report back Sunday with a quick check‑in.",
+          "intent": "accountability"
+        }
+      ],
+      "topics": [
+        "mindset",
+        "habit_building"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_066",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "recomp"
+        ],
+        "age": 26,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_067",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "endurance",
+          "marathon_prep"
+        ],
+        "age": 57,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I've hit a plateau. feels demotivating tbh.",
+          "intent": "motivation_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Plateaus are normal. Let's identify a controllable target for this week: sleep 7+ hrs, 8k steps/day, and 3 workouts. Deal?",
+          "intent": "reframe_and_targets"
+        },
+        {
+          "role": "user",
+          "content": "yea I can do that. any trick to enjoy workouts more?",
+          "intent": "adherence"
+        },
+        {
+          "role": "assistant",
+          "content": "Use a 10‑min rule: start for 10 minutes; if it still feels off, switch to a lighter session. Create a pump playlist.",
+          "intent": "adherence_tools",
+          "suggestions": [
+            "10_min_rule",
+            "playlist",
+            "light_session"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "sounds good. thx coach",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome! Report back Sunday with a quick check‑in.",
+          "intent": "accountability"
+        }
+      ],
+      "topics": [
+        "mindset",
+        "habit_building"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_068",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "flexibility",
+          "muscle_gain"
+        ],
+        "age": 45,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "My squat feels off, back rounding at bottom :/",
+          "intent": "form_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Back rounding often means depth + core bracing need work. Can you film from 45° angle next session?",
+          "intent": "assessment_request",
+          "suggestions": [
+            "film angle",
+            "brace cue",
+            "reduce depth"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Sure. what cues should I think abt?",
+          "intent": "ask_cues"
+        },
+        {
+          "role": "assistant",
+          "content": "Think 'big breath into belt', 'ribs down', and 'sit between hips'. Reduce load by 10% temporarily.",
+          "intent": "coaching_cues",
+          "suggestions": [
+            "brace",
+            "ribs_down",
+            "load_reduce"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "ok will try. how many sets?",
+          "intent": "volume_question"
+        },
+        {
+          "role": "assistant",
+          "content": "3–4 sets of 5 reps with RPE 7 is fine this week. Report back with the video.",
+          "intent": "progression"
+        }
+      ],
+      "topics": [
+        "technique",
+        "injury_prevention"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_069",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "endurance"
+        ],
+        "age": 28,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "My squat feels off, back rounding at bottom :/",
+          "intent": "form_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Back rounding often means depth + core bracing need work. Can you film from 45° angle next session?",
+          "intent": "assessment_request",
+          "suggestions": [
+            "film angle",
+            "brace cue",
+            "reduce depth"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Sure. what cues should I think abt?",
+          "intent": "ask_cues"
+        },
+        {
+          "role": "assistant",
+          "content": "Think 'big breath into belt', 'ribs down', and 'sit between hips'. Reduce load by 10% temporarily.",
+          "intent": "coaching_cues",
+          "suggestions": [
+            "brace",
+            "ribs_down",
+            "load_reduce"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "ok will try. how many sets?",
+          "intent": "volume_question"
+        },
+        {
+          "role": "assistant",
+          "content": "3–4 sets of 5 reps with RPE 7 is fine this week. Report back with the video.",
+          "intent": "progression"
+        }
+      ],
+      "topics": [
+        "technique",
+        "injury_prevention"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_070",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "general_health"
+        ],
+        "age": 26,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Need help with diet. I stall on fat loss.",
+          "intent": "nutrition_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. What’s your average daily calories and protein lately?",
+          "intent": "clarify_intake"
+        },
+        {
+          "role": "user",
+          "content": "Around 2598 and not sure about protein, maybe 60g",
+          "intent": "current_intake"
+        },
+        {
+          "role": "assistant",
+          "content": "Aim for 1.6–2.2 g/kg protein. Increase veggies, swap caloric drinks for water, and pre-log meals. Want a 7‑day sample menu?",
+          "intent": "macro_guidance",
+          "suggestions": [
+            "protein_target",
+            "meal_logging",
+            "hydration"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "yes pls. i also crave sweets at night",
+          "intent": "adherence_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Add a high‑protein dessert (Greek yogurt + berries), brush teeth after dinner, and set a caffeine cutoff at 2 pm.",
+          "intent": "habit_strategies"
+        }
+      ],
+      "topics": [
+        "nutrition",
+        "macros",
+        "hydration"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_071",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "endurance"
+        ],
+        "age": 22,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Yo! down 3 kilos in 4 weeks!!",
+          "intent": "progress_update"
+        },
+        {
+          "role": "assistant",
+          "content": "Amazing work! Which habits made the biggest impact?",
+          "intent": "reflect_success"
+        },
+        {
+          "role": "user",
+          "content": "steps + tracking food, and I slept earlier",
+          "intent": "habit_report"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. Let's lock those in and add one new habit: a 10‑min mobility block post‑workout.",
+          "intent": "habit_progression"
+        },
+        {
+          "role": "user",
+          "content": "done!",
+          "intent": "commitment"
+        },
+        {
+          "role": "assistant",
+          "content": "Proud of you. Keep going!",
+          "intent": "celebration"
+        }
+      ],
+      "topics": [
+        "progress_tracking",
+        "positive_reinforcement"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_072",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "general_health"
+        ],
+        "age": 22,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I have $200 to upgrade my home gym. what should I buy?",
+          "intent": "equipment_budget"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. Prioritize versatility: adjustable dumbbells, a bench, and a set of mini bands. If budget allows, add a door anchor.",
+          "intent": "recommendation_overview"
+        },
+        {
+          "role": "user",
+          "content": "What about a kettlebell?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Excellent choice. A 12–20 kg bell for swings, goblet squats, and presses fits most trainees.",
+          "intent": "specific_recommendation"
+        },
+        {
+          "role": "user",
+          "content": "cool, thx",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "Anytime. I can also share a 3‑day kettlebell plan if you want.",
+          "intent": "offer_followup"
+        }
+      ],
+      "topics": [
+        "equipment",
+        "home_gym",
+        "budget"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_073",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "recomp",
+          "weight_loss"
+        ],
+        "age": 60,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I finished running, my knee hurts like 3/10",
+          "intent": "injury_concern"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear that. Is the pain sharp or dull, and does it worsen on stairs? Consider resting if it's >4.",
+          "intent": "injury_assessment",
+          "suggestions": [
+            "rest",
+            "ice",
+            "stretching"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Dull, worse when i sit for long. I skipped warmup",
+          "intent": "injury_details"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely patellofemoral irritation. For now: 15 min ice, quad/hip stretches, and a 10‑min warm-up next time. Reduce downhill volume.",
+          "intent": "advice_and_prevention",
+          "suggestions": [
+            "ice_treatment",
+            "stretching_routine",
+            "warmup_protocol"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Should I stop running?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Switch to cycling or brisk walking for 5–7 days, monitor symptoms. If pain persists, consult a clinician.",
+          "intent": "modified_activity"
+        }
+      ],
+      "topics": [
+        "injury_prevention",
+        "rehab",
+        "warm_up"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_074",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "flexibility",
+          "hypertrophy"
+        ],
+        "age": 43,
+        "injuries": [
+          "wrist_pain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Yo! down 3 kilos in 4 weeks!!",
+          "intent": "progress_update"
+        },
+        {
+          "role": "assistant",
+          "content": "Amazing work! Which habits made the biggest impact?",
+          "intent": "reflect_success"
+        },
+        {
+          "role": "user",
+          "content": "steps + tracking food, and I slept earlier",
+          "intent": "habit_report"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. Let's lock those in and add one new habit: a 10‑min mobility block post‑workout.",
+          "intent": "habit_progression"
+        },
+        {
+          "role": "user",
+          "content": "done!",
+          "intent": "commitment"
+        },
+        {
+          "role": "assistant",
+          "content": "Proud of you. Keep going!",
+          "intent": "celebration"
+        }
+      ],
+      "topics": [
+        "progress_tracking",
+        "positive_reinforcement"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_075",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "recomp"
+        ],
+        "age": 53,
+        "injuries": [
+          "lower_back_strain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I have $500 to upgrade my home gym. what should I buy?",
+          "intent": "equipment_budget"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. Prioritize versatility: adjustable dumbbells, a bench, and a set of mini bands. If budget allows, add a door anchor.",
+          "intent": "recommendation_overview"
+        },
+        {
+          "role": "user",
+          "content": "What about a kettlebell?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Excellent choice. A 12–20 kg bell for swings, goblet squats, and presses fits most trainees.",
+          "intent": "specific_recommendation"
+        },
+        {
+          "role": "user",
+          "content": "cool, thx",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "Anytime. I can also share a 3‑day kettlebell plan if you want.",
+          "intent": "offer_followup"
+        }
+      ],
+      "topics": [
+        "equipment",
+        "home_gym",
+        "budget"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_076",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "marathon_prep",
+          "flexibility"
+        ],
+        "age": 31,
+        "injuries": [
+          "lower_back_strain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "My squat feels off, back rounding at bottom :/",
+          "intent": "form_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Back rounding often means depth + core bracing need work. Can you film from 45° angle next session?",
+          "intent": "assessment_request",
+          "suggestions": [
+            "film angle",
+            "brace cue",
+            "reduce depth"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Sure. what cues should I think abt?",
+          "intent": "ask_cues"
+        },
+        {
+          "role": "assistant",
+          "content": "Think 'big breath into belt', 'ribs down', and 'sit between hips'. Reduce load by 10% temporarily.",
+          "intent": "coaching_cues",
+          "suggestions": [
+            "brace",
+            "ribs_down",
+            "load_reduce"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "ok will try. how many sets?",
+          "intent": "volume_question"
+        },
+        {
+          "role": "assistant",
+          "content": "3–4 sets of 5 reps with RPE 7 is fine this week. Report back with the video.",
+          "intent": "progression"
+        }
+      ],
+      "topics": [
+        "technique",
+        "injury_prevention"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_077",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "weight_loss",
+          "flexibility"
+        ],
+        "age": 58,
+        "injuries": [
+          "lower_back_strain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_078",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "hypertrophy"
+        ],
+        "age": 50,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Need help with diet. I stall on fat loss.",
+          "intent": "nutrition_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. What’s your average daily calories and protein lately?",
+          "intent": "clarify_intake"
+        },
+        {
+          "role": "user",
+          "content": "Around 1703 and not sure about protein, maybe 60g",
+          "intent": "current_intake"
+        },
+        {
+          "role": "assistant",
+          "content": "Aim for 1.6–2.2 g/kg protein. Increase veggies, swap caloric drinks for water, and pre-log meals. Want a 7‑day sample menu?",
+          "intent": "macro_guidance",
+          "suggestions": [
+            "protein_target",
+            "meal_logging",
+            "hydration"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "yes pls. i also crave sweets at night",
+          "intent": "adherence_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Add a high‑protein dessert (Greek yogurt + berries), brush teeth after dinner, and set a caffeine cutoff at 2 pm.",
+          "intent": "habit_strategies"
+        }
+      ],
+      "topics": [
+        "nutrition",
+        "macros",
+        "hydration"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_079",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "hypertrophy",
+          "flexibility"
+        ],
+        "age": 48,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I finished running, my knee hurts like 7/10",
+          "intent": "injury_concern"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear that. Is the pain sharp or dull, and does it worsen on stairs? Consider resting if it's >4.",
+          "intent": "injury_assessment",
+          "suggestions": [
+            "rest",
+            "ice",
+            "stretching"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Dull, worse when i sit for long. I skipped warmup",
+          "intent": "injury_details"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely patellofemoral irritation. For now: 15 min ice, quad/hip stretches, and a 10‑min warm-up next time. Reduce downhill volume.",
+          "intent": "advice_and_prevention",
+          "suggestions": [
+            "ice_treatment",
+            "stretching_routine",
+            "warmup_protocol"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Should I stop running?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Switch to cycling or brisk walking for 5–7 days, monitor symptoms. If pain persists, consult a clinician.",
+          "intent": "modified_activity"
+        }
+      ],
+      "topics": [
+        "injury_prevention",
+        "rehab",
+        "warm_up"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_080",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "weight_loss",
+          "endurance"
+        ],
+        "age": 48,
+        "injuries": [
+          "knee_pain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_081",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "general_health",
+          "weight_loss"
+        ],
+        "age": 42,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "My squat feels off, back rounding at bottom :/",
+          "intent": "form_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Back rounding often means depth + core bracing need work. Can you film from 45° angle next session?",
+          "intent": "assessment_request",
+          "suggestions": [
+            "film angle",
+            "brace cue",
+            "reduce depth"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Sure. what cues should I think abt?",
+          "intent": "ask_cues"
+        },
+        {
+          "role": "assistant",
+          "content": "Think 'big breath into belt', 'ribs down', and 'sit between hips'. Reduce load by 10% temporarily.",
+          "intent": "coaching_cues",
+          "suggestions": [
+            "brace",
+            "ribs_down",
+            "load_reduce"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "ok will try. how many sets?",
+          "intent": "volume_question"
+        },
+        {
+          "role": "assistant",
+          "content": "3–4 sets of 5 reps with RPE 7 is fine this week. Report back with the video.",
+          "intent": "progression"
+        }
+      ],
+      "topics": [
+        "technique",
+        "injury_prevention"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_082",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "flexibility",
+          "muscle_gain"
+        ],
+        "age": 30,
+        "injuries": [
+          "plantar_fasciitis"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Need help with diet. I stall on fat loss.",
+          "intent": "nutrition_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. What’s your average daily calories and protein lately?",
+          "intent": "clarify_intake"
+        },
+        {
+          "role": "user",
+          "content": "Around 1732 & not sure about protein, maybe 60g",
+          "intent": "current_intake"
+        },
+        {
+          "role": "assistant",
+          "content": "Aim for 1.6–2.2 g/kg protein. Increase veggies, swap caloric drinks for water, and pre-log meals. Want a 7‑day sample menu?",
+          "intent": "macro_guidance",
+          "suggestions": [
+            "protein_target",
+            "meal_logging",
+            "hydration"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "yes pls. i also crave sweets at night",
+          "intent": "adherence_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Add a high‑protein dessert (Greek yogurt + berries), brush teeth after dinner, and set a caffeine cutoff at 2 pm.",
+          "intent": "habit_strategies"
+        }
+      ],
+      "topics": [
+        "nutrition",
+        "macros",
+        "hydration"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_083",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "endurance"
+        ],
+        "age": 46,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I finished running, my knee hurts like 4/10",
+          "intent": "injury_concern"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear that. Is the pain sharp or dull, and does it worsen on stairs? Consider resting if it's >4.",
+          "intent": "injury_assessment",
+          "suggestions": [
+            "rest",
+            "ice",
+            "stretching"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Dull, worse when i sit for long. I skipped warmup",
+          "intent": "injury_details"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely patellofemoral irritation. For now: 15 min ice, quad/hip stretches, and a 10‑min warm-up next time. Reduce downhill volume.",
+          "intent": "advice_and_prevention",
+          "suggestions": [
+            "ice_treatment",
+            "stretching_routine",
+            "warmup_protocol"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Should I stop running?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Switch to cycling or brisk walking for 5–7 days, monitor symptoms. If pain persists, consult a clinician.",
+          "intent": "modified_activity"
+        }
+      ],
+      "topics": [
+        "injury_prevention",
+        "rehab",
+        "warm_up"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_084",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "recomp"
+        ],
+        "age": 45,
+        "injuries": [
+          "wrist_pain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I have $300 to upgrade my home gym. what should I buy?",
+          "intent": "equipment_budget"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. Prioritize versatility: adjustable dumbbells, a bench, and a set of mini bands. If budget allows, add a door anchor.",
+          "intent": "recommendation_overview"
+        },
+        {
+          "role": "user",
+          "content": "What about a kettlebell?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Excellent choice. A 12–20 kg bell for swings, goblet squats, and presses fits most trainees.",
+          "intent": "specific_recommendation"
+        },
+        {
+          "role": "user",
+          "content": "cool, thx",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "Anytime. I can also share a 3‑day kettlebell plan if you want.",
+          "intent": "offer_followup"
+        }
+      ],
+      "topics": [
+        "equipment",
+        "home_gym",
+        "budget"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_085",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "weight_loss",
+          "marathon_prep"
+        ],
+        "age": 32,
+        "injuries": [
+          "lower_back_strain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I finished running, my knee hurts like 7/10",
+          "intent": "injury_concern"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear that. Is the pain sharp or dull, and does it worsen on stairs? Consider resting if it's >4.",
+          "intent": "injury_assessment",
+          "suggestions": [
+            "rest",
+            "ice",
+            "stretching"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Dull, worse when i sit for long. I skipped warmup",
+          "intent": "injury_details"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely patellofemoral irritation. For now: 15 min ice, quad/hip stretches, and a 10‑min warm-up next time. Reduce downhill volume.",
+          "intent": "advice_and_prevention",
+          "suggestions": [
+            "ice_treatment",
+            "stretching_routine",
+            "warmup_protocol"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Should I stop running?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Switch to cycling or brisk walking for 5–7 days, monitor symptoms. If pain persists, consult a clinician.",
+          "intent": "modified_activity"
+        }
+      ],
+      "topics": [
+        "injury_prevention",
+        "rehab",
+        "warm_up"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_086",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "hypertrophy"
+        ],
+        "age": 46,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_087",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "weight_loss",
+          "hypertrophy"
+        ],
+        "age": 52,
+        "injuries": [
+          "lower_back_strain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I have $100 2 upgrade my home gym. what should I buy?",
+          "intent": "equipment_budget"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. Prioritize versatility: adjustable dumbbells, a bench, and a set of mini bands. If budget allows, add a door anchor.",
+          "intent": "recommendation_overview"
+        },
+        {
+          "role": "user",
+          "content": "What about a kettlebell?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Excellent choice. A 12–20 kg bell for swings, goblet squats, and presses fits most trainees.",
+          "intent": "specific_recommendation"
+        },
+        {
+          "role": "user",
+          "content": "cool, thx",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "Anytime. I can also share a 3‑day kettlebell plan if you want.",
+          "intent": "offer_followup"
+        }
+      ],
+      "topics": [
+        "equipment",
+        "home_gym",
+        "budget"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_088",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "endurance"
+        ],
+        "age": 22,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I have $500 to upgrade my home gym. what should I buy?",
+          "intent": "equipment_budget"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. Prioritize versatility: adjustable dumbbells, a bench, and a set of mini bands. If budget allows, add a door anchor.",
+          "intent": "recommendation_overview"
+        },
+        {
+          "role": "user",
+          "content": "What about a kettlebell?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Excellent choice. A 12–20 kg bell for swings, goblet squats, and presses fits most trainees.",
+          "intent": "specific_recommendation"
+        },
+        {
+          "role": "user",
+          "content": "cool, thx",
+          "intent": "closing"
+        },
+        {
+          "role": "assistant",
+          "content": "Anytime. I can also share a 3‑day kettlebell plan if you want.",
+          "intent": "offer_followup"
+        }
+      ],
+      "topics": [
+        "equipment",
+        "home_gym",
+        "budget"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_089",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "general_health"
+        ],
+        "age": 26,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "I finished running, my knee hurts like 3/10",
+          "intent": "injury_concern"
+        },
+        {
+          "role": "assistant",
+          "content": "Sorry to hear that. Is the pain sharp or dull, and does it worsen on stairs? Consider resting if it's >4.",
+          "intent": "injury_assessment",
+          "suggestions": [
+            "rest",
+            "ice",
+            "stretching"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Dull, worse when i sit for long. I skipped warmup",
+          "intent": "injury_details"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely patellofemoral irritation. For now: 15 min ice, quad/hip stretches, and a 10‑min warm-up next time. Reduce downhill volume.",
+          "intent": "advice_and_prevention",
+          "suggestions": [
+            "ice_treatment",
+            "stretching_routine",
+            "warmup_protocol"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Should I stop running?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Switch to cycling or brisk walking for 5–7 days, monitor symptoms. If pain persists, consult a clinician.",
+          "intent": "modified_activity"
+        }
+      ],
+      "topics": [
+        "injury_prevention",
+        "rehab",
+        "warm_up"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_090",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "general_health"
+        ],
+        "age": 58,
+        "injuries": [
+          "wrist_pain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Need help with diet. I stall on fat loss.",
+          "intent": "nutrition_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. What’s your average daily calories and protein lately?",
+          "intent": "clarify_intake"
+        },
+        {
+          "role": "user",
+          "content": "Around 2029 & not sure about protein, maybe 60g",
+          "intent": "current_intake"
+        },
+        {
+          "role": "assistant",
+          "content": "Aim for 1.6–2.2 g/kg protein. Increase veggies, swap caloric drinks for water, and pre-log meals. Want a 7‑day sample menu?",
+          "intent": "macro_guidance",
+          "suggestions": [
+            "protein_target",
+            "meal_logging",
+            "hydration"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "yes pls. i also crave sweets at night",
+          "intent": "adherence_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Add a high‑protein dessert (Greek yogurt + berries), brush teeth after dinner, and set a caffeine cutoff at 2 pm.",
+          "intent": "habit_strategies"
+        }
+      ],
+      "topics": [
+        "nutrition",
+        "macros",
+        "hydration"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_091",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "recomp"
+        ],
+        "age": 46,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Yo! down 3 kilos in 4 weeks!!",
+          "intent": "progress_update"
+        },
+        {
+          "role": "assistant",
+          "content": "Amazing work! Which habits made the biggest impact?",
+          "intent": "reflect_success"
+        },
+        {
+          "role": "user",
+          "content": "steps + tracking food, & I slept earlier",
+          "intent": "habit_report"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. Let's lock those in and add one new habit: a 10‑min mobility block post‑workout.",
+          "intent": "habit_progression"
+        },
+        {
+          "role": "user",
+          "content": "done!",
+          "intent": "commitment"
+        },
+        {
+          "role": "assistant",
+          "content": "Proud of you. Keep going!",
+          "intent": "celebration"
+        }
+      ],
+      "topics": [
+        "progress_tracking",
+        "positive_reinforcement"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_092",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "recomp",
+          "hypertrophy"
+        ],
+        "age": 16,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "My squat feels off, back rounding at bottom :/",
+          "intent": "form_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Back rounding often means depth + core bracing need work. Can you film from 45° angle next session?",
+          "intent": "assessment_request",
+          "suggestions": [
+            "film angle",
+            "brace cue",
+            "reduce depth"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Sure. what cues should I think abt?",
+          "intent": "ask_cues"
+        },
+        {
+          "role": "assistant",
+          "content": "Think 'big breath into belt', 'ribs down', and 'sit between hips'. Reduce load by 10% temporarily.",
+          "intent": "coaching_cues",
+          "suggestions": [
+            "brace",
+            "ribs_down",
+            "load_reduce"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "ok will try. how many sets?",
+          "intent": "volume_question"
+        },
+        {
+          "role": "assistant",
+          "content": "3–4 sets of 5 reps with RPE 7 is fine this week. Report back with the video.",
+          "intent": "progression"
+        }
+      ],
+      "topics": [
+        "technique",
+        "injury_prevention"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_093",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "endurance"
+        ],
+        "age": 43,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "My squat feels off, back rounding at bottom :/",
+          "intent": "form_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Back rounding often means depth + core bracing need work. Can you film from 45° angle next session?",
+          "intent": "assessment_request",
+          "suggestions": [
+            "film angle",
+            "brace cue",
+            "reduce depth"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Sure. what cues should I think abt?",
+          "intent": "ask_cues"
+        },
+        {
+          "role": "assistant",
+          "content": "Think 'big breath into belt', 'ribs down', and 'sit between hips'. Reduce load by 10% temporarily.",
+          "intent": "coaching_cues",
+          "suggestions": [
+            "brace",
+            "ribs_down",
+            "load_reduce"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "ok will try. how many sets?",
+          "intent": "volume_question"
+        },
+        {
+          "role": "assistant",
+          "content": "3–4 sets of 5 reps with RPE 7 is fine this week. Report back with the video.",
+          "intent": "progression"
+        }
+      ],
+      "topics": [
+        "technique",
+        "injury_prevention"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_094",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "recomp"
+        ],
+        "age": 18,
+        "injuries": [
+          "shoulder_impingement"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_095",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "muscle_gain",
+          "marathon_prep"
+        ],
+        "age": 42,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Need help with diet. I stall on fat loss.",
+          "intent": "nutrition_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. What’s your average daily calories and protein lately?",
+          "intent": "clarify_intake"
+        },
+        {
+          "role": "user",
+          "content": "Around 2274 and not sure about protein, maybe 60g",
+          "intent": "current_intake"
+        },
+        {
+          "role": "assistant",
+          "content": "Aim for 1.6–2.2 g/kg protein. Increase veggies, swap caloric drinks for water, and pre-log meals. Want a 7‑day sample menu?",
+          "intent": "macro_guidance",
+          "suggestions": [
+            "protein_target",
+            "meal_logging",
+            "hydration"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "yes pls. i also crave sweets at night",
+          "intent": "adherence_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Add a high‑protein dessert (Greek yogurt + berries), brush teeth after dinner, and set a caffeine cutoff at 2 pm.",
+          "intent": "habit_strategies"
+        }
+      ],
+      "topics": [
+        "nutrition",
+        "macros",
+        "hydration"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_096",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "general_health",
+          "recomp"
+        ],
+        "age": 34,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Yo! down 3 kilos in 4 weeks!!",
+          "intent": "progress_update"
+        },
+        {
+          "role": "assistant",
+          "content": "Amazing work! Which habits made the biggest impact?",
+          "intent": "reflect_success"
+        },
+        {
+          "role": "user",
+          "content": "steps + tracking food, and I slept earlier",
+          "intent": "habit_report"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. Let's lock those in and add one new habit: a 10‑min mobility block post‑workout.",
+          "intent": "habit_progression"
+        },
+        {
+          "role": "user",
+          "content": "done!",
+          "intent": "commitment"
+        },
+        {
+          "role": "assistant",
+          "content": "Proud of you. Keep going!",
+          "intent": "celebration"
+        }
+      ],
+      "topics": [
+        "progress_tracking",
+        "positive_reinforcement"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_097",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "hypertrophy",
+          "muscle_gain"
+        ],
+        "age": 41,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Yo! down 3 kilos in 4 weeks!!",
+          "intent": "progress_update"
+        },
+        {
+          "role": "assistant",
+          "content": "Amazing work! Which habits made the biggest impact?",
+          "intent": "reflect_success"
+        },
+        {
+          "role": "user",
+          "content": "steps + tracking food, and I slept earlier",
+          "intent": "habit_report"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect. Let's lock those in and add one new habit: a 10‑min mobility block post‑workout.",
+          "intent": "habit_progression"
+        },
+        {
+          "role": "user",
+          "content": "done!",
+          "intent": "commitment"
+        },
+        {
+          "role": "assistant",
+          "content": "Proud of you. Keep going!",
+          "intent": "celebration"
+        }
+      ],
+      "topics": [
+        "progress_tracking",
+        "positive_reinforcement"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_098",
+      "user_profile": {
+        "fitness_level": "intermediate",
+        "goals": [
+          "weight_loss"
+        ],
+        "age": 61,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Need help with diet. I stall on fat loss.",
+          "intent": "nutrition_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Understood. What’s your average daily calories and protein lately?",
+          "intent": "clarify_intake"
+        },
+        {
+          "role": "user",
+          "content": "Around 2008 and not sure about protein, maybe 60g",
+          "intent": "current_intake"
+        },
+        {
+          "role": "assistant",
+          "content": "Aim for 1.6–2.2 g/kg protein. Increase veggies, swap caloric drinks for water, and pre-log meals. Want a 7‑day sample menu?",
+          "intent": "macro_guidance",
+          "suggestions": [
+            "protein_target",
+            "meal_logging",
+            "hydration"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "yes pls. i also crave sweets at night",
+          "intent": "adherence_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Add a high‑protein dessert (Greek yogurt + berries), brush teeth after dinner, and set a caffeine cutoff at 2 pm.",
+          "intent": "habit_strategies"
+        }
+      ],
+      "topics": [
+        "nutrition",
+        "macros",
+        "hydration"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_099",
+      "user_profile": {
+        "fitness_level": "beginner",
+        "goals": [
+          "weight_loss"
+        ],
+        "age": 41,
+        "injuries": []
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "My squat feels off, back rounding at bottom :/",
+          "intent": "form_issue"
+        },
+        {
+          "role": "assistant",
+          "content": "Back rounding often means depth + core bracing need work. Can you film from 45° angle next session?",
+          "intent": "assessment_request",
+          "suggestions": [
+            "film angle",
+            "brace cue",
+            "reduce depth"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Sure. what cues should I think abt?",
+          "intent": "ask_cues"
+        },
+        {
+          "role": "assistant",
+          "content": "Think 'big breath into belt', 'ribs down', and 'sit between hips'. Reduce load by 10% temporarily.",
+          "intent": "coaching_cues",
+          "suggestions": [
+            "brace",
+            "ribs_down",
+            "load_reduce"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "ok will try. how many sets?",
+          "intent": "volume_question"
+        },
+        {
+          "role": "assistant",
+          "content": "3–4 sets of 5 reps with RPE 7 is fine this week. Report back with the video.",
+          "intent": "progression"
+        }
+      ],
+      "topics": [
+        "technique",
+        "injury_prevention"
+      ],
+      "outcome": "resolved_with_advice"
+    },
+    {
+      "conversation_id": "conv_100",
+      "user_profile": {
+        "fitness_level": "advanced",
+        "goals": [
+          "endurance",
+          "hypertrophy"
+        ],
+        "age": 19,
+        "injuries": [
+          "wrist_pain"
+        ]
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey coach, can u make me a 4 day plan for fat loss?",
+          "intent": "workout_plan_request"
+        },
+        {
+          "role": "assistant",
+          "content": "Absolutely. What equipment do you have and how many days can you realistically commit?",
+          "intent": "clarify_requirements"
+        },
+        {
+          "role": "user",
+          "content": "I got dumbbells at home & can do 4-5 days. goal is weight loss + some muscle",
+          "intent": "equipment_and_goals"
+        },
+        {
+          "role": "assistant",
+          "content": "Great. We'll use an upper/lower split with a calorie deficit and 8-12k steps/day. Want me to share week 1 plan now?",
+          "intent": "proposal",
+          "suggestions": [
+            "upper/lower split",
+            "steps target",
+            "calorie deficit"
+          ],
+          "action_items": [
+            "share_week_plan"
+          ]
+        },
+        {
+          "role": "user",
+          "content": "Yes plz, also how much cardio?",
+          "intent": "follow_up"
+        },
+        {
+          "role": "assistant",
+          "content": "Start with 2x 20-min moderate sessions after lifts. If weight stalls for 2 weeks, add 10 minutes per session.",
+          "intent": "actionable_plan"
+        }
+      ],
+      "topics": [
+        "programming",
+        "split_design",
+        "periodization"
+      ],
+      "outcome": "resolved_with_advice"
+    }
+  ]
+}

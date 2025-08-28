@@ -1,0 +1,915 @@
+{
+  "ocr_training_data": [
+    {
+      "id": "workout_001",
+      "app_source": "Apple Fitness",
+      "extracted_text": "Workout Summary\nRunning\nDuration 87:31\nDistance 3.4 mi\nCalories 208 kcal\nAvg Pace 9:03 min/mi\nMax Heart Rate 181 bpm\nAvg Heart Rate 150 bpm\nSteps 2644\nElevation Gain 105 m\nDate Jun 24, 2024 05:53 AM",
+      "parsed_data": {
+        "type": "Running",
+        "duration_minutes": 87.51,
+        "distance_km": 5.47,
+        "calories": 208,
+        "heart_rate_avg": 150,
+        "heart_rate_max": 181,
+        "steps": 2644,
+        "date": "2024-06-24T05:53:00Z"
+      },
+      "confidence_score": 0.98,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_002",
+      "app_source": "Fitbit",
+      "extracted_text": "Workout Summary\nRunning\nDuration 59:54\nDistance 5.49 mi\nCalories 346 kcal\nAvg Pace 6:36 min/mi\nMax Heart Rate 137 bpm\nAvg Heart Rate 100 bpm\nSteps 6244\nElevation Gain 39 m\nDate Nov 01, 2024 04:59 AM",
+      "parsed_data": {
+        "type": "Running",
+        "duration_minutes": 59.9,
+        "distance_km": 8.84,
+        "calories": 346,
+        "heart_rate_avg": 100,
+        "heart_rate_max": 137,
+        "steps": 6244,
+        "date": "2024-11-01T04:59:00Z"
+      },
+      "confidence_score": 0.94,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_003",
+      "app_source": "Samsung Health",
+      "extracted_text": "Workout Summary\nHIIT\nDuratíon 42:55\nDistançe —\nCalor1es 680 kcal\nAvg Paee —\nMax Hean Rate 127 bpm\nAvg Hean Rate 103 bpm\nSteps 11641\nElevation Gain 68 m\nDate May 29, 2024 11:23 PM",
+      "parsed_data": {
+        "type": "HIIT",
+        "duration_minutes": 42.91,
+        "distance_km": null,
+        "calories": 680,
+        "heart_rate_avg": 103,
+        "heart_rate_max": 127,
+        "steps": 11641,
+        "date": "2024-05-29T23:23:00Z"
+      },
+      "confidence_score": 0.87,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_004",
+      "app_source": "Google Fit",
+      "extracted_text": "Workout Summary\nHIIT\nDurati0n 18:47\nDistancc —\nCaloreis 427 kcal\nAvg Paee —\nMax Hean Rate 173 bpm\nAvg Hean Rate 158 bpm\nSteps 13451\nElevation Gain 9 m\nDate Nov 22, 2024 07:56 PM",
+      "parsed_data": {
+        "type": "HIIT",
+        "duration_minutes": 18.79,
+        "distance_km": null,
+        "calories": 427,
+        "heart_rate_avg": 158,
+        "heart_rate_max": 173,
+        "steps": 13451,
+        "date": "2024-11-22T19:56:00Z"
+      },
+      "confidence_score": 0.89,
+      "is_valid": false,
+      "anti_cheat_flags": [
+        "duplicate_screenshot"
+      ]
+    },
+    {
+      "id": "workout_005",
+      "app_source": "Fitbit",
+      "extracted_text": "Workout Summary\nYoga\nDuration 40:14\nDistance —\nCalories 478 kcal\nAvg Pace —\nMax Heart Rate 181 bpm\nAvg Heart Rate 158 bpm\nSteps 14556\nElevation Gain 11 m\nDate Nov 28, 2024 04:45 AM",
+      "parsed_data": {
+        "type": "Yoga",
+        "duration_minutes": 40.23,
+        "distance_km": null,
+        "calories": 478,
+        "heart_rate_avg": 158,
+        "heart_rate_max": 181,
+        "steps": 14556,
+        "date": "2024-11-28T04:45:00Z"
+      },
+      "confidence_score": 0.9,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_006",
+      "app_source": "Samsung Health",
+      "extracted_text": "Workout Summary\nRunning\nDuration 72:41\nDistance 7.23 km\nCalories 71...",
+      "parsed_data": {
+        "type": "Running",
+        "duration_minutes": 72.69,
+        "distance_km": 7.23,
+        "calories": 711,
+        "heart_rate_avg": 152,
+        "heart_rate_max": 175,
+        "steps": 13241,
+        "date": "2024-10-07T22:11:00Z"
+      },
+      "confidence_score": 0.57,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_007",
+      "app_source": "Google Fit",
+      "extracted_text": "Workout Summary\nStrength Training\nDurati0n 22:44\nDistanse —\nCaloreis 373 kcal\nAvg Paee —\nMax Hean Rate 175 bpm\nAvg Hean Rate 145 bpm\nSteps 15777\nElevation Gain 57 m\nDate Dec 27, 2024 01:05 PM",
+      "parsed_data": {
+        "type": "Strength Training",
+        "duration_minutes": 22.74,
+        "distance_km": null,
+        "calories": 373,
+        "heart_rate_avg": 145,
+        "heart_rate_max": 175,
+        "steps": 15777,
+        "date": "2024-12-27T13:05:00Z"
+      },
+      "confidence_score": 0.94,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_008",
+      "app_source": "Apple Fitness",
+      "extracted_text": "Workout Summary\nSwimming\nDurati0n 91:29\nDistanse 2.67 mi\nCalorles 30...",
+      "parsed_data": {
+        "type": "Swimming",
+        "duration_minutes": 91.49,
+        "distance_km": 4.29,
+        "calories": 300,
+        "heart_rate_avg": 114,
+        "heart_rate_max": 149,
+        "steps": 12289,
+        "date": "2024-06-18T21:50:00Z"
+      },
+      "confidence_score": 0.62,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_009",
+      "app_source": "Fitbit",
+      "extracted_text": "Workout Summary\nRunning\nDurat1on 49:54\nDistancc 10.94 mi\nCalor1es 816 kcal\nAvg Paee 9:03 min/mi\nMax Heart Rale 175 bpm\nAvg Heart Rale 145 bpm\nSteps 8036\nElevation Gain 24 m\nDate Oct 13, 2024 11:44 PM",
+      "parsed_data": {
+        "type": "Running",
+        "duration_minutes": 49.9,
+        "distance_km": 17.61,
+        "calories": 816,
+        "heart_rate_avg": 145,
+        "heart_rate_max": 175,
+        "steps": 8036,
+        "date": "2024-10-13T23:44:00Z"
+      },
+      "confidence_score": 0.92,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_010",
+      "app_source": "Samsung Health",
+      "extracted_text": "Workout Summary\nRunning\nDuration 59:02\nDistance 11.43 km\nCalories 492 kcal\nAvg Pace 5:40 min/km\nMax Heart Rate 129 bpm\nAvg Heart Rate 98 bpm\nSteps 15825\nElevation Gain 32 m\nDate May 31, 2024 10:14 AM",
+      "parsed_data": {
+        "type": "Running",
+        "duration_minutes": 59.04,
+        "distance_km": 11.43,
+        "calories": 2500,
+        "heart_rate_avg": 210,
+        "heart_rate_max": 129,
+        "steps": 15825,
+        "date": "2024-05-31T10:14:00Z"
+      },
+      "confidence_score": 0.54,
+      "is_valid": false,
+      "anti_cheat_flags": [
+        "suspicious_values",
+        "duplicate_screenshot"
+      ]
+    },
+    {
+      "id": "workout_011",
+      "app_source": "Apple Fitness",
+      "extracted_text": "Workout Summary\nCycling\nDurat1on 23:58\nDistanse 9.55 mi\nCalorles 878 kcal\nAvg Paee 6:13 min/mi\nMax Hcart Rate 163 bpm\nAvg Hcart Rate 128 bpm\nSteps 15079\nElevation Gain 67 m\nDate May 18, 2025 10:34 PM",
+      "parsed_data": {
+        "type": "Cycling",
+        "duration_minutes": 23.96,
+        "distance_km": 15.37,
+        "calories": 878,
+        "heart_rate_avg": 128,
+        "heart_rate_max": 163,
+        "steps": 15079,
+        "date": "2025-05-18T22:34:00Z"
+      },
+      "confidence_score": 0.99,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_012",
+      "app_source": "Samsung Health",
+      "extracted_text": "Workout Summary\nStrength Training\nDuration 55:02\nDistance —\nCalories 291 kcal\nAvg Pace —\nMax Heart Rate 159 bpm\nAvg Heart Rate 140 bpm\nSteps 10225\nElevation Gain 42 m\nDate Jan 29, 2025 08:34 AM",
+      "parsed_data": {
+        "type": "Strength Training",
+        "duration_minutes": 55.03,
+        "distance_km": null,
+        "calories": 291,
+        "heart_rate_avg": 140,
+        "heart_rate_max": 159,
+        "steps": 10225,
+        "date": "2025-01-29T08:34:00Z"
+      },
+      "confidence_score": 0.92,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_013",
+      "app_source": "Google Fit",
+      "extracted_text": "Workout Summary\nHIIT\nDuration 79:55\nDistance —\nCalories 877 kcal\nAvg Pace —\nMax Heart Rate 141 bpm\nAvg Heart Rate 124 bpm\nSteps 9980\nElevation Gain 3 m\nDate Dec 24, 2024 07:59 PM",
+      "parsed_data": {
+        "type": "HIIT",
+        "duration_minutes": 79.92,
+        "distance_km": null,
+        "calories": 877,
+        "heart_rate_avg": 124,
+        "heart_rate_max": 141,
+        "steps": 9980,
+        "date": "2024-12-24T19:59:00Z"
+      },
+      "confidence_score": 0.95,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_014",
+      "app_source": "Strava",
+      "extracted_text": "Workout Summary\nStrength Training\nDurati0n 28:04\nDistancc —\nCaloreis 739 kcal\nAvg Paee —\nMax Heart Rale 172 bpm\nAvg Heart Rale 139 bpm\nSteps 14747\nElevation Gain 46 m\nDate Jun 10, 2025 01:34 PM",
+      "parsed_data": {
+        "type": "Strength Training",
+        "duration_minutes": 28.07,
+        "distance_km": null,
+        "calories": 739,
+        "heart_rate_avg": 139,
+        "heart_rate_max": 172,
+        "steps": 14747,
+        "date": "2025-06-10T13:34:00Z"
+      },
+      "confidence_score": 0.85,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_015",
+      "app_source": "Fitbit",
+      "extracted_text": "Workout Summary\nRunning\nDurat1on 51:48\nDistanse 13.58 km\nCalor1es 778 kcal\nAvg Paee 5:30 min/km\nMax Hcart Rate 135 bpm\nAvg Hcart Rate 105 bpm\nSteps 7865\nElevation Gain 113 m\nDate Jul 23, 2025 03:44 PM",
+      "parsed_data": {
+        "type": "Running",
+        "duration_minutes": 51.8,
+        "distance_km": 13.58,
+        "calories": 778,
+        "heart_rate_avg": 105,
+        "heart_rate_max": 135,
+        "steps": 7865,
+        "date": "2025-07-23T15:44:00Z"
+      },
+      "confidence_score": 0.9,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_016",
+      "app_source": "Samsung Health",
+      "extracted_text": "Workout Summary\nWalking\nDuration 26:07\nDistance 3.85 km\nCalories 274 kcal\nAvg Pace 6:09 min/km\nMax Heart Rate 168 bpm\nAvg Heart Rate 154 bpm\nSteps 11520\nElevation Gain 70 m\nDate Mar 09, 2025 09:35 PM",
+      "parsed_data": {
+        "type": "Walking",
+        "duration_minutes": 26.11,
+        "distance_km": 3.85,
+        "calories": 274,
+        "heart_rate_avg": 154,
+        "heart_rate_max": 168,
+        "steps": 11520,
+        "date": "2025-03-09T21:35:00Z"
+      },
+      "confidence_score": 0.82,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_017",
+      "app_source": "Samsung Health",
+      "extracted_text": "Workout Summary\nElliptical\nDurat1on 74:13\nDistancc 2.54 mi\nCalor1es 319 kcal\nAvg Pαce 7:48 min/mi\nMax Hcart Rate 130 bpm\nAvg Hcart Rate 122 bpm\nSteps 5626\nElevation Gain 75 m\nDate Jun 03, 2024 10:35 PM",
+      "parsed_data": {
+        "type": "Elliptical",
+        "duration_minutes": 74.21,
+        "distance_km": 4.08,
+        "calories": 319,
+        "heart_rate_avg": 122,
+        "heart_rate_max": 130,
+        "steps": 5626,
+        "date": "2024-06-03T22:35:00Z"
+      },
+      "confidence_score": 0.88,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_018",
+      "app_source": "Strava",
+      "extracted_text": "Workout Summary\nElliptical\nDuration 46:55\nDistance 18.48 km\nCalories 633 kcal\nAvg Pace 7:49 min/km\nMax Heart Rate 188 bpm\nAvg Heart Rate 111 bpm\nSteps 3987\nElevation Gain 23 m\nDate Jan 16, 2025 04:56 AM",
+      "parsed_data": {
+        "type": "Elliptical",
+        "duration_minutes": 46.91,
+        "distance_km": 18.48,
+        "calories": 633,
+        "heart_rate_avg": 111,
+        "heart_rate_max": 188,
+        "steps": 3987,
+        "date": "2025-01-16T04:56:00Z"
+      },
+      "confidence_score": 0.95,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_019",
+      "app_source": "Google Fit",
+      "extracted_text": "Workout Summary\nWalking\nDurat1on 23:45\nDistancc 12.95 km\nCaloreis 243 kcal\nAvg Paee 7:50 min/km\nMax Hcart Rate 161 bpm\nAvg Hcart Rate 102 bpm\nSteps 12679\nElevation Gain 99 m\nDate Jan 12, 2025 10:48 AM",
+      "parsed_data": {
+        "type": "Walking",
+        "duration_minutes": 23.75,
+        "distance_km": 12.95,
+        "calories": 243,
+        "heart_rate_avg": 102,
+        "heart_rate_max": 161,
+        "steps": 12679,
+        "date": "2025-01-12T10:48:00Z"
+      },
+      "confidence_score": 0.83,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_020",
+      "app_source": "Samsung Health",
+      "extracted_text": "Workout Summary\nElliptical\nDuration 49:32\nDistance 2.02 km\nCalories 184 kcal\nAvg Pace 5:44 min/km\nMax Heart Rate 176 bpm\nAvg Heart Rate 151 bpm\nSteps 11535\nElevation Gain 35 m\nDate Jan 03, 2025 03:10 AM",
+      "parsed_data": {
+        "type": "Elliptical",
+        "duration_minutes": 49.53,
+        "distance_km": 2.02,
+        "calories": 184,
+        "heart_rate_avg": 151,
+        "heart_rate_max": 176,
+        "steps": 11535,
+        "date": "2025-01-03T03:10:00Z"
+      },
+      "confidence_score": 0.91,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_021",
+      "app_source": "Strava",
+      "extracted_text": "Workout Summary\nElliptical\nDuration 90:08\nDistance 8.97 mi\nCalories 385 kcal\nAvg Pace 9:20 min/mi\nMax Heart Rate 182 bpm\nAvg Heart Rate 120 bpm\nSteps 3746\nElevation Gain 9 m\nDate Oct 30, 2024 09:15 AM",
+      "parsed_data": {
+        "type": "Elliptical",
+        "duration_minutes": 90.14,
+        "distance_km": 14.44,
+        "calories": 385,
+        "heart_rate_avg": 120,
+        "heart_rate_max": 182,
+        "steps": 3746,
+        "date": "2024-10-30T09:15:00Z"
+      },
+      "confidence_score": 0.89,
+      "is_valid": false,
+      "anti_cheat_flags": [
+        "inconsistent_data"
+      ]
+    },
+    {
+      "id": "workout_022",
+      "app_source": "Samsung Health",
+      "extracted_text": "Workout Summary\nWalking\nDuratíon 89:59\nDistancc 13.4 km\nCaloreis 494 kcal\nAvg Páce 5:47 min/km\nMax Hean Rate 152 bpm\nAvg Hean Rate 113 bpm\nSteps 15964\nElevation Gain 12 m\nDate Apr 09, 2024 10:41 PM",
+      "parsed_data": {
+        "type": "Walking",
+        "duration_minutes": 89.98,
+        "distance_km": 13.4,
+        "calories": 494,
+        "heart_rate_avg": 113,
+        "heart_rate_max": 152,
+        "steps": 15964,
+        "date": "2024-04-09T22:41:00Z"
+      },
+      "confidence_score": 0.94,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_023",
+      "app_source": "Fitbit",
+      "extracted_text": "Workout Summary\nSwimming\nDurati0n 40:09\nDistanse 5.12 km\nCalorles 446 kcal\nAvg Páce 7:45 min/km\nMax Hcart Rate 166 bpm\nAvg Hcart Rate 106 bpm\nSteps 1819\nElevation Gain 2 m\nDate Sep 03, 2024 02:37 AM",
+      "parsed_data": {
+        "type": "Swimming",
+        "duration_minutes": 40.15,
+        "distance_km": 5.12,
+        "calories": 446,
+        "heart_rate_avg": 106,
+        "heart_rate_max": 166,
+        "steps": 1819,
+        "date": "2024-09-03T02:37:00Z"
+      },
+      "confidence_score": 0.84,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_024",
+      "app_source": "Google Fit",
+      "extracted_text": "Workout Summary\nCycling\nDuration 18:59\nDistance 6.53 km\nCalories 305 kcal\nAvg Pace 6:25 min/km\nMax Heart Rate 182 bpm\nAvg Heart Rate 129 bpm\nSteps 3622\nElevation Gain 19 m\nDate Aug 19, 2025 10:38 PM",
+      "parsed_data": {
+        "type": "Cycling",
+        "duration_minutes": 18.98,
+        "distance_km": 6.53,
+        "calories": 305,
+        "heart_rate_avg": 129,
+        "heart_rate_max": 182,
+        "steps": 3622,
+        "date": "2025-08-19T22:38:00Z"
+      },
+      "confidence_score": 0.91,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_025",
+      "app_source": "Strava",
+      "extracted_text": "Workout Summary\nYoga\nDuratíon 19:26\nDistancc —\nCaloreis 178 kcal\nAvg Páce —\nMax Hean Rate 177 bpm\nAvg Hean Rate 118 bpm\nSteps 2686\nElevation Gain 81 m\nDate Jul 14, 2024 07:46 PM",
+      "parsed_data": {
+        "type": "Yoga",
+        "duration_minutes": 19.43,
+        "distance_km": null,
+        "calories": 178,
+        "heart_rate_avg": 118,
+        "heart_rate_max": 177,
+        "steps": 2686,
+        "date": "2024-07-14T19:46:00Z"
+      },
+      "confidence_score": 0.86,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_026",
+      "app_source": "Samsung Health",
+      "extracted_text": "Workout Summary\nRowing\nDurati0n 12:58\nDistanse 19.89 km\nCaloreis 547 kcal\nAvg Paee 5:07 min/km\nMax Heart Rale 173 bpm\nAvg Heart Rale 129 bpm\nSteps 3617\nElevation Gain 20 m\nDate Feb 01, 2024 11:04 AM",
+      "parsed_data": {
+        "type": "Rowing",
+        "duration_minutes": 12.96,
+        "distance_km": 19.89,
+        "calories": 547,
+        "heart_rate_avg": 129,
+        "heart_rate_max": 173,
+        "steps": 3617,
+        "date": "2024-02-01T11:04:00Z"
+      },
+      "confidence_score": 0.91,
+      "is_valid": false,
+      "anti_cheat_flags": [
+        "inconsistent_data"
+      ]
+    },
+    {
+      "id": "workout_027",
+      "app_source": "Strava",
+      "extracted_text": "Workout Summary\nElliptical\nDuratíon 67:47\nDistanse 6.5 km\nCaloreis 138 kcal\nAvg Paee 5:32 min/km\nMax Hean Rate 134 bpm\nAvg Hean Rate 127 bpm\nSteps 1751\nElevation Gain 60 m\nDate Jan 14, 2024 10:09 AM",
+      "parsed_data": {
+        "type": "Elliptical",
+        "duration_minutes": 67.79,
+        "distance_km": 6.5,
+        "calories": 138,
+        "heart_rate_avg": 127,
+        "heart_rate_max": 134,
+        "steps": 1751,
+        "date": "2024-01-14T10:09:00Z"
+      },
+      "confidence_score": 0.93,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_028",
+      "app_source": "Fitbit",
+      "extracted_text": "Workout Summary\nSwimming\nDuration 92:32\nDistance 7.19 km\nCalories 340 kcal\nAvg Pace 5:25 min/km\nMax Heart Rate 150 bpm\nAvg Heart Rate 124 bpm\nSteps 4754\nElevation Gain 44 m\nDate May 29, 2025 02:55 PM",
+      "parsed_data": {
+        "type": "Swimming",
+        "duration_minutes": 92.54,
+        "distance_km": 7.19,
+        "calories": 340,
+        "heart_rate_avg": 124,
+        "heart_rate_max": 150,
+        "steps": 4754,
+        "date": "2025-05-29T14:55:00Z"
+      },
+      "confidence_score": 0.96,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_029",
+      "app_source": "Samsung Health",
+      "extracted_text": "Workout Summary\nCycling\nDuration 63:55\nDistance 17.78 km\nCalories 561 kcal\nAvg Pace 6:38 min/km\nMax Heart Rate 127 bpm\nAvg Heart Rate 115 bpm\nSteps 2884\nElevation Gain 31 m\nDate Apr 29, 2025 09:41 AM",
+      "parsed_data": {
+        "type": "Cycling",
+        "duration_minutes": 63.91,
+        "distance_km": 17.78,
+        "calories": 561,
+        "heart_rate_avg": 115,
+        "heart_rate_max": 127,
+        "steps": 2884,
+        "date": "2025-04-29T09:41:00Z"
+      },
+      "confidence_score": 0.83,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_030",
+      "app_source": "Google Fit",
+      "extracted_text": "Workout Summary\nWalking\nDurat1on 34:20\nDistançe 0.98 mi\nCalor1es 492 kcal\nAvg Paee 8:13 min/mi\nMax Hean Rate 177 bpm\nAvg Hean Rate 137 bpm\nSteps 6800\nElevation Gain 45 m\nDate Jun 27, 2024 12:00 AM",
+      "parsed_data": {
+        "type": "Walking",
+        "duration_minutes": 34.33,
+        "distance_km": 1.57,
+        "calories": 492,
+        "heart_rate_avg": 137,
+        "heart_rate_max": 177,
+        "steps": 6800,
+        "date": "2024-06-27T00:00:00Z"
+      },
+      "confidence_score": 0.91,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_031",
+      "app_source": "Google Fit",
+      "extracted_text": "Workout Summary\nHIIT\nDurati0n 53:53\nDistanse —\nCalor1es 125 kcal\nAvg Páce —\nMax Heart Rale 153 bpm\nAvg Heart Rale 106 bpm\nSteps 14886\nElevation Gain 75 m\nDate Mar 06, 2024 08:33 AM",
+      "parsed_data": {
+        "type": "HIIT",
+        "duration_minutes": 53.89,
+        "distance_km": null,
+        "calories": 125,
+        "heart_rate_avg": 106,
+        "heart_rate_max": 153,
+        "steps": 14886,
+        "date": "2024-03-06T08:33:00Z"
+      },
+      "confidence_score": 0.83,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_032",
+      "app_source": "Fitbit",
+      "extracted_text": "Workout Summary\nWalking\nDuration 66:35\nDistance 9.17 mi\nCalories 730 kcal\nAvg Pace 7:02 min/mi\nMax Heart Rate 169 bpm\nAvg Heart Rate 144 bpm\nSteps 13307\nElevation Gain 105 m\nDate Dec 25, 2024 08:36 PM",
+      "parsed_data": {
+        "type": "Walking",
+        "duration_minutes": 66.58,
+        "distance_km": 14.75,
+        "calories": 730,
+        "heart_rate_avg": 144,
+        "heart_rate_max": 169,
+        "steps": 13307,
+        "date": "2024-12-25T20:36:00Z"
+      },
+      "confidence_score": 0.97,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_033",
+      "app_source": "Strava",
+      "extracted_text": "Workout Summary\nElliptical\nDuration 23:34\nDistance 6.95 mi\nCalories 636 kcal\nAvg Pace 8:06 min/mi\nMax Heart Rate 149 bpm\nAvg Heart Rate 97 bpm\nSteps 2894\nElevation Gain 48 m\nDate Jan 23, 2024 04:34 PM",
+      "parsed_data": {
+        "type": "Elliptical",
+        "duration_minutes": 23.56,
+        "distance_km": 11.19,
+        "calories": 636,
+        "heart_rate_avg": 97,
+        "heart_rate_max": 149,
+        "steps": 2894,
+        "date": "2024-01-23T16:34:00Z"
+      },
+      "confidence_score": 0.91,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_034",
+      "app_source": "Samsung Health",
+      "extracted_text": "Workout Summary\nElliptical\nDurati0n 68:30\nDistancc 10.55 km\nCalor1es 123 kcal\nAvg Paee 4:42 min/km\nMax Hcart Rate 162 bpm\nAvg Hcart Rate 153 bpm\nSteps 13759\nElevation Gain 67 m\nDate Jan 01, 2025 06:03 AM",
+      "parsed_data": {
+        "type": "Elliptical",
+        "duration_minutes": 68.5,
+        "distance_km": 10.55,
+        "calories": 123,
+        "heart_rate_avg": 153,
+        "heart_rate_max": 162,
+        "steps": 13759,
+        "date": "2025-01-01T06:03:00Z"
+      },
+      "confidence_score": 0.86,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_035",
+      "app_source": "Google Fit",
+      "extracted_text": "Workout Summary\nHIIT\nDuratíon 73:25\nDistanse —\nCalorles 591 kcal\nAvg Páce —\nMax Heart Rale 190 bpm\nAvg Heart Rale 158 bpm\nSteps 7767\nElevation Gain 87 m\nDate Feb 25, 2024 09:07 PM",
+      "parsed_data": {
+        "type": "HIIT",
+        "duration_minutes": 73.41,
+        "distance_km": null,
+        "calories": 591,
+        "heart_rate_avg": 158,
+        "heart_rate_max": 190,
+        "steps": 7767,
+        "date": "2024-02-25T21:07:00Z"
+      },
+      "confidence_score": 0.83,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_036",
+      "app_source": "Google Fit",
+      "extracted_text": "Workout Summary\nYoga\nDuration 33:05\nDistance —\nCalories 881 kcal\nAvg Pace —\nMax Heart Rate 177 bpm\nAvg Heart Rate 133 bpm\nSteps 10802\nElevation Gain 7 m\nDate Apr 07, 2024 04:03 AM",
+      "parsed_data": {
+        "type": "Yoga",
+        "duration_minutes": 33.08,
+        "distance_km": null,
+        "calories": 881,
+        "heart_rate_avg": 133,
+        "heart_rate_max": 177,
+        "steps": 10802,
+        "date": "2024-04-07T04:03:00Z"
+      },
+      "confidence_score": 0.99,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_037",
+      "app_source": "Samsung Health",
+      "extracted_text": "Workout Summary\nHIIT\nDuration 68:05\nDistance —\nCalories 417 kcal\nAvg Pace —\nMax Heart Rate 165 bpm\nAvg Heart Rate 131 bpm\nSteps 9133\nElevation Gain 114 m\nDate Dec 05, 2024 01:52 PM",
+      "parsed_data": {
+        "type": "HIIT",
+        "duration_minutes": 68.08,
+        "distance_km": null,
+        "calories": 417,
+        "heart_rate_avg": 131,
+        "heart_rate_max": 165,
+        "steps": 9133,
+        "date": "2024-12-05T13:52:00Z"
+      },
+      "confidence_score": 0.87,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_038",
+      "app_source": "Samsung Health",
+      "extracted_text": "Workout Summary\nRowing\nDurati0n 13:27\nDistançe 9.99 km\nCalorles 638 kcal\nAvg Páce 5:04 min/km\nMax Hcart Rate 174 bpm\nAvg Hcart Rate 152 bpm\nSteps 7838\nElevation Gain 74 m\nDate Jun 01, 2024 07:10 PM",
+      "parsed_data": {
+        "type": "Rowing",
+        "duration_minutes": 13.45,
+        "distance_km": 9.99,
+        "calories": 638,
+        "heart_rate_avg": 152,
+        "heart_rate_max": 174,
+        "steps": 7838,
+        "date": "2024-06-01T19:10:00Z"
+      },
+      "confidence_score": 0.92,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_039",
+      "app_source": "Fitbit",
+      "extracted_text": "Workout Summary\nStrength Training\nDurati0n 85:37\nDistançe —\nCalorles 840 kcal\nAvg Paee...",
+      "parsed_data": {
+        "type": "Strength Training",
+        "duration_minutes": 85.61,
+        "distance_km": null,
+        "calories": 840,
+        "heart_rate_avg": 141,
+        "heart_rate_max": 160,
+        "steps": 9657,
+        "date": "2024-12-19T23:55:00Z"
+      },
+      "confidence_score": 0.54,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_040",
+      "app_source": "Apple Fitness",
+      "extracted_text": "Workout Summary\nCycling\nDurat1on 81:44\nDistançe 1.53 km\nCalorles 888 kcal\nAvg Paee 6:16 min/km\nMax Hean Rate 168 bpm\nAvg Hean Rate 138 bpm\nSteps 3466\nElevation Gain 47 m\nDate May 22, 2024 12:49 PM",
+      "parsed_data": {
+        "type": "Cycling",
+        "duration_minutes": 81.74,
+        "distance_km": 1.53,
+        "calories": 888,
+        "heart_rate_avg": 138,
+        "heart_rate_max": 168,
+        "steps": 3466,
+        "date": "2024-05-22T12:49:00Z"
+      },
+      "confidence_score": 0.95,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_041",
+      "app_source": "Samsung Health",
+      "extracted_text": "Workout Summary\nStrength Training\nDuration 20:26\nDistance —\nCalories 797 kcal\nAvg Pace —\nMax Heart Rate 176 bpm\nAvg Heart Rate 131 bpm\nSteps 3939\nElevation Gain 55 m\nDate Jun 30, 2024 01:15 PM",
+      "parsed_data": {
+        "type": "Strength Training",
+        "duration_minutes": 20.44,
+        "distance_km": null,
+        "calories": 797,
+        "heart_rate_avg": 131,
+        "heart_rate_max": 176,
+        "steps": 3939,
+        "date": "2024-06-30T13:15:00Z"
+      },
+      "confidence_score": 0.85,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_042",
+      "app_source": "Apple Fitness",
+      "extracted_text": "Workout Summary\nSwimming\nDuratíon 85:23\nDistançe 16.52 km\nCaloreis 766 kcal\nAvg Paee 4:59 min/km\nMax Hcart Rate 186 bpm\nAvg Hcart Rate 146 bpm\nSteps 10498\nElevation Gain 93 m\nDate May 28, 2024 03:17 AM",
+      "parsed_data": {
+        "type": "Swimming",
+        "duration_minutes": 85.39,
+        "distance_km": 16.52,
+        "calories": 766,
+        "heart_rate_avg": 146,
+        "heart_rate_max": 186,
+        "steps": 10498,
+        "date": "2024-05-28T03:17:00Z"
+      },
+      "confidence_score": 0.83,
+      "is_valid": false,
+      "anti_cheat_flags": [
+        "edited_image"
+      ]
+    },
+    {
+      "id": "workout_043",
+      "app_source": "Strava",
+      "extracted_text": "Workout Summary\nSwimming\nDuration 40:31\nDistance 4.36 mi\nCalories 876 kcal\nAvg Pace 9:07 min/mi\nMax Heart Rate 158 bpm\nAvg Heart Rate 128 bpm\nSteps 12247\nElevation Gain 21 m\nDate Jun 22, 2024 06:58 PM",
+      "parsed_data": {
+        "type": "Swimming",
+        "duration_minutes": 40.52,
+        "distance_km": 7.01,
+        "calories": 876,
+        "heart_rate_avg": 128,
+        "heart_rate_max": 158,
+        "steps": 12247,
+        "date": "2024-06-22T18:58:00Z"
+      },
+      "confidence_score": 0.83,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_044",
+      "app_source": "Fitbit",
+      "extracted_text": "Workout Summary\nRowing\nDuration 57:41\nDistance 6.14 mi\nCalories 460 kcal\nAvg Pace 6:11 min/mi\nMax Heart Rate 184 bpm\nAvg Heart Rate 152 bpm\nSteps 3787\nElevation Gain 43 m\nDate Feb 02, 2025 09:14 PM",
+      "parsed_data": {
+        "type": "Rowing",
+        "duration_minutes": 57.68,
+        "distance_km": 9.88,
+        "calories": 460,
+        "heart_rate_avg": 152,
+        "heart_rate_max": 184,
+        "steps": 3787,
+        "date": "2025-02-02T21:14:00Z"
+      },
+      "confidence_score": 0.87,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_045",
+      "app_source": "Apple Fitness",
+      "extracted_text": "Workout Summary\nStrength Training\nDurati0n 79:11\nDistançe —\nCaloreis 326 kcal\nAvg Pαce —\nMax Hean Rate 172 bpm\nAvg Hean Rate 97 bpm\nSteps 7772\nElevation Gain 26 m\nDate Oct 28, 2024 09:08 AM",
+      "parsed_data": {
+        "type": "Strength Training",
+        "duration_minutes": 79.18,
+        "distance_km": null,
+        "calories": 326,
+        "heart_rate_avg": 97,
+        "heart_rate_max": 172,
+        "steps": 7772,
+        "date": "2024-10-28T09:08:00Z"
+      },
+      "confidence_score": 0.98,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_046",
+      "app_source": "Google Fit",
+      "extracted_text": "Workout Summary\nElliptical\nDuration 55:56\nDistance 16.12 km\nCalories 341 kcal\nAvg Pace 7:27 min/km\nMax Heart Rate 154 bpm\nAvg Heart Rate 106 bpm\nSteps 5570\nElevation Gain 39 m\nDate Oct 07, 2024 12:41 AM",
+      "parsed_data": {
+        "type": "Elliptical",
+        "duration_minutes": 55.93,
+        "distance_km": 16.12,
+        "calories": 341,
+        "heart_rate_avg": 106,
+        "heart_rate_max": 154,
+        "steps": 5570,
+        "date": "2024-10-07T00:41:00Z"
+      },
+      "confidence_score": 0.97,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_047",
+      "app_source": "Samsung Health",
+      "extracted_text": "Workout Summary\nWalking\nDuration 14:41\nDistance 14.63 km\nCalories 604 kcal\nAvg Pace 7:28 min/km\nMax Heart Rate 162 bpm\nAvg Heart Rate 157 bpm\nSteps 2698\nElevation Gain 31 m\nDate Oct 12, 2024 02:19 AM",
+      "parsed_data": {
+        "type": "Walking",
+        "duration_minutes": 14.68,
+        "distance_km": 14.63,
+        "calories": 604,
+        "heart_rate_avg": 157,
+        "heart_rate_max": 162,
+        "steps": 2698,
+        "date": "2024-10-12T02:19:00Z"
+      },
+      "confidence_score": 0.86,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_048",
+      "app_source": "Google Fit",
+      "extracted_text": "Workout Summary\nElliptical\nDuration 92:40\nDistance 2.18 mi\nCalories 859 kcal\nAvg Pace 7:14 min/mi\nMax Heart Rate 163 bpm\nAvg Heart Rate 153 bpm\nSteps 10535\nElevation Gain 72 m\nDate Jul 19, 2025 04:38 PM",
+      "parsed_data": {
+        "type": "Elliptical",
+        "duration_minutes": 92.67,
+        "distance_km": 3.51,
+        "calories": 859,
+        "heart_rate_avg": 153,
+        "heart_rate_max": 163,
+        "steps": 10535,
+        "date": "2025-07-19T16:38:00Z"
+      },
+      "confidence_score": 0.93,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_049",
+      "app_source": "Apple Fitness",
+      "extracted_text": "Workout Summary\nWalking\nDurat1on 64:00\nDistanse 11.27 km\nCaloreis 567 kcal\nAvg Paee 5:24 min/km\nMax Hcart Rate 132 bpm\nAvg Hcart Rate 109 bpm\nSteps 2652\nElevation Gain 33 m\nDate Aug 06, 2024 04:59 PM",
+      "parsed_data": {
+        "type": "Walking",
+        "duration_minutes": 64.0,
+        "distance_km": 11.27,
+        "calories": 567,
+        "heart_rate_avg": 109,
+        "heart_rate_max": 132,
+        "steps": 2652,
+        "date": "2024-08-06T16:59:00Z"
+      },
+      "confidence_score": 0.99,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    },
+    {
+      "id": "workout_050",
+      "app_source": "Apple Fitness",
+      "extracted_text": "Workout Summary\nYoga\nDuration 65:30\nDistance —\nCalories 368 kcal\nAvg Pace —\nMax Heart Rate 176 bpm\nAvg Heart Rate 155 bpm\nSteps 5346\nElevation Gain 52 m\nDate Feb 02, 2025 07:33 AM",
+      "parsed_data": {
+        "type": "Yoga",
+        "duration_minutes": 65.5,
+        "distance_km": null,
+        "calories": 368,
+        "heart_rate_avg": 155,
+        "heart_rate_max": 176,
+        "steps": 5346,
+        "date": "2025-02-02T07:33:00Z"
+      },
+      "confidence_score": 0.87,
+      "is_valid": true,
+      "anti_cheat_flags": []
+    }
+  ]
+}

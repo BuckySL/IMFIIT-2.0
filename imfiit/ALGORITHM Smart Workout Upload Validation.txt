@@ -1,0 +1,28 @@
+ALGORITHM: Smart Workout Upload Validation
+
+1. IMAGE DUPLICATE DETECTION:
+   - Calculate image hash (using canvas pixel data)
+   - Check against stored hashes in localStorage
+   - If hash exists → REJECT ("You've already uploaded this workout")
+   - If similar hash exists → REJECT ("Similar workout already uploaded")
+
+2. ENHANCED FITNESS VALIDATION:
+   - OCR extract text
+   - Calculate fitness keyword density (must be >30%)
+   - Check for numeric patterns (calories, steps, time formats)
+   - Validate app UI structure (headers, metrics layout)
+   - Require minimum 3 fitness metrics detected
+
+3. ANTI-CHEAT MEASURES:
+   - Track upload timestamps (prevent rapid uploads)
+   - Validate workout progression (stats shouldn't jump too much)
+   - Cross-reference with previous workouts for consistency
+
+4. CONFIDENCE SCORING:
+   Total Score = OCR_confidence + Fitness_keywords + UI_patterns + Numeric_data
+   Minimum required score: 75/100
+
+5. STORAGE:
+   - Store approved image hashes
+   - Track user upload patterns
+   - Log validation scores for debugging

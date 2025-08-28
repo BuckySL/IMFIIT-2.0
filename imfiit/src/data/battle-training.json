@@ -1,0 +1,3714 @@
+{
+  "battle_training_data": [
+    {
+      "battle_id": "battle_001",
+      "player1": {
+        "username": "CardioQueen15",
+        "level": 26,
+        "stats": {
+          "strength": 86,
+          "endurance": 99,
+          "agility": 99,
+          "defense": 99
+        },
+        "recent_workouts": [
+          "running",
+          "strength_training"
+        ],
+        "win_rate": 0.57
+      },
+      "player2": {
+        "username": "HydraKing22",
+        "level": 26,
+        "stats": {
+          "strength": 66,
+          "endurance": 67,
+          "agility": 48,
+          "defense": 63
+        },
+        "recent_workouts": [
+          "hiit",
+          "strength_training"
+        ],
+        "win_rate": 0.53
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 24,
+          "critical": false,
+          "description": "CardioQueen15 Perfectly timed counter!"
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 15,
+          "critical": false,
+          "description": "HydraKing22 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 15,
+          "critical": false,
+          "description": "CardioQueen15 Defense cracks under pressure."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 18,
+          "critical": true,
+          "description": "HydraKing22 Perfectly timed counter!"
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 14,
+          "critical": false,
+          "description": "CardioQueen15 Defense cracks under pressure."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 12,
+          "critical": false,
+          "description": "HydraKing22 Perfectly timed counter!"
+        }
+      ],
+      "winner": "player1",
+      "battle_duration_seconds": 52,
+      "total_damage_dealt": {
+        "player1": 53,
+        "player2": 45
+      }
+    },
+    {
+      "battle_id": "battle_002",
+      "player1": {
+        "username": "FitNinja21",
+        "level": 20,
+        "stats": {
+          "strength": 57,
+          "endurance": 75,
+          "agility": 41,
+          "defense": 66
+        },
+        "recent_workouts": [
+          "yoga",
+          "strength_training"
+        ],
+        "win_rate": 0.7
+      },
+      "player2": {
+        "username": "ZenNinja26",
+        "level": 19,
+        "stats": {
+          "strength": 47,
+          "endurance": 75,
+          "agility": 58,
+          "defense": 54
+        },
+        "recent_workouts": [
+          "running",
+          "yoga"
+        ],
+        "win_rate": 0.52
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 22,
+          "critical": false,
+          "description": "FitNinja21 Perfectly timed counter!"
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 8,
+          "critical": false,
+          "description": "ZenNinja26 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 28,
+          "critical": true,
+          "description": "FitNinja21 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 12,
+          "critical": true,
+          "description": "ZenNinja26 A charged special slams down."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 8,
+          "critical": false,
+          "description": "FitNinja21 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 8,
+          "critical": false,
+          "description": "ZenNinja26 Perfectly timed counter!"
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 9,
+          "critical": false,
+          "description": "FitNinja21 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 15,
+          "critical": true,
+          "description": "ZenNinja26 Defense cracks under pressure."
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 9,
+          "critical": false,
+          "description": "FitNinja21 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 8,
+          "critical": false,
+          "description": "ZenNinja26 Perfectly timed counter!"
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 15,
+          "critical": false,
+          "description": "FitNinja21 Perfectly timed counter!"
+        },
+        {
+          "turn": 12,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 12,
+          "critical": true,
+          "description": "ZenNinja26 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 13,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 11,
+          "critical": false,
+          "description": "FitNinja21 A charged special slams down."
+        }
+      ],
+      "winner": "player1",
+      "battle_duration_seconds": 60,
+      "total_damage_dealt": {
+        "player1": 102,
+        "player2": 63
+      }
+    },
+    {
+      "battle_id": "battle_003",
+      "player1": {
+        "username": "SwiftPhantom64",
+        "level": 26,
+        "stats": {
+          "strength": 51,
+          "endurance": 56,
+          "agility": 75,
+          "defense": 62
+        },
+        "recent_workouts": [
+          "cycling",
+          "strength_training"
+        ],
+        "win_rate": 0.71
+      },
+      "player2": {
+        "username": "ZenRanger59",
+        "level": 18,
+        "stats": {
+          "strength": 55,
+          "endurance": 68,
+          "agility": 74,
+          "defense": 82
+        },
+        "recent_workouts": [
+          "running",
+          "hiit"
+        ],
+        "win_rate": 0.71
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 30,
+          "critical": true,
+          "description": "SwiftPhantom64 A charged special slams down."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 11,
+          "critical": false,
+          "description": "ZenRanger59 A charged special slams down."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 25,
+          "critical": true,
+          "description": "SwiftPhantom64 Perfectly timed counter!"
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 24,
+          "critical": true,
+          "description": "ZenRanger59 Perfectly timed counter!"
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 12,
+          "critical": false,
+          "description": "SwiftPhantom64 Defense cracks under pressure."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 20,
+          "critical": false,
+          "description": "ZenRanger59 Defense cracks under pressure."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 16,
+          "critical": true,
+          "description": "SwiftPhantom64 Defense cracks under pressure."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 21,
+          "critical": false,
+          "description": "ZenRanger59 Perfectly timed counter!"
+        }
+      ],
+      "winner": "player1",
+      "battle_duration_seconds": 43,
+      "total_damage_dealt": {
+        "player1": 83,
+        "player2": 76
+      }
+    },
+    {
+      "battle_id": "battle_004",
+      "player1": {
+        "username": "PulseRunner43",
+        "level": 21,
+        "stats": {
+          "strength": 61,
+          "endurance": 84,
+          "agility": 77,
+          "defense": 62
+        },
+        "recent_workouts": [
+          "strength_training",
+          "yoga"
+        ],
+        "win_rate": 0.8
+      },
+      "player2": {
+        "username": "AeroGuru71",
+        "level": 18,
+        "stats": {
+          "strength": 86,
+          "endurance": 59,
+          "agility": 79,
+          "defense": 73
+        },
+        "recent_workouts": [
+          "swimming",
+          "hiit"
+        ],
+        "win_rate": 0.55
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 16,
+          "critical": false,
+          "description": "PulseRunner43 Defense cracks under pressure."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 19,
+          "critical": true,
+          "description": "AeroGuru71 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 12,
+          "critical": false,
+          "description": "PulseRunner43 A charged special slams down."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 40,
+          "critical": true,
+          "description": "AeroGuru71 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 14,
+          "critical": false,
+          "description": "PulseRunner43 Perfectly timed counter!"
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 27,
+          "critical": true,
+          "description": "AeroGuru71 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 10,
+          "critical": false,
+          "description": "PulseRunner43 Perfectly timed counter!"
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 17,
+          "critical": false,
+          "description": "AeroGuru71 A charged special slams down."
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 16,
+          "critical": false,
+          "description": "PulseRunner43 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 34,
+          "critical": true,
+          "description": "AeroGuru71 Perfectly timed counter!"
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 17,
+          "critical": false,
+          "description": "PulseRunner43 Defense cracks under pressure."
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 31,
+      "total_damage_dealt": {
+        "player1": 85,
+        "player2": 137
+      }
+    },
+    {
+      "battle_id": "battle_005",
+      "player1": {
+        "username": "CardioNinja42",
+        "level": 25,
+        "stats": {
+          "strength": 90,
+          "endurance": 65,
+          "agility": 84,
+          "defense": 92
+        },
+        "recent_workouts": [
+          "yoga",
+          "cycling"
+        ],
+        "win_rate": 0.76
+      },
+      "player2": {
+        "username": "IronPhantom39",
+        "level": 30,
+        "stats": {
+          "strength": 99,
+          "endurance": 83,
+          "agility": 86,
+          "defense": 82
+        },
+        "recent_workouts": [
+          "swimming",
+          "running"
+        ],
+        "win_rate": 0.76
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 23,
+          "critical": false,
+          "description": "CardioNinja42 A charged special slams down."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 18,
+          "critical": false,
+          "description": "IronPhantom39 Defense cracks under pressure."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 18,
+          "critical": false,
+          "description": "CardioNinja42 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 19,
+          "critical": false,
+          "description": "IronPhantom39 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 36,
+          "critical": true,
+          "description": "CardioNinja42 Defense cracks under pressure."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 25,
+          "critical": true,
+          "description": "IronPhantom39 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 31,
+          "critical": true,
+          "description": "CardioNinja42 Perfectly timed counter!"
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 30,
+          "critical": false,
+          "description": "IronPhantom39 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 12,
+          "critical": false,
+          "description": "CardioNinja42 Perfectly timed counter!"
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 26,
+          "critical": false,
+          "description": "IronPhantom39 Rapid combo pressures the opponent."
+        }
+      ],
+      "winner": "player1",
+      "battle_duration_seconds": 28,
+      "total_damage_dealt": {
+        "player1": 120,
+        "player2": 118
+      }
+    },
+    {
+      "battle_id": "battle_006",
+      "player1": {
+        "username": "HydraNinja59",
+        "level": 15,
+        "stats": {
+          "strength": 76,
+          "endurance": 57,
+          "agility": 65,
+          "defense": 65
+        },
+        "recent_workouts": [
+          "running",
+          "hiit"
+        ],
+        "win_rate": 0.58
+      },
+      "player2": {
+        "username": "FitNinja67",
+        "level": 21,
+        "stats": {
+          "strength": 66,
+          "endurance": 59,
+          "agility": 42,
+          "defense": 74
+        },
+        "recent_workouts": [
+          "strength_training",
+          "yoga"
+        ],
+        "win_rate": 0.46
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 21,
+          "critical": true,
+          "description": "HydraNinja59 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 23,
+          "critical": false,
+          "description": "FitNinja67 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 11,
+          "critical": false,
+          "description": "HydraNinja59 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 36,
+          "critical": true,
+          "description": "FitNinja67 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 31,
+          "critical": true,
+          "description": "HydraNinja59 A charged special slams down."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 9,
+          "critical": false,
+          "description": "FitNinja67 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 24,
+          "critical": true,
+          "description": "HydraNinja59 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 8,
+          "critical": false,
+          "description": "FitNinja67 Perfectly timed counter!"
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 19,
+          "critical": false,
+          "description": "HydraNinja59 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 24,
+          "critical": true,
+          "description": "FitNinja67 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 20,
+          "critical": false,
+          "description": "HydraNinja59 Defense cracks under pressure."
+        },
+        {
+          "turn": 12,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 19,
+          "critical": false,
+          "description": "FitNinja67 Perfectly timed counter!"
+        }
+      ],
+      "winner": "player1",
+      "battle_duration_seconds": 51,
+      "total_damage_dealt": {
+        "player1": 126,
+        "player2": 119
+      }
+    },
+    {
+      "battle_id": "battle_007",
+      "player1": {
+        "username": "SwiftKing56",
+        "level": 11,
+        "stats": {
+          "strength": 72,
+          "endurance": 56,
+          "agility": 63,
+          "defense": 72
+        },
+        "recent_workouts": [
+          "cycling",
+          "yoga"
+        ],
+        "win_rate": 0.45
+      },
+      "player2": {
+        "username": "VeloWarrior62",
+        "level": 10,
+        "stats": {
+          "strength": 76,
+          "endurance": 76,
+          "agility": 49,
+          "defense": 62
+        },
+        "recent_workouts": [
+          "hiit",
+          "yoga"
+        ],
+        "win_rate": 0.67
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 16,
+          "critical": true,
+          "description": "SwiftKing56 A charged special slams down."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 24,
+          "critical": true,
+          "description": "VeloWarrior62 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 9,
+          "critical": false,
+          "description": "SwiftKing56 Defense cracks under pressure."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 12,
+          "critical": false,
+          "description": "VeloWarrior62 A charged special slams down."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 34,
+          "critical": true,
+          "description": "SwiftKing56 Perfectly timed counter!"
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 8,
+          "critical": false,
+          "description": "VeloWarrior62 Perfectly timed counter!"
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 24,
+          "critical": true,
+          "description": "SwiftKing56 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 15,
+          "critical": false,
+          "description": "VeloWarrior62 A charged special slams down."
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 17,
+          "critical": false,
+          "description": "SwiftKing56 Relentless light strikes wear down the guard."
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 65,
+      "total_damage_dealt": {
+        "player1": 100,
+        "player2": 59
+      }
+    },
+    {
+      "battle_id": "battle_008",
+      "player1": {
+        "username": "CardioNinja55",
+        "level": 23,
+        "stats": {
+          "strength": 58,
+          "endurance": 76,
+          "agility": 59,
+          "defense": 48
+        },
+        "recent_workouts": [
+          "strength_training",
+          "swimming"
+        ],
+        "win_rate": 0.47
+      },
+      "player2": {
+        "username": "ZenGuru58",
+        "level": 23,
+        "stats": {
+          "strength": 75,
+          "endurance": 82,
+          "agility": 83,
+          "defense": 91
+        },
+        "recent_workouts": [
+          "strength_training",
+          "hiit"
+        ],
+        "win_rate": 0.52
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 27,
+          "critical": true,
+          "description": "CardioNinja55 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 16,
+          "critical": false,
+          "description": "ZenGuru58 Defense cracks under pressure."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 23,
+          "critical": false,
+          "description": "CardioNinja55 Defense cracks under pressure."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 19,
+          "critical": true,
+          "description": "ZenGuru58 A charged special slams down."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 15,
+          "critical": false,
+          "description": "CardioNinja55 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 15,
+          "critical": true,
+          "description": "ZenGuru58 FitWarrior lands a solid power strike!"
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 60,
+      "total_damage_dealt": {
+        "player1": 65,
+        "player2": 50
+      }
+    },
+    {
+      "battle_id": "battle_009",
+      "player1": {
+        "username": "LiftRunner85",
+        "level": 26,
+        "stats": {
+          "strength": 66,
+          "endurance": 80,
+          "agility": 80,
+          "defense": 77
+        },
+        "recent_workouts": [
+          "cycling",
+          "yoga"
+        ],
+        "win_rate": 0.56
+      },
+      "player2": {
+        "username": "ZenQueen28",
+        "level": 27,
+        "stats": {
+          "strength": 70,
+          "endurance": 88,
+          "agility": 87,
+          "defense": 67
+        },
+        "recent_workouts": [
+          "strength_training",
+          "yoga"
+        ],
+        "win_rate": 0.78
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 19,
+          "critical": true,
+          "description": "LiftRunner85 Perfectly timed counter!"
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 21,
+          "critical": false,
+          "description": "ZenQueen28 A charged special slams down."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 16,
+          "critical": false,
+          "description": "LiftRunner85 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 22,
+          "critical": true,
+          "description": "ZenQueen28 A charged special slams down."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 15,
+          "critical": false,
+          "description": "LiftRunner85 Defense cracks under pressure."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 33,
+          "critical": true,
+          "description": "ZenQueen28 Defense cracks under pressure."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 20,
+          "critical": false,
+          "description": "LiftRunner85 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 19,
+          "critical": false,
+          "description": "ZenQueen28 A charged special slams down."
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 36,
+          "critical": true,
+          "description": "LiftRunner85 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 15,
+          "critical": false,
+          "description": "ZenQueen28 Perfectly timed counter!"
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 19,
+          "critical": true,
+          "description": "LiftRunner85 FitWarrior lands a solid power strike!"
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 48,
+      "total_damage_dealt": {
+        "player1": 125,
+        "player2": 110
+      }
+    },
+    {
+      "battle_id": "battle_010",
+      "player1": {
+        "username": "CardioBeast25",
+        "level": 12,
+        "stats": {
+          "strength": 58,
+          "endurance": 70,
+          "agility": 57,
+          "defense": 56
+        },
+        "recent_workouts": [
+          "running",
+          "cycling"
+        ],
+        "win_rate": 0.64
+      },
+      "player2": {
+        "username": "AeroWarrior65",
+        "level": 9,
+        "stats": {
+          "strength": 99,
+          "endurance": 72,
+          "agility": 83,
+          "defense": 76
+        },
+        "recent_workouts": [
+          "running",
+          "swimming"
+        ],
+        "win_rate": 0.77
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 18,
+          "critical": true,
+          "description": "CardioBeast25 A charged special slams down."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 37,
+          "critical": true,
+          "description": "AeroWarrior65 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 12,
+          "critical": true,
+          "description": "CardioBeast25 Defense cracks under pressure."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 17,
+          "critical": false,
+          "description": "AeroWarrior65 A charged special slams down."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 16,
+          "critical": false,
+          "description": "CardioBeast25 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 27,
+          "critical": false,
+          "description": "AeroWarrior65 Perfectly timed counter!"
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 9,
+          "critical": false,
+          "description": "CardioBeast25 Relentless light strikes wear down the guard."
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 53,
+      "total_damage_dealt": {
+        "player1": 55,
+        "player2": 81
+      }
+    },
+    {
+      "battle_id": "battle_011",
+      "player1": {
+        "username": "AeroRunner59",
+        "level": 16,
+        "stats": {
+          "strength": 70,
+          "endurance": 58,
+          "agility": 51,
+          "defense": 60
+        },
+        "recent_workouts": [
+          "hiit",
+          "cycling"
+        ],
+        "win_rate": 0.62
+      },
+      "player2": {
+        "username": "PulseRanger11",
+        "level": 16,
+        "stats": {
+          "strength": 75,
+          "endurance": 63,
+          "agility": 71,
+          "defense": 69
+        },
+        "recent_workouts": [
+          "swimming",
+          "cycling"
+        ],
+        "win_rate": 0.64
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 15,
+          "critical": true,
+          "description": "AeroRunner59 Defense cracks under pressure."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 19,
+          "critical": false,
+          "description": "PulseRanger11 Defense cracks under pressure."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 33,
+          "critical": true,
+          "description": "AeroRunner59 A charged special slams down."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 13,
+          "critical": false,
+          "description": "PulseRanger11 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 11,
+          "critical": false,
+          "description": "AeroRunner59 Defense cracks under pressure."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 9,
+          "critical": false,
+          "description": "PulseRanger11 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 31,
+          "critical": true,
+          "description": "AeroRunner59 A charged special slams down."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 12,
+          "critical": true,
+          "description": "PulseRanger11 Perfectly timed counter!"
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 17,
+          "critical": false,
+          "description": "AeroRunner59 Defense cracks under pressure."
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 21,
+          "critical": true,
+          "description": "PulseRanger11 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 8,
+          "critical": false,
+          "description": "AeroRunner59 A charged special slams down."
+        },
+        {
+          "turn": 12,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 24,
+          "critical": true,
+          "description": "PulseRanger11 A charged special slams down."
+        },
+        {
+          "turn": 13,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 11,
+          "critical": false,
+          "description": "AeroRunner59 Relentless light strikes wear down the guard."
+        }
+      ],
+      "winner": "player1",
+      "battle_duration_seconds": 47,
+      "total_damage_dealt": {
+        "player1": 126,
+        "player2": 98
+      }
+    },
+    {
+      "battle_id": "battle_012",
+      "player1": {
+        "username": "SwiftGuru60",
+        "level": 17,
+        "stats": {
+          "strength": 70,
+          "endurance": 98,
+          "agility": 88,
+          "defense": 68
+        },
+        "recent_workouts": [
+          "hiit",
+          "swimming"
+        ],
+        "win_rate": 0.55
+      },
+      "player2": {
+        "username": "AeroRunner86",
+        "level": 14,
+        "stats": {
+          "strength": 69,
+          "endurance": 88,
+          "agility": 78,
+          "defense": 61
+        },
+        "recent_workouts": [
+          "hiit",
+          "yoga"
+        ],
+        "win_rate": 0.49
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 21,
+          "critical": false,
+          "description": "SwiftGuru60 A charged special slams down."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 16,
+          "critical": false,
+          "description": "AeroRunner86 Perfectly timed counter!"
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 25,
+          "critical": true,
+          "description": "SwiftGuru60 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 27,
+          "critical": false,
+          "description": "AeroRunner86 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 23,
+          "critical": false,
+          "description": "SwiftGuru60 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 16,
+          "critical": false,
+          "description": "AeroRunner86 A charged special slams down."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 19,
+          "critical": true,
+          "description": "SwiftGuru60 Perfectly timed counter!"
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 22,
+          "critical": false,
+          "description": "AeroRunner86 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 15,
+          "critical": false,
+          "description": "SwiftGuru60 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 16,
+          "critical": false,
+          "description": "AeroRunner86 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 8,
+          "critical": false,
+          "description": "SwiftGuru60 Defense cracks under pressure."
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 46,
+      "total_damage_dealt": {
+        "player1": 111,
+        "player2": 97
+      }
+    },
+    {
+      "battle_id": "battle_013",
+      "player1": {
+        "username": "PulseGuru98",
+        "level": 16,
+        "stats": {
+          "strength": 66,
+          "endurance": 73,
+          "agility": 67,
+          "defense": 76
+        },
+        "recent_workouts": [
+          "hiit",
+          "swimming"
+        ],
+        "win_rate": 0.76
+      },
+      "player2": {
+        "username": "AeroNinja31",
+        "level": 12,
+        "stats": {
+          "strength": 94,
+          "endurance": 68,
+          "agility": 95,
+          "defense": 47
+        },
+        "recent_workouts": [
+          "yoga",
+          "hiit"
+        ],
+        "win_rate": 0.57
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 18,
+          "critical": false,
+          "description": "PulseGuru98 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 43,
+          "critical": true,
+          "description": "AeroNinja31 Perfectly timed counter!"
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 20,
+          "critical": false,
+          "description": "PulseGuru98 Defense cracks under pressure."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 23,
+          "critical": false,
+          "description": "AeroNinja31 Defense cracks under pressure."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 15,
+          "critical": false,
+          "description": "PulseGuru98 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 19,
+          "critical": false,
+          "description": "AeroNinja31 Defense cracks under pressure."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 13,
+          "critical": false,
+          "description": "PulseGuru98 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 20,
+          "critical": false,
+          "description": "AeroNinja31 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 24,
+          "critical": true,
+          "description": "PulseGuru98 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 12,
+          "critical": false,
+          "description": "AeroNinja31 Defense cracks under pressure."
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 10,
+          "critical": false,
+          "description": "PulseGuru98 A charged special slams down."
+        },
+        {
+          "turn": 12,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 24,
+          "critical": true,
+          "description": "AeroNinja31 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 13,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 17,
+          "critical": false,
+          "description": "PulseGuru98 A charged special slams down."
+        },
+        {
+          "turn": 14,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 20,
+          "critical": false,
+          "description": "AeroNinja31 Rapid combo pressures the opponent."
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 35,
+      "total_damage_dealt": {
+        "player1": 117,
+        "player2": 161
+      }
+    },
+    {
+      "battle_id": "battle_014",
+      "player1": {
+        "username": "FitWarrior97",
+        "level": 27,
+        "stats": {
+          "strength": 70,
+          "endurance": 60,
+          "agility": 66,
+          "defense": 74
+        },
+        "recent_workouts": [
+          "hiit",
+          "cycling"
+        ],
+        "win_rate": 0.56
+      },
+      "player2": {
+        "username": "PulseGuru28",
+        "level": 27,
+        "stats": {
+          "strength": 61,
+          "endurance": 77,
+          "agility": 86,
+          "defense": 79
+        },
+        "recent_workouts": [
+          "yoga",
+          "running"
+        ],
+        "win_rate": 0.71
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 15,
+          "critical": false,
+          "description": "FitWarrior97 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 27,
+          "critical": true,
+          "description": "PulseGuru28 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 30,
+          "critical": true,
+          "description": "FitWarrior97 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 12,
+          "critical": true,
+          "description": "PulseGuru28 Perfectly timed counter!"
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 8,
+          "critical": false,
+          "description": "FitWarrior97 Perfectly timed counter!"
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 12,
+          "critical": true,
+          "description": "PulseGuru28 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 20,
+          "critical": false,
+          "description": "FitWarrior97 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 8,
+          "critical": false,
+          "description": "PulseGuru28 Perfectly timed counter!"
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 22,
+          "critical": true,
+          "description": "FitWarrior97 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 30,
+          "critical": true,
+          "description": "PulseGuru28 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 27,
+          "critical": false,
+          "description": "FitWarrior97 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 12,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 15,
+          "critical": true,
+          "description": "PulseGuru28 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 13,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 13,
+          "critical": false,
+          "description": "FitWarrior97 Perfectly timed counter!"
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 27,
+      "total_damage_dealt": {
+        "player1": 135,
+        "player2": 104
+      }
+    },
+    {
+      "battle_id": "battle_015",
+      "player1": {
+        "username": "VeloQueen69",
+        "level": 18,
+        "stats": {
+          "strength": 73,
+          "endurance": 73,
+          "agility": 61,
+          "defense": 75
+        },
+        "recent_workouts": [
+          "swimming",
+          "yoga"
+        ],
+        "win_rate": 0.72
+      },
+      "player2": {
+        "username": "SwiftGuru40",
+        "level": 23,
+        "stats": {
+          "strength": 82,
+          "endurance": 80,
+          "agility": 71,
+          "defense": 55
+        },
+        "recent_workouts": [
+          "running",
+          "cycling"
+        ],
+        "win_rate": 0.46
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 19,
+          "critical": false,
+          "description": "VeloQueen69 Defense cracks under pressure."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 21,
+          "critical": false,
+          "description": "SwiftGuru40 Defense cracks under pressure."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 42,
+          "critical": true,
+          "description": "VeloQueen69 A charged special slams down."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 34,
+          "critical": false,
+          "description": "SwiftGuru40 Perfectly timed counter!"
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 10,
+          "critical": false,
+          "description": "VeloQueen69 A charged special slams down."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 13,
+          "critical": false,
+          "description": "SwiftGuru40 A charged special slams down."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 22,
+          "critical": true,
+          "description": "VeloQueen69 A charged special slams down."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 26,
+          "critical": false,
+          "description": "SwiftGuru40 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 21,
+          "critical": false,
+          "description": "VeloQueen69 Defense cracks under pressure."
+        }
+      ],
+      "winner": "player1",
+      "battle_duration_seconds": 47,
+      "total_damage_dealt": {
+        "player1": 114,
+        "player2": 94
+      }
+    },
+    {
+      "battle_id": "battle_016",
+      "player1": {
+        "username": "FitRanger21",
+        "level": 11,
+        "stats": {
+          "strength": 72,
+          "endurance": 95,
+          "agility": 65,
+          "defense": 77
+        },
+        "recent_workouts": [
+          "cycling",
+          "running"
+        ],
+        "win_rate": 0.51
+      },
+      "player2": {
+        "username": "LiftQueen51",
+        "level": 9,
+        "stats": {
+          "strength": 74,
+          "endurance": 78,
+          "agility": 89,
+          "defense": 95
+        },
+        "recent_workouts": [
+          "hiit",
+          "strength_training"
+        ],
+        "win_rate": 0.56
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 34,
+          "critical": true,
+          "description": "FitRanger21 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 14,
+          "critical": false,
+          "description": "LiftQueen51 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 19,
+          "critical": true,
+          "description": "FitRanger21 Perfectly timed counter!"
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 17,
+          "critical": false,
+          "description": "LiftQueen51 Defense cracks under pressure."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 27,
+          "critical": false,
+          "description": "FitRanger21 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 37,
+          "critical": true,
+          "description": "LiftQueen51 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 37,
+          "critical": true,
+          "description": "FitRanger21 Defense cracks under pressure."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 28,
+          "critical": true,
+          "description": "LiftQueen51 Defense cracks under pressure."
+        }
+      ],
+      "winner": "player1",
+      "battle_duration_seconds": 54,
+      "total_damage_dealt": {
+        "player1": 117,
+        "player2": 96
+      }
+    },
+    {
+      "battle_id": "battle_017",
+      "player1": {
+        "username": "AeroBeast90",
+        "level": 23,
+        "stats": {
+          "strength": 73,
+          "endurance": 66,
+          "agility": 58,
+          "defense": 82
+        },
+        "recent_workouts": [
+          "swimming",
+          "yoga"
+        ],
+        "win_rate": 0.76
+      },
+      "player2": {
+        "username": "LiftPhantom39",
+        "level": 23,
+        "stats": {
+          "strength": 76,
+          "endurance": 68,
+          "agility": 72,
+          "defense": 53
+        },
+        "recent_workouts": [
+          "swimming",
+          "hiit"
+        ],
+        "win_rate": 0.75
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 20,
+          "critical": false,
+          "description": "AeroBeast90 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 17,
+          "critical": false,
+          "description": "LiftPhantom39 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 15,
+          "critical": false,
+          "description": "AeroBeast90 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 8,
+          "critical": false,
+          "description": "LiftPhantom39 A charged special slams down."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 8,
+          "critical": false,
+          "description": "AeroBeast90 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 26,
+          "critical": false,
+          "description": "LiftPhantom39 Perfectly timed counter!"
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 62,
+      "total_damage_dealt": {
+        "player1": 43,
+        "player2": 51
+      }
+    },
+    {
+      "battle_id": "battle_018",
+      "player1": {
+        "username": "AeroWarrior96",
+        "level": 21,
+        "stats": {
+          "strength": 57,
+          "endurance": 75,
+          "agility": 71,
+          "defense": 68
+        },
+        "recent_workouts": [
+          "cycling",
+          "hiit"
+        ],
+        "win_rate": 0.5
+      },
+      "player2": {
+        "username": "ZenRanger96",
+        "level": 24,
+        "stats": {
+          "strength": 47,
+          "endurance": 71,
+          "agility": 74,
+          "defense": 69
+        },
+        "recent_workouts": [
+          "running",
+          "strength_training"
+        ],
+        "win_rate": 0.79
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 10,
+          "critical": false,
+          "description": "AeroWarrior96 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 17,
+          "critical": false,
+          "description": "ZenRanger96 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 19,
+          "critical": false,
+          "description": "AeroWarrior96 Perfectly timed counter!"
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 20,
+          "critical": false,
+          "description": "ZenRanger96 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 14,
+          "critical": false,
+          "description": "AeroWarrior96 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 17,
+          "critical": false,
+          "description": "ZenRanger96 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 20,
+          "critical": false,
+          "description": "AeroWarrior96 A charged special slams down."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 16,
+          "critical": false,
+          "description": "ZenRanger96 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 17,
+          "critical": false,
+          "description": "AeroWarrior96 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 8,
+          "critical": false,
+          "description": "ZenRanger96 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 24,
+          "critical": true,
+          "description": "AeroWarrior96 Rapid combo pressures the opponent."
+        }
+      ],
+      "winner": "player1",
+      "battle_duration_seconds": 35,
+      "total_damage_dealt": {
+        "player1": 104,
+        "player2": 78
+      }
+    },
+    {
+      "battle_id": "battle_019",
+      "player1": {
+        "username": "FitBeast48",
+        "level": 14,
+        "stats": {
+          "strength": 71,
+          "endurance": 55,
+          "agility": 75,
+          "defense": 66
+        },
+        "recent_workouts": [
+          "running",
+          "cycling"
+        ],
+        "win_rate": 0.69
+      },
+      "player2": {
+        "username": "ZenNinja99",
+        "level": 12,
+        "stats": {
+          "strength": 75,
+          "endurance": 98,
+          "agility": 63,
+          "defense": 61
+        },
+        "recent_workouts": [
+          "cycling",
+          "running"
+        ],
+        "win_rate": 0.79
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 12,
+          "critical": false,
+          "description": "FitBeast48 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 19,
+          "critical": false,
+          "description": "ZenNinja99 Perfectly timed counter!"
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 10,
+          "critical": false,
+          "description": "FitBeast48 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 18,
+          "critical": true,
+          "description": "ZenNinja99 Defense cracks under pressure."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 13,
+          "critical": true,
+          "description": "FitBeast48 Defense cracks under pressure."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 27,
+          "critical": true,
+          "description": "ZenNinja99 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 13,
+          "critical": false,
+          "description": "FitBeast48 Perfectly timed counter!"
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 24,
+          "critical": false,
+          "description": "ZenNinja99 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 19,
+          "critical": true,
+          "description": "FitBeast48 Defense cracks under pressure."
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 18,
+          "critical": false,
+          "description": "ZenNinja99 Defense cracks under pressure."
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 61,
+      "total_damage_dealt": {
+        "player1": 67,
+        "player2": 106
+      }
+    },
+    {
+      "battle_id": "battle_020",
+      "player1": {
+        "username": "IronKing80",
+        "level": 6,
+        "stats": {
+          "strength": 77,
+          "endurance": 74,
+          "agility": 99,
+          "defense": 40
+        },
+        "recent_workouts": [
+          "hiit",
+          "strength_training"
+        ],
+        "win_rate": 0.46
+      },
+      "player2": {
+        "username": "IronBeast40",
+        "level": 5,
+        "stats": {
+          "strength": 95,
+          "endurance": 55,
+          "agility": 57,
+          "defense": 72
+        },
+        "recent_workouts": [
+          "swimming",
+          "running"
+        ],
+        "win_rate": 0.52
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 19,
+          "critical": false,
+          "description": "IronKing80 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 34,
+          "critical": true,
+          "description": "IronBeast40 Perfectly timed counter!"
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 13,
+          "critical": false,
+          "description": "IronKing80 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 27,
+          "critical": true,
+          "description": "IronBeast40 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 18,
+          "critical": false,
+          "description": "IronKing80 A charged special slams down."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 19,
+          "critical": true,
+          "description": "IronBeast40 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 13,
+          "critical": false,
+          "description": "IronKing80 FitWarrior lands a solid power strike!"
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 62,
+      "total_damage_dealt": {
+        "player1": 63,
+        "player2": 80
+      }
+    },
+    {
+      "battle_id": "battle_021",
+      "player1": {
+        "username": "LiftRanger47",
+        "level": 26,
+        "stats": {
+          "strength": 58,
+          "endurance": 65,
+          "agility": 57,
+          "defense": 67
+        },
+        "recent_workouts": [
+          "swimming",
+          "cycling"
+        ],
+        "win_rate": 0.78
+      },
+      "player2": {
+        "username": "FitTitan82",
+        "level": 27,
+        "stats": {
+          "strength": 98,
+          "endurance": 68,
+          "agility": 94,
+          "defense": 48
+        },
+        "recent_workouts": [
+          "swimming",
+          "hiit"
+        ],
+        "win_rate": 0.65
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 8,
+          "critical": false,
+          "description": "LiftRanger47 A charged special slams down."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 17,
+          "critical": false,
+          "description": "FitTitan82 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 25,
+          "critical": true,
+          "description": "LiftRanger47 Defense cracks under pressure."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 22,
+          "critical": true,
+          "description": "FitTitan82 Defense cracks under pressure."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 19,
+          "critical": true,
+          "description": "LiftRanger47 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 12,
+          "critical": false,
+          "description": "FitTitan82 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 18,
+          "critical": false,
+          "description": "LiftRanger47 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 18,
+          "critical": false,
+          "description": "FitTitan82 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 22,
+          "critical": true,
+          "description": "LiftRanger47 Perfectly timed counter!"
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 32,
+          "critical": false,
+          "description": "FitTitan82 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 25,
+          "critical": true,
+          "description": "LiftRanger47 FitWarrior lands a solid power strike!"
+        }
+      ],
+      "winner": "player1",
+      "battle_duration_seconds": 28,
+      "total_damage_dealt": {
+        "player1": 117,
+        "player2": 101
+      }
+    },
+    {
+      "battle_id": "battle_022",
+      "player1": {
+        "username": "ZenRunner68",
+        "level": 27,
+        "stats": {
+          "strength": 60,
+          "endurance": 40,
+          "agility": 41,
+          "defense": 53
+        },
+        "recent_workouts": [
+          "cycling",
+          "yoga"
+        ],
+        "win_rate": 0.69
+      },
+      "player2": {
+        "username": "ZenRunner83",
+        "level": 22,
+        "stats": {
+          "strength": 92,
+          "endurance": 86,
+          "agility": 90,
+          "defense": 69
+        },
+        "recent_workouts": [
+          "cycling",
+          "yoga"
+        ],
+        "win_rate": 0.7
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 9,
+          "critical": false,
+          "description": "ZenRunner68 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 14,
+          "critical": false,
+          "description": "ZenRunner83 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 18,
+          "critical": true,
+          "description": "ZenRunner68 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 27,
+          "critical": true,
+          "description": "ZenRunner83 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 13,
+          "critical": true,
+          "description": "ZenRunner68 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 27,
+          "critical": true,
+          "description": "ZenRunner83 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 17,
+          "critical": false,
+          "description": "ZenRunner68 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 15,
+          "critical": false,
+          "description": "ZenRunner83 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 16,
+          "critical": false,
+          "description": "ZenRunner68 Defense cracks under pressure."
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 27,
+          "critical": false,
+          "description": "ZenRunner83 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 13,
+          "critical": false,
+          "description": "ZenRunner68 Defense cracks under pressure."
+        },
+        {
+          "turn": 12,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 17,
+          "critical": false,
+          "description": "ZenRunner83 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 13,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 11,
+          "critical": false,
+          "description": "ZenRunner68 A charged special slams down."
+        },
+        {
+          "turn": 14,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 27,
+          "critical": true,
+          "description": "ZenRunner83 A charged special slams down."
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 32,
+      "total_damage_dealt": {
+        "player1": 97,
+        "player2": 154
+      }
+    },
+    {
+      "battle_id": "battle_023",
+      "player1": {
+        "username": "CardioWarrior96",
+        "level": 11,
+        "stats": {
+          "strength": 75,
+          "endurance": 58,
+          "agility": 85,
+          "defense": 73
+        },
+        "recent_workouts": [
+          "hiit",
+          "yoga"
+        ],
+        "win_rate": 0.55
+      },
+      "player2": {
+        "username": "ZenBeast55",
+        "level": 10,
+        "stats": {
+          "strength": 68,
+          "endurance": 74,
+          "agility": 82,
+          "defense": 63
+        },
+        "recent_workouts": [
+          "strength_training",
+          "running"
+        ],
+        "win_rate": 0.46
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 22,
+          "critical": false,
+          "description": "CardioWarrior96 Defense cracks under pressure."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 20,
+          "critical": false,
+          "description": "ZenBeast55 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 15,
+          "critical": false,
+          "description": "CardioWarrior96 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 16,
+          "critical": false,
+          "description": "ZenBeast55 Perfectly timed counter!"
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 14,
+          "critical": false,
+          "description": "CardioWarrior96 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 11,
+          "critical": false,
+          "description": "ZenBeast55 Defense cracks under pressure."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 19,
+          "critical": false,
+          "description": "CardioWarrior96 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 30,
+          "critical": true,
+          "description": "ZenBeast55 Perfectly timed counter!"
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 15,
+          "critical": true,
+          "description": "CardioWarrior96 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 30,
+          "critical": true,
+          "description": "ZenBeast55 A charged special slams down."
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 16,
+          "critical": true,
+          "description": "CardioWarrior96 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 12,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 12,
+          "critical": false,
+          "description": "ZenBeast55 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 13,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 30,
+          "critical": true,
+          "description": "CardioWarrior96 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 14,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 15,
+          "critical": false,
+          "description": "ZenBeast55 Relentless light strikes wear down the guard."
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 41,
+      "total_damage_dealt": {
+        "player1": 131,
+        "player2": 134
+      }
+    },
+    {
+      "battle_id": "battle_024",
+      "player1": {
+        "username": "LiftBeast59",
+        "level": 13,
+        "stats": {
+          "strength": 57,
+          "endurance": 64,
+          "agility": 99,
+          "defense": 61
+        },
+        "recent_workouts": [
+          "swimming",
+          "cycling"
+        ],
+        "win_rate": 0.57
+      },
+      "player2": {
+        "username": "SwiftNinja74",
+        "level": 13,
+        "stats": {
+          "strength": 83,
+          "endurance": 47,
+          "agility": 67,
+          "defense": 65
+        },
+        "recent_workouts": [
+          "cycling",
+          "yoga"
+        ],
+        "win_rate": 0.63
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 14,
+          "critical": false,
+          "description": "LiftBeast59 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 24,
+          "critical": false,
+          "description": "SwiftNinja74 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 10,
+          "critical": false,
+          "description": "LiftBeast59 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 28,
+          "critical": true,
+          "description": "SwiftNinja74 Defense cracks under pressure."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 9,
+          "critical": false,
+          "description": "LiftBeast59 A charged special slams down."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 33,
+          "critical": true,
+          "description": "SwiftNinja74 Defense cracks under pressure."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 20,
+          "critical": false,
+          "description": "LiftBeast59 Perfectly timed counter!"
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 15,
+          "critical": true,
+          "description": "SwiftNinja74 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 25,
+          "critical": true,
+          "description": "LiftBeast59 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 11,
+          "critical": false,
+          "description": "SwiftNinja74 Perfectly timed counter!"
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 10,
+          "critical": false,
+          "description": "LiftBeast59 Relentless light strikes wear down the guard."
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 31,
+      "total_damage_dealt": {
+        "player1": 88,
+        "player2": 111
+      }
+    },
+    {
+      "battle_id": "battle_025",
+      "player1": {
+        "username": "AeroGuru19",
+        "level": 23,
+        "stats": {
+          "strength": 61,
+          "endurance": 75,
+          "agility": 40,
+          "defense": 71
+        },
+        "recent_workouts": [
+          "hiit",
+          "cycling"
+        ],
+        "win_rate": 0.76
+      },
+      "player2": {
+        "username": "ZenPhantom20",
+        "level": 21,
+        "stats": {
+          "strength": 60,
+          "endurance": 92,
+          "agility": 94,
+          "defense": 87
+        },
+        "recent_workouts": [
+          "hiit",
+          "strength_training"
+        ],
+        "win_rate": 0.51
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 12,
+          "critical": false,
+          "description": "AeroGuru19 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 19,
+          "critical": true,
+          "description": "ZenPhantom20 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 17,
+          "critical": false,
+          "description": "AeroGuru19 Perfectly timed counter!"
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 13,
+          "critical": false,
+          "description": "ZenPhantom20 A charged special slams down."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 17,
+          "critical": false,
+          "description": "AeroGuru19 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 24,
+          "critical": true,
+          "description": "ZenPhantom20 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 16,
+          "critical": false,
+          "description": "AeroGuru19 A charged special slams down."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 18,
+          "critical": false,
+          "description": "ZenPhantom20 A charged special slams down."
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 17,
+          "critical": false,
+          "description": "AeroGuru19 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 14,
+          "critical": false,
+          "description": "ZenPhantom20 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 8,
+          "critical": false,
+          "description": "AeroGuru19 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 12,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 30,
+          "critical": true,
+          "description": "ZenPhantom20 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 13,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 20,
+          "critical": false,
+          "description": "AeroGuru19 Perfectly timed counter!"
+        },
+        {
+          "turn": 14,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 19,
+          "critical": false,
+          "description": "ZenPhantom20 Perfectly timed counter!"
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 41,
+      "total_damage_dealt": {
+        "player1": 107,
+        "player2": 137
+      }
+    },
+    {
+      "battle_id": "battle_026",
+      "player1": {
+        "username": "FitGuru82",
+        "level": 24,
+        "stats": {
+          "strength": 42,
+          "endurance": 70,
+          "agility": 68,
+          "defense": 77
+        },
+        "recent_workouts": [
+          "cycling",
+          "yoga"
+        ],
+        "win_rate": 0.75
+      },
+      "player2": {
+        "username": "IronWarrior63",
+        "level": 22,
+        "stats": {
+          "strength": 78,
+          "endurance": 54,
+          "agility": 70,
+          "defense": 51
+        },
+        "recent_workouts": [
+          "cycling",
+          "running"
+        ],
+        "win_rate": 0.46
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 17,
+          "critical": false,
+          "description": "FitGuru82 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 14,
+          "critical": false,
+          "description": "IronWarrior63 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 16,
+          "critical": true,
+          "description": "FitGuru82 Defense cracks under pressure."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 11,
+          "critical": false,
+          "description": "IronWarrior63 A charged special slams down."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 12,
+          "critical": false,
+          "description": "FitGuru82 A charged special slams down."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 31,
+          "critical": true,
+          "description": "IronWarrior63 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 11,
+          "critical": false,
+          "description": "FitGuru82 Defense cracks under pressure."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 18,
+          "critical": true,
+          "description": "IronWarrior63 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 8,
+          "critical": false,
+          "description": "FitGuru82 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 31,
+          "critical": true,
+          "description": "IronWarrior63 A charged special slams down."
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 13,
+          "critical": false,
+          "description": "FitGuru82 A charged special slams down."
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 63,
+      "total_damage_dealt": {
+        "player1": 77,
+        "player2": 105
+      }
+    },
+    {
+      "battle_id": "battle_027",
+      "player1": {
+        "username": "LiftKing77",
+        "level": 19,
+        "stats": {
+          "strength": 78,
+          "endurance": 99,
+          "agility": 66,
+          "defense": 73
+        },
+        "recent_workouts": [
+          "yoga",
+          "running"
+        ],
+        "win_rate": 0.66
+      },
+      "player2": {
+        "username": "FitGuru41",
+        "level": 23,
+        "stats": {
+          "strength": 90,
+          "endurance": 89,
+          "agility": 81,
+          "defense": 84
+        },
+        "recent_workouts": [
+          "hiit",
+          "cycling"
+        ],
+        "win_rate": 0.56
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 17,
+          "critical": false,
+          "description": "LiftKing77 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 14,
+          "critical": false,
+          "description": "FitGuru41 Perfectly timed counter!"
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 36,
+          "critical": true,
+          "description": "LiftKing77 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 24,
+          "critical": true,
+          "description": "FitGuru41 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 30,
+          "critical": true,
+          "description": "LiftKing77 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "counter_punch",
+          "damage": 15,
+          "critical": false,
+          "description": "FitGuru41 Perfectly timed counter!"
+        }
+      ],
+      "winner": "player1",
+      "battle_duration_seconds": 47,
+      "total_damage_dealt": {
+        "player1": 83,
+        "player2": 53
+      }
+    },
+    {
+      "battle_id": "battle_028",
+      "player1": {
+        "username": "LiftBeast46",
+        "level": 20,
+        "stats": {
+          "strength": 76,
+          "endurance": 82,
+          "agility": 56,
+          "defense": 59
+        },
+        "recent_workouts": [
+          "swimming",
+          "strength_training"
+        ],
+        "win_rate": 0.42
+      },
+      "player2": {
+        "username": "CardioGuru10",
+        "level": 30,
+        "stats": {
+          "strength": 97,
+          "endurance": 84,
+          "agility": 89,
+          "defense": 62
+        },
+        "recent_workouts": [
+          "strength_training",
+          "running"
+        ],
+        "win_rate": 0.71
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 21,
+          "critical": false,
+          "description": "LiftBeast46 Perfectly timed counter!"
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 20,
+          "critical": false,
+          "description": "CardioGuru10 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 28,
+          "critical": false,
+          "description": "LiftBeast46 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 21,
+          "critical": false,
+          "description": "CardioGuru10 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 31,
+          "critical": true,
+          "description": "LiftBeast46 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 40,
+          "critical": true,
+          "description": "CardioGuru10 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 15,
+          "critical": false,
+          "description": "LiftBeast46 Defense cracks under pressure."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 10,
+          "critical": false,
+          "description": "CardioGuru10 FitWarrior lands a solid power strike!"
+        }
+      ],
+      "winner": "player1",
+      "battle_duration_seconds": 53,
+      "total_damage_dealt": {
+        "player1": 95,
+        "player2": 91
+      }
+    },
+    {
+      "battle_id": "battle_029",
+      "player1": {
+        "username": "AeroPhantom39",
+        "level": 8,
+        "stats": {
+          "strength": 66,
+          "endurance": 75,
+          "agility": 72,
+          "defense": 99
+        },
+        "recent_workouts": [
+          "yoga",
+          "hiit"
+        ],
+        "win_rate": 0.7
+      },
+      "player2": {
+        "username": "PulseRanger99",
+        "level": 7,
+        "stats": {
+          "strength": 67,
+          "endurance": 69,
+          "agility": 79,
+          "defense": 73
+        },
+        "recent_workouts": [
+          "running",
+          "swimming"
+        ],
+        "win_rate": 0.6
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 12,
+          "critical": false,
+          "description": "AeroPhantom39 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 27,
+          "critical": true,
+          "description": "PulseRanger99 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 28,
+          "critical": false,
+          "description": "AeroPhantom39 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "endurance_barrage",
+          "damage": 19,
+          "critical": false,
+          "description": "PulseRanger99 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 22,
+          "critical": true,
+          "description": "AeroPhantom39 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 10,
+          "critical": false,
+          "description": "PulseRanger99 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "power_strike",
+          "damage": 19,
+          "critical": true,
+          "description": "AeroPhantom39 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "power_strike",
+          "damage": 9,
+          "critical": false,
+          "description": "PulseRanger99 FitWarrior lands a solid power strike!"
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 13,
+          "critical": false,
+          "description": "AeroPhantom39 Defense cracks under pressure."
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 11,
+          "critical": false,
+          "description": "PulseRanger99 Defense cracks under pressure."
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "counter_punch",
+          "damage": 18,
+          "critical": false,
+          "description": "AeroPhantom39 Perfectly timed counter!"
+        },
+        {
+          "turn": 12,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 16,
+          "critical": true,
+          "description": "PulseRanger99 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 13,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 18,
+          "critical": false,
+          "description": "AeroPhantom39 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 14,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 12,
+          "critical": true,
+          "description": "PulseRanger99 Defense cracks under pressure."
+        }
+      ],
+      "winner": "player1",
+      "battle_duration_seconds": 32,
+      "total_damage_dealt": {
+        "player1": 130,
+        "player2": 104
+      }
+    },
+    {
+      "battle_id": "battle_030",
+      "player1": {
+        "username": "CardioNinja89",
+        "level": 27,
+        "stats": {
+          "strength": 69,
+          "endurance": 92,
+          "agility": 67,
+          "defense": 73
+        },
+        "recent_workouts": [
+          "strength_training",
+          "cycling"
+        ],
+        "win_rate": 0.64
+      },
+      "player2": {
+        "username": "FitWarrior61",
+        "level": 21,
+        "stats": {
+          "strength": 97,
+          "endurance": 78,
+          "agility": 86,
+          "defense": 66
+        },
+        "recent_workouts": [
+          "hiit",
+          "cycling"
+        ],
+        "win_rate": 0.8
+      },
+      "battle_log": [
+        {
+          "turn": 1,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 12,
+          "critical": false,
+          "description": "CardioNinja89 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 2,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 24,
+          "critical": false,
+          "description": "FitWarrior61 A charged special slams down."
+        },
+        {
+          "turn": 3,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 28,
+          "critical": true,
+          "description": "CardioNinja89 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 4,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 13,
+          "critical": false,
+          "description": "FitWarrior61 A charged special slams down."
+        },
+        {
+          "turn": 5,
+          "attacker": "player1",
+          "move": "endurance_barrage",
+          "damage": 9,
+          "critical": false,
+          "description": "CardioNinja89 Relentless light strikes wear down the guard."
+        },
+        {
+          "turn": 6,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 21,
+          "critical": false,
+          "description": "FitWarrior61 A charged special slams down."
+        },
+        {
+          "turn": 7,
+          "attacker": "player1",
+          "move": "special_meteor",
+          "damage": 36,
+          "critical": true,
+          "description": "CardioNinja89 A charged special slams down."
+        },
+        {
+          "turn": 8,
+          "attacker": "player2",
+          "move": "special_meteor",
+          "damage": 43,
+          "critical": true,
+          "description": "FitWarrior61 A charged special slams down."
+        },
+        {
+          "turn": 9,
+          "attacker": "player1",
+          "move": "flurry_combo",
+          "damage": 18,
+          "critical": false,
+          "description": "CardioNinja89 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 10,
+          "attacker": "player2",
+          "move": "flurry_combo",
+          "damage": 24,
+          "critical": true,
+          "description": "FitWarrior61 Rapid combo pressures the opponent."
+        },
+        {
+          "turn": 11,
+          "attacker": "player1",
+          "move": "guard_break",
+          "damage": 11,
+          "critical": false,
+          "description": "CardioNinja89 Defense cracks under pressure."
+        },
+        {
+          "turn": 12,
+          "attacker": "player2",
+          "move": "guard_break",
+          "damage": 13,
+          "critical": false,
+          "description": "FitWarrior61 Defense cracks under pressure."
+        }
+      ],
+      "winner": "player2",
+      "battle_duration_seconds": 40,
+      "total_damage_dealt": {
+        "player1": 114,
+        "player2": 138
+      }
+    }
+  ]
+}
