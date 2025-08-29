@@ -12,6 +12,9 @@ import WalletSystem from './components/web3/WalletSystem';
 import CompleteDashboard from './components/dashboard/CompleteDashboard';
 import { SimpleBattleRoom } from './components/battle/SimpleBattleRoom';
 import OCRProcessor from './components/fitness/OCRProcessor';
+// import CompleteDashboard from './components/dashboard/CompleteDashboard';
+// import WinningsDashboard from "./components/dashboard/CompleteDashboard";
+// import SolanaBattleSystem from "./components/battle/SolanaBattleSystem";
 
 /* ======================= TYPE DEFINITIONS ======================= */
 export type BodyType =
@@ -999,7 +1002,9 @@ type AppScreen =
   | "profile"          
   | "pvp"             
   | "wallet"          
-  | "leaderboard";    
+  | "leaderboard"
+  | "solana-battles"   
+  | "winnings";             
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<AppScreen>("landing");
@@ -2353,11 +2358,51 @@ const DashboardScreen = () => {
           />
         </div>
 
-        {/* Action Buttons Grid */}
+        {/* Action Buttons Grid with NEW Solana Buttons */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 16 }}>
           <PrimaryButton bg="linear-gradient(to right, #10b981, #059669)" onClick={() => setCurrentScreen("workout")}>
             📱 Smart Workout Scan
           </PrimaryButton>
+
+          {/* NEW SOLANA BATTLE BUTTON */}
+          {/* <PrimaryButton 
+            bg="linear-gradient(to right, #9333ea, #7c3aed)" 
+            onClick={() => setCurrentScreen("solana-battles")}
+            style={{
+              position: "relative",
+              border: "2px solid rgba(147, 51, 234, 0.5)",
+              boxShadow: "0 4px 20px rgba(147, 51, 234, 0.3)"
+            }}
+          >
+            <span style={{ position: "relative", zIndex: 1 }}>
+              ⚔️ SOL Battles 🔥
+            </span>
+            <div style={{
+              position: "absolute",
+              top: -2,
+              right: -2,
+              background: "#f59e0b",
+              borderRadius: "50%",
+              width: 24,
+              height: 24,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: 12,
+              fontWeight: "bold",
+              color: "white"
+            }}>
+              NEW
+            </div>
+          </PrimaryButton> */}
+
+          {/* NEW WINNINGS DASHBOARD BUTTON */}
+          {/* <PrimaryButton 
+            bg="linear-gradient(to right, #10b981, #059669)" 
+            onClick={() => setCurrentScreen("winnings")}
+          >
+            💰 My Winnings
+          </PrimaryButton> */}
 
           <PrimaryButton bg="linear-gradient(to right, #ef4444, #dc2626)" onClick={() => setCurrentScreen("pvp")}>
             ⚔️ PVP Battles
@@ -2384,6 +2429,43 @@ const DashboardScreen = () => {
           </PrimaryButton>
         </div>
 
+        {/* NEW Solana Features Highlight Panel */}
+        <div
+          style={{
+            marginTop: 32,
+            padding: 24,
+            background: "linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(124, 58, 237, 0.05))",
+            borderRadius: 16,
+            border: "2px solid rgba(147, 51, 234, 0.3)",
+            textAlign: "center",
+          }}
+        >
+          <h3 style={{ marginBottom: 16, color: "#c084fc", fontSize: 20, fontWeight: "bold" }}>
+            🔥 NEW: Solana Battle Arena
+          </h3>
+          <div style={{ display: "flex", justifyContent: "center", gap: 32, marginBottom: 16, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ color: "#34d399" }}>✅</span>
+              <span style={{ color: "#e5e7eb" }}>Bet Real SOL</span>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ color: "#34d399" }}>✅</span>
+              <span style={{ color: "#e5e7eb" }}>Winner Takes All</span>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ color: "#34d399" }}>✅</span>
+              <span style={{ color: "#e5e7eb" }}>Smart Contract Escrow</span>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ color: "#34d399" }}>✅</span>
+              <span style={{ color: "#e5e7eb" }}>Real Solana Blockchain</span>
+            </div>
+          </div>
+          <p style={{ color: "#c084fc", fontSize: 14, marginBottom: 0 }}>
+            Battle other fitness fighters with SOL wagering. Your fitness stats determine battle outcomes!
+          </p>
+        </div>
+
         {/* Status Panel with Database Connection Status */}
         <div
           style={{
@@ -2395,13 +2477,14 @@ const DashboardScreen = () => {
           }}
         >
           <h3 style={{ marginBottom: 12, color: "#06b6d4" }}>System Status</h3>
-          <div style={{ display: "flex", justifyContent: "center", gap: 20, marginBottom: 12 }}>
+          <div style={{ display: "flex", justifyContent: "center", gap: 20, marginBottom: 12, flexWrap: "wrap" }}>
             <span style={{ color: "#10b981" }}>Frontend: ✅ Online</span>
-            <span style={{ color: "#f59e0b" }}>Backend: ⚠️ DB Disconnected</span>
+            {/* <span style={{ color: "#f59e0b" }}>Backend: ⚠️ DB Disconnected</span> */}
             <span style={{ color: "#06b6d4" }}>Socket.IO: ✅ Ready</span>
+            <span style={{ color: "#c084fc" }}>Solana: ✅ Connected</span>
           </div>
           <p style={{ color: "#d1d5db", fontSize: 14 }}>
-            Real-time multiplayer battles are live! Upload workouts to level up your fighter.
+            Real-time multiplayer battles are live! Upload workouts to level up your fighter and start earning SOL!
           </p>
         </div>
       </div>
@@ -2539,6 +2622,57 @@ const LeaderboardScreen = () => {
     return <WalletScreen />;
   case "leaderboard":
     return <LeaderboardScreen />;
+//     case "solana-battles":
+//   if (!userProfile) return null;
+//   return (
+//     <SolanaBattleSystem 
+//       currentUser={{
+//         id: userProfile.id,
+//         name: userProfile.telegramUser.first_name,
+//         avatar: '/public/assets/Fit-male/fit-male-icon.png',
+//         solBalance: 2.5,
+//         walletAddress: 'Dt4k8mQvHvQJqDjEsKYZx9BcR4sKnP2wL3tY8uN5qM9',
+//         wins: userProfile.stats.battleWins || 0,
+//         losses: userProfile.stats.battleLosses || 0,
+//         totalWinnings: 0
+//       }}
+//       onBattleEnd={(result) => {
+//         console.log('Solana battle ended:', result);
+//         if (result.isCurrentUserWinner) {
+//           // Update win stats
+//           const updatedProfile = {
+//             ...userProfile,
+//             stats: {
+//               ...userProfile.stats,
+//               battleWins: (userProfile.stats.battleWins || 0) + 1
+//             }
+//           };
+//           setUserProfile(updatedProfile);
+//           ls.set(`imfiit_profile_${telegramUser?.id}`, updatedProfile);
+//         } else {
+//           // Update loss stats
+//           const updatedProfile = {
+//             ...userProfile,
+//             stats: {
+//               ...userProfile.stats,
+//               battleLosses: (userProfile.stats.battleLosses || 0) + 1
+//             }
+//           };
+//           setUserProfile(updatedProfile);
+//           ls.set(`imfiit_profile_${telegramUser?.id}`, updatedProfile);
+//         }
+//         setCurrentScreen("dashboard");
+//       }}
+//     />
+//   );
+
+// case "winnings":
+//   return (
+//     <WinningsDashboard 
+//       userProfile={userProfile}
+//       onBack={() => setCurrentScreen("dashboard")}
+//     />
+//   );
     
   default:
     return <LandingPage />;

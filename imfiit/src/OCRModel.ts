@@ -1,5 +1,5 @@
 // OCR Model Class
-class OCRModel {
+export class OCRModel {
   async analyzeScreenshot(imageData: ImageData): Promise<ScreenshotAnalysis> {
     console.log('Starting screenshot analysis...');
     
@@ -435,7 +435,7 @@ class OCRModel {
     
     return 'Unknown Fitness App';
   }
-
+6
   private extractData(textPatterns: string[]): any {
     // Extract data based on detected patterns
     const data: any = {};

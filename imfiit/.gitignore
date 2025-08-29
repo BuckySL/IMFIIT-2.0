@@ -1,3 +1,57 @@
+# ============================================================================
+# IM FIIT FRONTEND .gitignore
+# Place this in: imfiit/.gitignore
+# ============================================================================
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production builds
+/dist
+/build
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vite
+.vite/
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# TypeScript
+*.tsbuildinfo
+.tscache/
+
+# Testing
+/coverage
+/.nyc_output
+/reports
+
+# Vitest
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Cache directories
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
 # Logs
 logs
 *.log
@@ -7,18 +61,171 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# pnpm
+.pnpm-debug.log*
+.pnpm/
+
+# Yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
 
 # Editor directories and files
-.vscode/*
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+/tmp/
+/temp/
+
+# Storybook build outputs
+/storybook-static
+
+# PWA files
+workbox-*.js
+sw.js
+
+# Sentry
+.sentryclirc
+
+# Vercel
+.vercel
+
+# Netlify
+.netlify/
+
+# Capacitor
+/android/
+/ios/
+
+# Local Netlify folder
+.netlify
+
+# TurboRepo
+.turbo
+
+# Telegram Web App specific
+telegram-web-app.js
+
+# Web3/Crypto specific
+*.p12
+*.key
+*.pem
+
+# Fitness/OCR temp files
+/uploads/
+/temp-images/
+/ocr-cache/
+
+# Battle system cache
+/battle-cache/
+/game-saves/
+
+# User generated content (if any)
+/user-uploads/
+/profile-pics/
+
+# Mobile app builds (if applicable)
+/platforms/
+/plugins/
+
+# Debugging
+chrome_debug.log
+firefox_debug.log
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+
+# IDE specific
+*.sublime-project
+*.sublime-workspace
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# JetBrains
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Vi/Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix

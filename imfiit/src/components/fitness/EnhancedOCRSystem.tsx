@@ -27,7 +27,7 @@ interface WorkoutContentData {
     activeTime?: number;
     activityCalories?: number;
     totalCalories?: number;
-    distance?: number;
+    distance?: number; 
   };
   rawText: string;
   filename: string;
