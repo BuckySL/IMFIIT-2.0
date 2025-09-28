@@ -1,19 +1,18 @@
 // ============================================================================
-// COMPLETE AI TRAINER FRONTEND COMPONENT
-// Create this file: src/components/ai/AITrainerSystem.tsx
+// COMPLETE AI TRAINER FRONTEND WITH ML CHATBOT INTEGRATION (Finished)
+// File: src/components/ai/AITrainerSystem.tsx
 // ============================================================================
 
-import React, { useState, useEffect } from 'react';
-import dataService from '../services/DataService';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
-// Types
+// ----------------------------- Types ----------------------------------------
 interface AITrainer {
   id: string;
   name: string;
   specialty: string;
   personality: string;
-  experience: number;
-  avatar: string;
+  experience: number; // 0-100 score
+  avatar: string; // emoji or URL
   description: string;
   stats: {
     strength: number;
@@ -22,83 +21,167 @@ interface AITrainer {
   };
 }
 
-interface WorkoutAnalysis {
-  totalWorkouts: number;
-  avgDuration: number;
-  preferredType: string;
-  weeklyFrequency: number;
-  consistencyScore: number;
-  fitnessLevel: string;
-  suggestions: string[];
-  recommendedTrainer: string;
-  weeklyGoal: string;
-  nextWorkout: string;
-  motivationalMessage: string;
-  trainerName?: string;
-  trainerMessage?: string;
-  trainerAvatar?: string;
+interface UserProfile {
+  userId: string;
+  age: number;
+  weight: number; // kg
+  height: number; // cm
+  gender: string; // "male" | "female" | "other"
+  activityLevel: string; // sedentary | light | moderate | active | very_active
+  fitnessLevel: string; // beginner | intermediate | advanced
+  goals: string[]; // e.g. ["fat_loss","muscle_gain"]
+  bmi?: number;
+  bmiCategory?: string;
+}
+
+interface MLAssessment {
+  bmi_analysis: {
+    value: number;
+    category: string;
+    interpretation: string;
+    ideal_weight_range: {
+      min_kg: number;
+      max_kg: number;
+    };
+  };
+  health_assessment: {
+    potential_risks: string[];
+    recommendations: string[];
+    priority_actions: string[];
+  };
+  nutrition_plan: {
+    bmr: number;
+    tdee: number;
+    daily_targets: {
+      calories: number;
+      protein: number;
+      carbs: number;
+      fats: number;
+    };
+    meal_timing: Record<string, string> & { notes?: string };
+    food_suggestions: Record<string, string[]>;
+  };
+  workout_plan: any; // backend-defined structure
+  timeline: any; // milestones/progression
 }
 
 interface ChatMessage {
   id: string;
-  type: 'user' | 'trainer';
+  type: 'user' | 'trainer' | 'system';
   message: string;
   timestamp: Date;
   trainerName?: string;
   trainerAvatar?: string;
+  data?: any;
 }
 
 interface AITrainerSystemProps {
   userId: string;
-  socket?: any; // Optional socket connection
+  userAge?: number;
+  userWeight?: number;
+  userHeight?: number;
+  userGender?: string;
+  userActivityLevel?: string;
+  userGoals?: string[];
+  socket?: any; // optional Socket.IO client
   onWorkoutRecommendation?: (recommendation: any) => void;
 }
 
-const AITrainerSystem: React.FC<AITrainerSystemProps> = ({ 
-  userId, 
+// ----------------------------- Component ------------------------------------
+const AITrainerSystem: React.FC<AITrainerSystemProps> = ({
+  userId,
+  userAge = 25,
+  userWeight = 70,
+  userHeight = 175,
+  userGender = 'male',
+  userActivityLevel = 'moderate',
+  userGoals = ['general_fitness'],
   socket,
-  onWorkoutRecommendation 
+  onWorkoutRecommendation
 }) => {
   const [trainers, setTrainers] = useState<AITrainer[]>([]);
   const [selectedTrainer, setSelectedTrainer] = useState<AITrainer | null>(null);
-  const [analysis, setAnalysis] = useState<WorkoutAnalysis | null>(null);
+  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+  const [assessment, setAssessment] = useState<MLAssessment | null>(null);
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [chatInput, setChatInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string>('');
-  const [activeTab, setActiveTab] = useState<'trainers' | 'analysis' | 'chat'>('trainers');
+  const [activeTab, setActiveTab] = useState<'profile' | 'trainers' | 'assessment' | 'chat'>('profile');
+  const [profileCreated, setProfileCreated] = useState(false);
+  const chatBottomRef = useRef<HTMLDivElement | null>(null);
 
-  // Backend URL - update this to match your setup
-  const BACKEND_URL = 'http://localhost:3001';
+  // Backend URL
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
 
-  // Load trainers on component mount
+  // Auto-select first trainer when trainers load
+  useEffect(() => {
+    if (!selectedTrainer && trainers.length > 0) {
+      setSelectedTrainer(trainers[0]);
+    }
+  }, [trainers, selectedTrainer]);
+
+  // Initialize trainers
   useEffect(() => {
     loadTrainers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Load recommended trainer after trainers are loaded
+  // Create user profile on mount if data available
   useEffect(() => {
-    if (trainers.length > 0) {
-      loadRecommendedTrainer();
+    if (userAge && userWeight && userHeight && userGender && !profileCreated) {
+      createUserProfile();
     }
-  }, [trainers, userId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userAge, userWeight, userHeight, userGender]);
 
+  // Optional socket listeners for real-time bot replies
+  useEffect(() => {
+    if (!socket) return;
+
+    const onBotReply = (payload: { userId: string; text: string; data?: any }) => {
+      if (payload.userId !== userId) return;
+      const botMessage: ChatMessage = {
+        id: `msg_${Date.now()}_rt`,
+        type: 'trainer',
+        message: payload.text,
+        timestamp: new Date(),
+        trainerName: selectedTrainer?.name || 'AI Coach',
+        trainerAvatar: selectedTrainer?.avatar || '🤖',
+        data: payload.data
+      };
+      setChatMessages(prev => [...prev, botMessage]);
+      if (payload.data?.workout_plan && onWorkoutRecommendation) {
+        onWorkoutRecommendation(payload.data.workout_plan);
+      }
+    };
+
+    socket.on('chatbot_reply', onBotReply);
+    return () => {
+      socket.off('chatbot_reply', onBotReply);
+    };
+  }, [socket, selectedTrainer, userId, onWorkoutRecommendation]);
+
+  // Always scroll to bottom when messages change
+  useEffect(() => {
+    chatBottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [chatMessages, loading]);
+
+  // ----------------------------- Data Loaders --------------------------------
   const loadTrainers = async () => {
     try {
       setError('');
       const response = await fetch(`${BACKEND_URL}/api/ai-trainers`);
       const data = await response.json();
-      
+
       if (data.success && data.trainers) {
         setTrainers(data.trainers);
       } else {
         throw new Error('Failed to load trainers');
       }
     } catch (err) {
-      console.warn('Backend not available, using fallback trainers');
-      setError('⚠️ Using offline trainers (backend not connected)');
-      
-      // Fallback trainers when backend is not available
+      console.warn('Using fallback trainers');
+      // Fallback trainers
       setTrainers([
         {
           id: '1',
@@ -129,106 +212,104 @@ const AITrainerSystem: React.FC<AITrainerSystemProps> = ({
           avatar: '🧘‍♂️',
           description: 'Mindful movement and flexibility expert',
           stats: { strength: 75, endurance: 85, intelligence: 88 }
-        },
-        {
-          id: '4',
-          name: 'Coach Thunder',
-          specialty: 'high-intensity',
-          personality: 'energetic',
-          experience: 90,
-          avatar: '⚡',
-          description: 'High-energy HIIT and explosive training specialist',
-          stats: { strength: 88, endurance: 90, intelligence: 78 }
-        },
-        {
-          id: '5',
-          name: 'Mentor Grace',
-          specialty: 'wellness',
-          personality: 'supportive',
-          experience: 85,
-          avatar: '🌟',
-          description: 'Holistic wellness and recovery focused mentor',
-          stats: { strength: 70, endurance: 80, intelligence: 85 }
         }
       ]);
     }
   };
 
-  const loadRecommendedTrainer = async () => {
-    if (!trainers.length) return;
-    
-    try {
-      const response = await fetch(`${BACKEND_URL}/api/ai-trainers/recommended/${userId}`);
-      const data = await response.json();
-      
-      if (data.success && data.trainer) {
-        const trainer = trainers.find(t => t.id === data.trainer.id);
-        if (trainer) {
-          setSelectedTrainer(trainer);
-          setActiveTab('analysis');
-          return;
-        }
-      }
-    } catch (err) {
-      console.log('Using fallback trainer selection');
-    }
-    
-    // Fallback: select first trainer
-    setSelectedTrainer(trainers[0]);
+  const computeBMILocal = (heightCm: number, weightKg: number) => {
+    const hM = heightCm / 100;
+    const bmi = Math.round((weightKg / (hM * hM)) * 10) / 10;
+    let category = 'normal';
+    if (bmi < 18.5) category = 'underweight';
+    else if (bmi < 25) category = 'normal';
+    else if (bmi < 30) category = 'overweight';
+    else category = 'obese';
+    return { bmi, category };
   };
 
-  const getWorkoutAnalysis = async () => {
-    if (!selectedTrainer) return;
-    
+  const createUserProfile = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${BACKEND_URL}/api/ai-trainers/analyze`, {
+      const userData = {
+        userId,
+        age: userAge,
+        weight: userWeight,
+        height: userHeight,
+        gender: userGender,
+        activityLevel: userActivityLevel,
+        fitnessLevel: 'beginner',
+        goals: userGoals,
+        healthConditions: [],
+        dietaryRestrictions: []
+      };
+
+      const response = await fetch(`${BACKEND_URL}/api/chatbot/profile`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          userId,
-          trainerId: selectedTrainer.id
-        })
+        body: JSON.stringify(userData)
       });
-      
+
       const data = await response.json();
-      
-      if (data.success && data.analysis) {
-        setAnalysis(data.analysis);
+
+      if (data.success) {
+        setUserProfile({
+          ...userData,
+          bmi: data.profile.bmi,
+          bmiCategory: data.profile.category
+        });
+
+        if (data.assessment) {
+          setAssessment(data.assessment);
+        }
+
+        setProfileCreated(true);
+
+        const welcomeMsg: ChatMessage = {
+          id: `msg_${Date.now()}`,
+          type: 'system',
+          message: `Welcome! Your BMI is ${data.profile.bmi} (${data.profile.category}). I've created a personalized fitness plan for you.`,
+          timestamp: new Date()
+        };
+        setChatMessages([welcomeMsg]);
       } else {
-        throw new Error('Analysis failed');
+        throw new Error('Profile API returned success=false');
       }
     } catch (err) {
-      console.warn('Using fallback analysis');
-      // Fallback analysis
-      setAnalysis({
-        totalWorkouts: Math.floor(Math.random() * 50) + 10,
-        avgDuration: Math.floor(Math.random() * 30) + 30,
-        preferredType: ['strength', 'cardio', 'flexibility', 'sports'][Math.floor(Math.random() * 4)],
-        weeklyFrequency: Math.floor(Math.random() * 5) + 2,
-        consistencyScore: Math.floor(Math.random() * 40) + 60,
-        fitnessLevel: ['beginner', 'intermediate', 'advanced'][Math.floor(Math.random() * 3)],
-        suggestions: [
-          'Increase workout frequency by 1 session per week',
-          'Focus more on compound movements',
-          'Add 10 minutes of stretching after each workout',
-          'Try progressive overload in your strength training'
-        ],
-        recommendedTrainer: selectedTrainer.name,
-        weeklyGoal: 'Complete 4 balanced workouts this week',
-        nextWorkout: 'Upper body strength training with 3 sets of 8-10 reps',
-        motivationalMessage: `You're making great progress! ${selectedTrainer.name} believes in your potential!`,
-        trainerName: selectedTrainer.name,
-        trainerMessage: `Hey there! I've analyzed your workout pattern and I'm impressed with your dedication. Let's focus on consistency and progressive improvement this week!`,
-        trainerAvatar: selectedTrainer.avatar
+      console.error('Failed to create profile:', err);
+      setError('Failed to create profile. Using local mode.');
+
+      const { bmi, category } = computeBMILocal(userHeight, userWeight);
+      setUserProfile({
+        userId,
+        age: userAge,
+        weight: userWeight,
+        height: userHeight,
+        gender: userGender,
+        activityLevel: userActivityLevel,
+        fitnessLevel: 'beginner',
+        goals: userGoals,
+        bmi,
+        bmiCategory: category
       });
+      setProfileCreated(true);
+      setChatMessages(prev => [
+        ...prev,
+        {
+          id: `msg_${Date.now()}_sys`,
+          type: 'system',
+          message: `Local mode active. BMI is ${bmi} (${category}).`,
+          timestamp: new Date()
+        }
+      ]);
     } finally {
       setLoading(false);
     }
   };
 
+  // ----------------------------- Chat Flow -----------------------------------
   const sendChatMessage = async () => {
-    if (!chatInput.trim() || !selectedTrainer) return;
+    if (!chatInput.trim()) return;
 
     const userMessage: ChatMessage = {
       id: `msg_${Date.now()}`,
@@ -237,218 +318,290 @@ const AITrainerSystem: React.FC<AITrainerSystemProps> = ({
       timestamp: new Date()
     };
 
-    // Add the user's message immediately
     setChatMessages(prev => [...prev, userMessage]);
     setChatInput('');
     setLoading(true);
 
-    // >>> WHEN USER SENDS MESSAGE — local DataService chatbot response (your requested insertion)
     try {
-      const fitnessLevel = analysis?.fitnessLevel ?? 'intermediate';
-      const response = dataService.getChatbotResponse(
-        userMessage.message,
-        {
-          userName: (typeof userId === 'string' && userId) || 'Athlete',
-          fitnessLevel
-        }
-      );
-
-      if (response?.response) {
-        const trainerMessage: ChatMessage = {
-          id: `msg_${Date.now()}_trainer_local`,
-          type: 'trainer',
-          message: response.response,
-          timestamp: new Date(),
-          trainerName: selectedTrainer?.name,
-          trainerAvatar: selectedTrainer?.avatar
-        };
-        setChatMessages(prev => [...prev, trainerMessage]);
-        // If you want to stop after local reply, uncomment the next line:
-        // setLoading(false); return;
-      }
-    } catch (e) {
-      console.warn('Local DataService chatbot failed:', e);
-    }
-    // <<< END INSERT
-
-    // Continue with backend chat (kept as-is)
-    try {
-      const response = await fetch(`${BACKEND_URL}/api/ai-trainers/chat`, {
+      const response = await fetch(`${BACKEND_URL}/api/chatbot/message`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           userId,
-          trainerId: selectedTrainer.id,
-          message: userMessage.message
+          message: userMessage.message,
+          trainer: selectedTrainer?.id,
+          context: {
+            profile: userProfile,
+            lastAssessment: assessment
+          }
         })
       });
 
       const data = await response.json();
-      
-      if (data.success && data.response) {
-        const trainerMessage: ChatMessage = {
-          id: `msg_${Date.now()}_trainer`,
+
+      if (data.response) {
+        const botMessage: ChatMessage = {
+          id: `msg_${Date.now()}_bot`,
           type: 'trainer',
           message: data.response,
           timestamp: new Date(),
-          trainerName: selectedTrainer.name,
-          trainerAvatar: selectedTrainer.avatar
+          trainerName: selectedTrainer?.name || 'AI Coach',
+          trainerAvatar: selectedTrainer?.avatar || '🤖',
+          data: data.data
         };
-        
-        setChatMessages(prev => [...prev, trainerMessage]);
+
+        setChatMessages(prev => [...prev, botMessage]);
+
+        // Update assessment/profile if backend sends refresh
+        if (data.data?.assessment) {
+          setAssessment(data.data.assessment);
+        }
+        if (data.data?.bmi) {
+          setUserProfile(prev => prev ? { ...prev, bmi: data.data.bmi, bmiCategory: data.data.category } : prev);
+        }
+        if (data.data?.workout_plan && onWorkoutRecommendation) {
+          onWorkoutRecommendation(data.data.workout_plan);
+        }
       } else {
-        throw new Error('Chat failed');
+        throw new Error('No response text');
       }
     } catch (err) {
-      // Fallback responses
-      const fallbackResponses = [
-        "That's a great question! Keep pushing forward with your fitness journey!",
-        "I'm here to support you every step of the way. What specific area would you like to focus on?",
-        "Your dedication is impressive! Let's work together to reach your goals.",
-        "Remember, consistency is key. Every workout counts towards your progress!",
-        "I believe in your potential! What's your biggest fitness challenge right now?"
-      ];
-      
-      const trainerMessage: ChatMessage = {
-        id: `msg_${Date.now()}_trainer_fallback`,
+      console.error('Chat error:', err);
+
+      const fallbackMessage: ChatMessage = {
+        id: `msg_${Date.now()}_fallback`,
         type: 'trainer',
-        message: fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)],
+        message: "I'm here to help you with your fitness journey! Ask about BMI, macros, diet, or workouts.",
         timestamp: new Date(),
-        trainerName: selectedTrainer.name,
-        trainerAvatar: selectedTrainer.avatar
+        trainerName: selectedTrainer?.name || 'AI Coach',
+        trainerAvatar: selectedTrainer?.avatar || '🤖'
       };
-      
-      setChatMessages(prev => [...prev, trainerMessage]);
+
+      setChatMessages(prev => [...prev, fallbackMessage]);
     } finally {
       setLoading(false);
     }
   };
 
-  const getWorkoutRecommendation = () => {
-    if (onWorkoutRecommendation && analysis) {
-      const recommendation = {
-        trainer: selectedTrainer,
-        workout: analysis.nextWorkout,
-        goal: analysis.weeklyGoal,
-        type: analysis.preferredType
-      };
-      onWorkoutRecommendation(recommendation);
+  const getQuickResponse = async (topic: string) => {
+    setChatInput(topic);
+
+    const userMessage: ChatMessage = {
+      id: `msg_${Date.now()}`,
+      type: 'user',
+      message: topic,
+      timestamp: new Date()
+    };
+
+    setChatMessages(prev => [...prev, userMessage]);
+    setLoading(true);
+
+    try {
+      const response = await fetch(`${BACKEND_URL}/api/chatbot/message`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId, message: topic, trainer: selectedTrainer?.id })
+      });
+
+      const data = await response.json();
+
+      if (data.response) {
+        const botMessage: ChatMessage = {
+          id: `msg_${Date.now()}_bot`,
+          type: 'trainer',
+          message: data.response,
+          timestamp: new Date(),
+          trainerName: selectedTrainer?.name || 'AI Coach',
+          trainerAvatar: selectedTrainer?.avatar || '🤖',
+          data: data.data
+        };
+
+        setChatMessages(prev => [...prev, botMessage]);
+      }
+    } catch (err) {
+      console.error('Quick response error:', err);
+    } finally {
+      setLoading(false);
+      setChatInput('');
     }
   };
 
-  const getPersonalityColor = (personality: string) => {
-    const colors: { [key: string]: string } = {
-      motivational: '#ff6b6b',
-      analytical: '#4ecdc4',
-      calm: '#45b7d1',
-      energetic: '#f9ca24',
-      supportive: '#6c5ce7'
-    };
-    return colors[personality] || '#06b6d4';
+  // ----------------------------- Formatting ----------------------------------
+  const formatNutritionPlan = (nutrition: MLAssessment['nutrition_plan'] | any) => {
+    if (!nutrition) return 'No nutrition data available';
+
+    return `\n🔥 Daily Targets:\n• Calories: ${nutrition.daily_targets?.calories ?? 'N/A'} kcal\n• Protein: ${nutrition.daily_targets?.protein ?? 'N/A'}g\n• Carbs: ${nutrition.daily_targets?.carbs ?? 'N/A'}g\n• Fats: ${nutrition.daily_targets?.fats ?? 'N/A'}g\n\n⚡ Energy Balance:\n• BMR: ${nutrition.bmr ?? 'N/A'} kcal\n• TDEE: ${nutrition.tdee ?? 'N/A'} kcal\n\n🍽️ Meal Timing:\n${Object.entries(nutrition.meal_timing || {})
+      .filter(([key]) => key !== 'notes')
+      .map(([meal, time]) => `• ${meal}: ${time}`)
+      .join('\n')}`.trim();
   };
 
+  const formatHealthRisks = (health: MLAssessment['health_assessment'] | any) => {
+    if (!health) return 'No health data available';
+
+    return `\n⚠️ Potential Risks:\n${(health.potential_risks || []).map((risk: string) => `• ${risk}`).join('\n')}\n\n✅ Recommendations:\n${(health.recommendations || []).map((rec: string) => `• ${rec}`).join('\n')}\n\n🎯 Priority Actions:\n${(health.priority_actions || []).map((action: string, i: number) => `${i + 1}. ${action}`).join('\n')}`.trim();
+  };
+
+  const formatWorkoutPlan = (plan: any) => {
+    if (!plan) return 'No workout data available';
+    if (Array.isArray(plan)) {
+      return plan
+        .map((day, idx) => {
+          const header = day?.name || `Day ${idx + 1}`;
+          const lines = (day?.exercises || [])
+            .map((ex: any) => `• ${ex.name} — ${ex.sets || 3}x${ex.reps || '10'}${ex.rpe ? ` (RPE ${ex.rpe})` : ''}`)
+            .join('\n');
+          return `${header}\n${lines}`;
+        })
+        .join('\n\n');
+    }
+    // fallback stringify
+    try { return JSON.stringify(plan, null, 2); } catch { return String(plan); }
+  };
+
+  // ----------------------------- Derived UI ----------------------------------
+  const riskBadgeColor = useMemo(() => {
+    const cat = userProfile?.bmiCategory || '';
+    if (cat === 'underweight') return '#3b82f6';
+    if (cat === 'normal') return '#10b981';
+    if (cat === 'overweight') return '#f59e0b';
+    if (cat === 'obese') return '#ef4444';
+    return '#9ca3af';
+  }, [userProfile?.bmiCategory]);
+
+  // ----------------------------- Render --------------------------------------
   return (
     <div className="ai-trainer-system">
+      {/* Header */}
+      <div className="system-header">
+        <h2>🤖 AI Fitness Coach</h2>
+        {userProfile && (
+          <div className="user-stats">
+            <span className="stat-badge">BMI: {userProfile.bmi}</span>
+            <span className="stat-badge" style={{ background: riskBadgeColor }}>{userProfile.bmiCategory}</span>
+            <span className="stat-badge">{userProfile.fitnessLevel}</span>
+          </div>
+        )}
+      </div>
+
+      {/* Error Notice */}
       {error && (
         <div className="error-notice">
-          <span className="error-icon">⚠️</span>
+          <span>⚠️</span>
           {error}
         </div>
       )}
 
       {/* Tab Navigation */}
       <div className="trainer-tabs">
-        <button 
+        <button
+          className={`tab-button ${activeTab === 'profile' ? 'active' : ''}`}
+          onClick={() => setActiveTab('profile')}
+        >
+          👤 Profile
+        </button>
+        <button
           className={`tab-button ${activeTab === 'trainers' ? 'active' : ''}`}
           onClick={() => setActiveTab('trainers')}
         >
-          🤖 Choose Trainer
+          🏋️ Trainers
         </button>
-        <button 
-          className={`tab-button ${activeTab === 'analysis' ? 'active' : ''}`}
-          onClick={() => setActiveTab('analysis')}
-          disabled={!selectedTrainer}
+        <button
+          className={`tab-button ${activeTab === 'assessment' ? 'active' : ''}`}
+          onClick={() => setActiveTab('assessment')}
+          disabled={!profileCreated}
         >
-          📊 Analysis
+          📊 Assessment
         </button>
-        <button 
+        <button
           className={`tab-button ${activeTab === 'chat' ? 'active' : ''}`}
           onClick={() => setActiveTab('chat')}
-          disabled={!selectedTrainer}
+          disabled={!profileCreated}
         >
           💬 Chat
         </button>
       </div>
 
-      {/* Trainers Selection Tab */}
+      {/* Profile Tab */}
+      {activeTab === 'profile' && (
+        <div className="profile-section">
+          <h3>Your Fitness Profile</h3>
+
+          {userProfile ? (
+            <div className="profile-info">
+              <div className="profile-grid">
+                <div className="profile-card">
+                  <h4>Basic Info</h4>
+                  <p>Age: {userProfile.age} years</p>
+                  <p>Weight: {userProfile.weight} kg</p>
+                  <p>Height: {userProfile.height} cm</p>
+                  <p>Gender: {userProfile.gender}</p>
+                </div>
+
+                <div className="profile-card">
+                  <h4>BMI Analysis</h4>
+                  <div className="bmi-display">
+                    <span className="bmi-value">{userProfile.bmi}</span>
+                    <span className={`bmi-category ${userProfile.bmiCategory}`}>
+                      {userProfile.bmiCategory?.toUpperCase()}
+                    </span>
+                  </div>
+                  <p>Activity: {userProfile.activityLevel}</p>
+                  <p>Level: {userProfile.fitnessLevel}</p>
+                </div>
+
+                <div className="profile-card">
+                  <h4>Goals</h4>
+                  <div className="goals-list">
+                    {userProfile.goals.map((goal, i) => (
+                      <span key={i} className="goal-tag">
+                        {goal.replace('_', ' ')}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {!profileCreated && (
+                <button
+                  onClick={createUserProfile}
+                  className="create-profile-btn"
+                  disabled={loading}
+                >
+                  {loading ? 'Creating Profile...' : 'Create ML Profile'}
+                </button>
+              )}
+            </div>
+          ) : (
+            <div className="no-profile">
+              <p>No profile data available. Please provide your fitness information.</p>
+              <button onClick={createUserProfile} disabled={loading}>
+                {loading ? 'Creating...' : 'Create Profile'}
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Trainers Tab */}
       {activeTab === 'trainers' && (
-        <div className="trainers-grid">
-          <h3>Select Your AI Fitness Coach</h3>
-          <div className="trainers-list">
-            {trainers.map((trainer) => (
+        <div className="trainers-section">
+          <h3>Choose Your AI Coach</h3>
+          <div className="trainers-grid">
+            {trainers.map(trainer => (
               <div
                 key={trainer.id}
                 className={`trainer-card ${selectedTrainer?.id === trainer.id ? 'selected' : ''}`}
-                onClick={() => {
-                  setSelectedTrainer(trainer);
-                  setActiveTab('analysis');
-                  setChatMessages([]); // Reset chat when switching trainers
-                }}
+                onClick={() => setSelectedTrainer(trainer)}
               >
-                <div className="trainer-header">
-                  <div className="trainer-avatar">{trainer.avatar}</div>
-                  <div className="trainer-info">
-                    <h4 className="trainer-name">{trainer.name}</h4>
-                    <div className="trainer-specialty">{trainer.specialty.toUpperCase()}</div>
-                  </div>
-                  <div className="trainer-experience">
-                    Level {Math.floor(trainer.experience / 10)}
-                  </div>
-                </div>
-                
-                <p className="trainer-description">{trainer.description}</p>
-                
-                <div className="trainer-stats">
-                  <div className="stat-item">
-                    <span>Strength</span>
-                    <div className="stat-bar">
-                      <div 
-                        className="stat-fill" 
-                        style={{ 
-                          width: `${trainer.stats.strength}%`,
-                          backgroundColor: '#ef4444'
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <div className="stat-item">
-                    <span>Endurance</span>
-                    <div className="stat-bar">
-                      <div 
-                        className="stat-fill" 
-                        style={{ 
-                          width: `${trainer.stats.endurance}%`,
-                          backgroundColor: '#10b981'
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <div className="stat-item">
-                    <span>Intelligence</span>
-                    <div className="stat-bar">
-                      <div 
-                        className="stat-fill" 
-                        style={{ 
-                          width: `${trainer.stats.intelligence}%`,
-                          backgroundColor: '#3b82f6'
-                        }}
-                      />
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="trainer-personality" style={{ color: getPersonalityColor(trainer.personality) }}>
-                  {trainer.personality.toUpperCase()} STYLE
+                <div className="trainer-avatar">{trainer.avatar}</div>
+                <h4>{trainer.name}</h4>
+                <p className="trainer-specialty">{trainer.specialty}</p>
+                <p className="trainer-desc">{trainer.description}</p>
+                <div className="trainer-stats-mini">
+                  <div className="stat-mini">STR: {trainer.stats.strength}</div>
+                  <div className="stat-mini">END: {trainer.stats.endurance}</div>
+                  <div className="stat-mini">INT: {trainer.stats.intelligence}</div>
                 </div>
               </div>
             ))}
@@ -456,958 +609,259 @@ const AITrainerSystem: React.FC<AITrainerSystemProps> = ({
         </div>
       )}
 
-      {/* Analysis Tab */}
-      {activeTab === 'analysis' && selectedTrainer && (
-        <div className="analysis-section">
-          <div className="analysis-header">
-            <h3>
-              {selectedTrainer.avatar} Workout Analysis by {selectedTrainer.name}
-            </h3>
-            <button 
-              onClick={getWorkoutAnalysis}
-              disabled={loading}
-              className="analyze-button"
-            >
-              {loading ? 'Analyzing...' : 'Get Fresh Analysis'}
-            </button>
-          </div>
+      {/* Assessment Tab */}
+      {activeTab === 'assessment' && profileCreated && (
+        <div className="assessment-section">
+          <h3>Your Fitness Assessment</h3>
 
-          {analysis ? (
-            <div className="analysis-results">
-              {/* Trainer's Personal Message */}
-              {analysis.trainerMessage && (
-                <div className="trainer-message">
-                  <div className="message-header">
-                    <span className="trainer-avatar">{analysis.trainerAvatar}</span>
-                    <span className="trainer-name">{analysis.trainerName}</span>
-                  </div>
-                  <div className="message-content">
-                    "{analysis.trainerMessage}"
-                  </div>
+          {assessment ? (
+            <div className="assessment-content">
+              {/* BMI Analysis */}
+              <div className="assessment-card">
+                <h4>📊 BMI Analysis</h4>
+                <div className="bmi-details">
+                  <p>Current BMI: <strong>{assessment.bmi_analysis.value}</strong></p>
+                  <p>Category: <strong>{assessment.bmi_analysis.category}</strong></p>
+                  <p>{assessment.bmi_analysis.interpretation}</p>
+                  <p>
+                    Ideal Weight Range: {assessment.bmi_analysis.ideal_weight_range.min_kg} - {assessment.bmi_analysis.ideal_weight_range.max_kg} kg
+                  </p>
+                </div>
+              </div>
+
+              {/* Health Assessment */}
+              <div className="assessment-card">
+                <h4>⚕️ Health Assessment</h4>
+                <pre className="assessment-text">{formatHealthRisks(assessment.health_assessment)}</pre>
+              </div>
+
+              {/* Nutrition Plan */}
+              <div className="assessment-card">
+                <h4>🥗 Nutrition Plan</h4>
+                <pre className="assessment-text">{formatNutritionPlan(assessment.nutrition_plan)}</pre>
+              </div>
+
+              {/* Workout Plan (if provided by backend) */}
+              {assessment.workout_plan && (
+                <div className="assessment-card">
+                  <h4>💪 Workout Plan</h4>
+                  <pre className="assessment-text">{formatWorkoutPlan(assessment.workout_plan)}</pre>
                 </div>
               )}
 
-              {/* Fitness Overview */}
-              <div className="fitness-overview">
-                <div className="overview-card">
-                  <h4>Fitness Level</h4>
-                  <div className="level-badge">{analysis.fitnessLevel.toUpperCase()}</div>
-                </div>
-                <div className="overview-card">
-                  <h4>Weekly Frequency</h4>
-                  <div className="frequency">{analysis.weeklyFrequency} workouts/week</div>
-                </div>
-                <div className="overview-card">
-                  <h4>Consistency Score</h4>
-                  <div className="consistency">
-                    <div className="consistency-bar">
-                      <div 
-                        className="consistency-fill" 
-                        style={{ width: `${analysis.consistencyScore}%` }}
-                      />
-                    </div>
-                    <span>{analysis.consistencyScore}%</span>
-                  </div>
-                </div>
-                <div className="overview-card">
-                  <h4>Preferred Type</h4>
-                  <div className="preferred-type">{analysis.preferredType}</div>
-                </div>
+              {/* Quick Actions */}
+              <div className="quick-actions">
+                <button onClick={() => { setActiveTab('chat'); getQuickResponse('Show me my detailed diet plan'); }}>Get Diet Plan</button>
+                <button onClick={() => { setActiveTab('chat'); getQuickResponse('Create a workout routine for me'); }}>Get Workout Plan</button>
+                <button onClick={() => { setActiveTab('chat'); getQuickResponse('What supplements should I take?'); }}>Supplement Guide</button>
               </div>
-
-              {/* Suggestions */}
-              <div className="suggestions-section">
-                <h4>Personalized Recommendations</h4>
-                <div className="suggestions-list">
-                  {analysis.suggestions.map((suggestion, index) => (
-                    <div key={index} className="suggestion-item">
-                      <span className="suggestion-icon">💡</span>
-                      <span className="suggestion-text">{suggestion}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Goals and Next Steps */}
-              <div className="goals-section">
-                <div className="goal-card">
-                  <h4>Weekly Goal</h4>
-                  <p>{analysis.weeklyGoal}</p>
-                </div>
-                <div className="goal-card">
-                  <h4>Next Workout Suggestion</h4>
-                  <p>{analysis.nextWorkout}</p>
-                  <button 
-                    onClick={getWorkoutRecommendation}
-                    disabled={loading}
-                    className="recommendation-button"
-                  >
-                    Get Detailed Plan
-                  </button>
-                </div>
-              </div>
-
-              {/* Motivational Message */}
-              {analysis.motivationalMessage && (
-                <div className="motivational-section">
-                  <h4>Motivation</h4>
-                  <div className="motivational-message">
-                    {analysis.motivationalMessage}
-                  </div>
-                </div>
-              )}
             </div>
           ) : (
-            <div className="no-analysis">
-              <div className="empty-state">
-                <div className="empty-icon">📊</div>
-                <h4>Ready for Analysis</h4>
-                <p>Click "Get Fresh Analysis" to have {selectedTrainer.name} analyze your workout patterns and provide personalized recommendations.</p>
-                <button onClick={getWorkoutAnalysis} className="get-analysis-btn">
-                  Start Analysis
-                </button>
-              </div>
+            <div className="no-assessment">
+              <p>Complete your profile to get a personalized assessment.</p>
+              <button onClick={() => setActiveTab('profile')}>Go to Profile</button>
             </div>
           )}
         </div>
       )}
 
       {/* Chat Tab */}
-      {activeTab === 'chat' && selectedTrainer && (
+      {activeTab === 'chat' && profileCreated && (
         <div className="chat-section">
           <div className="chat-header">
             <div className="chat-trainer-info">
-              <span className="trainer-avatar">{selectedTrainer.avatar}</span>
+              <span className="trainer-avatar">{selectedTrainer?.avatar || '🤖'}</span>
               <div>
-                <h4>{selectedTrainer.name}</h4>
-                <p>Your {selectedTrainer.specialty} coach</p>
+                <h4>{selectedTrainer?.name || 'AI Fitness Coach'}</h4>
+                <p>ML-Powered Personal Trainer</p>
               </div>
             </div>
           </div>
 
           <div className="chat-messages">
-            {chatMessages.length === 0 && (
-              <div className="welcome-message">
-                <div className="welcome-avatar">{selectedTrainer.avatar}</div>
-                <div className="welcome-text">
-                  <strong>{selectedTrainer.name}:</strong> Hey there! I'm here to help with your fitness journey. Ask me anything about workouts, nutrition, or motivation!
-                </div>
-              </div>
-            )}
-            
-            {chatMessages.map((message) => (
+            {chatMessages.map(message => (
               <div key={message.id} className={`message ${message.type}`}>
                 {message.type === 'trainer' && (
-                  <div className="message-avatar">{message.trainerAvatar}</div>
+                  <div className="message-avatar">{message.trainerAvatar || '🤖'}</div>
                 )}
                 <div className="message-content">
                   {message.type === 'trainer' && (
-                    <div className="message-name">{message.trainerName}</div>
+                    <div className="message-name">{message.trainerName || 'AI Coach'}</div>
                   )}
                   <div className="message-text">{message.message}</div>
-                  <div className="message-time">
-                    {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                  </div>
+                  <div className="message-time">{
+                    message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                  }</div>
                 </div>
               </div>
             ))}
-            
+
             {loading && (
               <div className="message trainer">
-                <div className="message-avatar">{selectedTrainer.avatar}</div>
+                <div className="message-avatar">🤖</div>
                 <div className="message-content">
-                  <div className="typing-indicator">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
+                  <div className="typing-indicator"><span></span><span></span><span></span></div>
                 </div>
               </div>
             )}
+            <div ref={chatBottomRef} />
           </div>
 
           <div className="chat-controls">
             <div className="quick-messages">
-              <button onClick={() => setChatInput("How can I improve my workouts?")}>
-                💪 Improve Workouts
-              </button>
-              <button onClick={() => setChatInput("What should I focus on next?")}>
-                🎯 What's Next?
-              </button>
-              <button onClick={() => setChatInput("I need motivation!")}>
-                🔥 Motivate Me
-              </button>
-              <button onClick={() => setChatInput("Can you analyze my progress?")}>
-                📊 Check Progress
-              </button>
+              <button onClick={() => getQuickResponse("What's my BMI and what does it mean?")}>📊 BMI Info</button>
+              <button onClick={() => getQuickResponse('Create a diet plan for me')}>🥗 Diet Plan</button>
+              <button onClick={() => getQuickResponse('I need a workout routine')}>💪 Workout</button>
+              <button onClick={() => getQuickResponse('What are my health risks?')}>⚕️ Health</button>
+              <button onClick={() => getQuickResponse('How can I track my progress?')}>📈 Progress</button>
+              <button onClick={() => getQuickResponse('I need motivation')}>🔥 Motivation</button>
             </div>
-            
+
             <div className="chat-input">
               <input
                 type="text"
                 value={chatInput}
                 onChange={(e) => setChatInput(e.target.value)}
-                placeholder={`Ask ${selectedTrainer.name} anything...`}
-                onKeyPress={(e) => e.key === 'Enter' && sendChatMessage()}
+                placeholder="Ask anything about fitness, nutrition, or health..."
+                onKeyDown={(e) => e.key === 'Enter' && !loading && sendChatMessage()}
+                disabled={loading}
               />
-              <button 
-                onClick={sendChatMessage}
-                disabled={!chatInput.trim() || loading}
-                className="send-button"
-              >
+              <button onClick={sendChatMessage} disabled={!chatInput.trim() || loading} className="send-button">
                 {loading ? '...' : 'Send'}
               </button>
             </div>
           </div>
         </div>
       )}
+
+      {/* CSS Styles */}
+      <style jsx>{`
+        .ai-trainer-system {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+          background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+          border-radius: 16px;
+          color: white;
+          font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        .system-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 24px;
+          padding-bottom: 16px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .system-header h2 {
+          margin: 0;
+          font-size: 28px;
+          background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .user-stats { display: flex; gap: 12px; }
+        .stat-badge {
+          background: rgba(255, 255, 255, 0.1);
+          padding: 6px 12px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+
+        .error-notice {
+          display: flex; align-items: center; gap: 8px;
+          background: rgba(239, 68, 68, 0.1);
+          border: 1px solid rgba(239, 68, 68, 0.3);
+          border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; color: #fca5a5;
+        }
+
+        .trainer-tabs { display: flex; gap: 8px; margin-bottom: 24px; background: rgba(255,255,255,0.05); border-radius: 12px; padding: 4px; }
+        .tab-button {
+          flex: 1; padding: 12px 20px; background: none; border: none; color: #9ca3af; border-radius: 8px; cursor: pointer; transition: all .3s ease; font-weight: 500;
+        }
+        .tab-button:hover:not(:disabled) { background: rgba(255,255,255,0.1); color: white; }
+        .tab-button.active { background: linear-gradient(135deg, #06b6d4, #8b5cf6); color: white; }
+        .tab-button:disabled { opacity: .5; cursor: not-allowed; }
+
+        /* Profile Section */
+        .profile-section { animation: fadeIn .5s ease; }
+        .profile-section h3 { margin-bottom: 24px; font-size: 24px; }
+        .profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 24px; }
+        .profile-card { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; }
+        .profile-card h4 { margin: 0 0 16px 0; color: #06b6d4; font-size: 16px; }
+        .profile-card p { margin: 8px 0; color: #d1d5db; }
+        .bmi-display { display: flex; align-items: center; gap: 12px; margin: 16px 0; }
+        .bmi-value { font-size: 36px; font-weight: bold; color: #06b6d4; }
+        .bmi-category { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .bmi-category.underweight { background: #3b82f6; }
+        .bmi-category.normal { background: #10b981; }
+        .bmi-category.overweight { background: #f59e0b; }
+        .bmi-category.obese { background: #ef4444; }
+        .goals-list { display: flex; flex-wrap: wrap; gap: 8px; }
+        .goal-tag { background: rgba(139,92,246,0.2); color: #a78bfa; padding: 4px 12px; border-radius: 12px; font-size: 12px; text-transform: capitalize; }
+        .create-profile-btn { background: linear-gradient(135deg, #06b6d4, #8b5cf6); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all .3s ease; }
+        .create-profile-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(6,182,212,0.3); }
+        .create-profile-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+        /* Trainers Section */
+        .trainers-section h3 { margin-bottom: 24px; font-size: 24px; text-align: center; }
+        .trainers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .trainer-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 16px; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+        .trainer-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.25); border-color: rgba(6,182,212,0.45); }
+        .trainer-card.selected { outline: 2px solid #06b6d4; background: rgba(6,182,212,0.08); }
+        .trainer-avatar { font-size: 36px; }
+        .trainer-specialty { color: #93c5fd; text-transform: capitalize; margin: 4px 0; }
+        .trainer-desc { color: #d1d5db; font-size: 14px; min-height: 40px; }
+        .trainer-stats-mini { display: flex; gap: 8px; margin-top: 10px; }
+        .stat-mini { background: rgba(255,255,255,0.12); padding: 6px 10px; border-radius: 10px; font-size: 12px; }
+
+        /* Assessment */
+        .assessment-section h3 { margin-bottom: 16px; font-size: 24px; }
+        .assessment-content { display: grid; grid-template-columns: 1fr; gap: 16px; }
+        .assessment-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 16px; }
+        .assessment-text { white-space: pre-wrap; color: #e5e7eb; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size: 13px; }
+        .quick-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+        .quick-actions button { background: rgba(6,182,212,0.15); border: 1px solid rgba(6,182,212,0.35); color: #e0f2fe; border-radius: 8px; padding: 8px 12px; cursor: pointer; }
+
+        /* Chat */
+        .chat-section { display: flex; flex-direction: column; gap: 12px; }
+        .chat-header { display: flex; justify-content: space-between; align-items: center; }
+        .chat-trainer-info { display: flex; align-items: center; gap: 10px; }
+        .chat-messages { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px; max-height: 420px; overflow-y: auto; }
+        .message { display: flex; gap: 10px; margin-bottom: 10px; }
+        .message.user { justify-content: flex-end; }
+        .message.system .message-content { background: rgba(147,197,253,0.12); border-color: rgba(147,197,253,0.35); }
+        .message-avatar { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border-radius: 50%; }
+        .message-content { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); padding: 10px 12px; border-radius: 12px; max-width: 80%; }
+        .message-name { font-size: 12px; color: #93c5fd; margin-bottom: 4px; }
+        .message-text { white-space: pre-wrap; line-height: 1.45; }
+        .message-time { font-size: 10px; color: #9ca3af; margin-top: 6px; text-align: right; }
+        .typing-indicator { display: inline-flex; gap: 4px; }
+        .typing-indicator span { width: 6px; height: 6px; background: #e5e7eb; border-radius: 50%; display: inline-block; animation: blink 1.4s infinite both; }
+        .typing-indicator span:nth-child(2) { animation-delay: .2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: .4s; }
+
+        .chat-controls { display: flex; flex-direction: column; gap: 10px; }
+        .quick-messages { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+        .quick-messages button { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: #e5e7eb; border-radius: 8px; padding: 8px; cursor: pointer; }
+        .quick-messages button:hover { background: rgba(6,182,212,0.1); border-color: rgba(6,182,212,0.35); }
+
+        .chat-input { display: flex; gap: 8px; }
+        .chat-input input { flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: #e5e7eb; border-radius: 10px; padding: 10px 12px; }
+        .send-button { background: linear-gradient(135deg, #06b6d4, #8b5cf6); color: white; border: none; padding: 10px 16px; border-radius: 10px; font-weight: 600; cursor: pointer; }
+
+        .no-profile, .no-assessment { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 16px; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes blink { 0%, 80%, 100% { opacity: .2; } 40% { opacity: 1; } }
+      `}</style>
     </div>
   );
 };
 
-// CSS Styles for the AI Trainer System
-const aiTrainerStyles = `
-.ai-trainer-system {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-  border-radius: 16px;
-  color: white;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-.error-notice {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.3);
-  border-radius: 8px;
-  padding: 12px 16px;
-  margin-bottom: 16px;
-  color: #fca5a5;
-  font-size: 14px;
-}
-
-.trainer-tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 24px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 4px;
-}
-
-.tab-button {
-  flex: 1;
-  padding: 12px 20px;
-  background: none;
-  border: none;
-  color: #9ca3af;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-.tab-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-}
-
-.tab-button.active {
-  background: linear-gradient(135deg, #06b6d4, #0891b2);
-  color: white;
-  transform: translateY(-1px);
-}
-
-.tab-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.trainers-grid h3 {
-  text-align: center;
-  margin-bottom: 24px;
-  font-size: 24px;
-  background: linear-gradient(135deg, #06b6d4, #0891b2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.trainers-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.trainer-card {
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  animation: fadeIn 0.5s ease;
-}
-
-.trainer-card:hover {
-  border-color: #06b6d4;
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(6, 182, 212, 0.2);
-}
-
-.trainer-card.selected {
-  border-color: #06b6d4;
-  background: rgba(6, 182, 212, 0.1);
-}
-
-.trainer-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.trainer-avatar {
-  font-size: 2.5em;
-  line-height: 1;
-}
-
-.trainer-info h4 {
-  margin: 0 0 4px 0;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.trainer-specialty {
-  font-size: 12px;
-  color: #06b6d4;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-.trainer-experience {
-  margin-left: auto;
-  background: rgba(6, 182, 212, 0.2);
-  color: #06b6d4;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.trainer-description {
-  margin: 16px 0;
-  color: #d1d5db;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.trainer-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 16px 0;
-}
-
-.stat-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 12px;
-}
-
-.stat-bar {
-  width: 60px;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.stat-fill {
-  height: 100%;
-  border-radius: 2px;
-  transition: width 0.3s ease;
-}
-
-.trainer-personality {
-  text-align: center;
-  font-weight: 600;
-  font-size: 11px;
-  letter-spacing: 1px;
-  margin-top: 12px;
-  padding: 8px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.analysis-section {
-  animation: fadeIn 0.5s ease;
-}
-
-.analysis-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.analysis-header h3 {
-  font-size: 24px;
-  margin: 0;
-}
-
-.analyze-button {
-  background: linear-gradient(135deg, #06b6d4, #0891b2);
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.analyze-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
-}
-
-.analyze-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.trainer-message {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 24px;
-}
-
-.message-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.message-header .trainer-avatar {
-  font-size: 2em;
-}
-
-.trainer-name {
-  font-weight: 600;
-  font-size: 18px;
-  color: #ffeaa7;
-}
-
-.message-content {
-  font-size: 16px;
-  line-height: 1.6;
-  font-style: italic;
-}
-
-.fitness-overview {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.overview-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-}
-
-.overview-card h4 {
-  margin: 0 0 12px 0;
-  font-size: 14px;
-  color: #9ca3af;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.level-badge {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.frequency {
-  font-size: 24px;
-  font-weight: bold;
-  color: #06b6d4;
-}
-
-.consistency {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.consistency-bar {
-  flex: 1;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.consistency-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #ef4444, #f59e0b, #10b981);
-  border-radius: 4px;
-  transition: width 0.3s ease;
-}
-
-.consistency span {
-  font-weight: 600;
-  color: #10b981;
-}
-
-.preferred-type {
-  font-size: 16px;
-  font-weight: 600;
-  color: #8b5cf6;
-  text-transform: capitalize;
-}
-
-.suggestions-section {
-  margin-bottom: 24px;
-}
-
-.suggestions-section h4 {
-  margin-bottom: 16px;
-  font-size: 18px;
-  color: #06b6d4;
-}
-
-.suggestions-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.suggestion-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 12px 16px;
-  border-radius: 8px;
-  transition: transform 0.2s ease;
-}
-
-.suggestion-item:hover {
-  transform: translateX(4px);
-}
-
-.suggestion-icon {
-  font-size: 18px;
-}
-
-.suggestion-text {
-  flex: 1;
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.goals-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.goal-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 20px;
-}
-
-.goal-card h4 {
-  margin: 0 0 12px 0;
-  color: #06b6d4;
-  font-size: 16px;
-}
-
-.goal-card p {
-  margin: 0 0 16px 0;
-  color: #d1d5db;
-  line-height: 1.5;
-}
-
-.recommendation-button {
-  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-}
-
-.recommendation-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
-}
-
-.recommendation-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.motivational-section {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
-}
-
-.motivational-section h4 {
-  margin: 0 0 12px 0;
-  color: #ffeaa7;
-  font-size: 18px;
-}
-
-.motivational-message {
-  font-size: 16px;
-  line-height: 1.6;
-  font-style: italic;
-  color: white;
-}
-
-.no-analysis {
-  text-align: center;
-  padding: 40px;
-}
-
-.empty-state {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 40px;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.empty-icon {
-  font-size: 4em;
-  margin-bottom: 16px;
-}
-
-.empty-state h4 {
-  margin: 0 0 12px 0;
-  font-size: 20px;
-  color: #06b6d4;
-}
-
-.empty-state p {
-  margin: 0 0 24px 0;
-  color: #9ca3af;
-  line-height: 1.5;
-}
-
-.get-analysis-btn {
-  background: linear-gradient(135deg, #06b6d4, #0891b2);
-  color: white;
-  border: none;
-  padding: 16px 32px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.get-analysis-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
-}
-
-.chat-section {
-  height: 600px;
-  display: flex;
-  flex-direction: column;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.chat-header {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 16px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.chat-trainer-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.chat-trainer-info .trainer-avatar {
-  font-size: 2em;
-}
-
-.chat-trainer-info h4 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.chat-trainer-info p {
-  margin: 0;
-  font-size: 14px;
-  color: #9ca3af;
-}
-
-.chat-messages {
-  flex: 1;
-  overflow-y: auto;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-height: 400px;
-}
-
-.welcome-message {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  background: rgba(6, 182, 212, 0.1);
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  border-radius: 16px;
-  padding: 16px;
-}
-
-.welcome-avatar {
-  font-size: 2em;
-  line-height: 1;
-}
-
-.welcome-text {
-  flex: 1;
-  line-height: 1.5;
-  font-size: 14px;
-}
-
-.message {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  animation: fadeIn 0.3s ease;
-}
-
-.message.user {
-  flex-direction: row-reverse;
-}
-
-.message.user .message-content {
-  background: linear-gradient(135deg, #06b6d4, #0891b2);
-  margin-left: auto;
-}
-
-.message.trainer .message-content {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.message-avatar {
-  font-size: 1.5em;
-  line-height: 1;
-  margin-top: 4px;
-}
-
-.message-content {
-  max-width: 70%;
-  border-radius: 16px;
-  padding: 12px 16px;
-  position: relative;
-}
-
-.message-name {
-  font-size: 12px;
-  font-weight: 600;
-  color: #06b6d4;
-  margin-bottom: 4px;
-}
-
-.message-text {
-  font-size: 14px;
-  line-height: 1.4;
-  margin-bottom: 4px;
-}
-
-.message-time {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
-  text-align: right;
-}
-
-.message.user .message-time {
-  text-align: left;
-}
-
-.typing-indicator {
-  display: flex;
-  gap: 4px;
-  padding: 8px 0;
-}
-
-.typing-indicator span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #06b6d4;
-  animation: pulse 1.4s ease-in-out infinite both;
-}
-
-.typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
-.typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
-
-.chat-controls {
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.quick-messages {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-}
-
-.quick-messages button {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.quick-messages button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-1px);
-}
-
-.chat-input {
-  display: flex;
-  gap: 12px;
-}
-
-.chat-input input {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
-  padding: 12px 20px;
-  color: white;
-  font-size: 14px;
-}
-
-.chat-input input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.chat-input input:focus {
-  outline: none;
-  border-color: #06b6d4;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.send-button {
-  background: linear-gradient(135deg, #06b6d4, #0891b2);
-  color: white;
-  border: none;
-  border-radius: 24px;
-  padding: 12px 24px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.send-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
-}
-
-.send-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-@media (max-width: 768px) {
-  .ai-trainer-system {
-    padding: 16px;
-  }
-  
-  .trainer-tabs {
-    flex-direction: column;
-  }
-  
-  .trainers-list {
-    grid-template-columns: 1fr;
-  }
-  
-  .fitness-overview {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .goals-section {
-    grid-template-columns: 1fr;
-  }
-  
-  .quick-messages {
-    flex-direction: column;
-  }
-  
-  .chat-input {
-    flex-direction: column;
-    gap: 8px;
-  }
-  
-  .analysis-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .chat-section {
-    height: 500px;
-  }
-  
-  .chat-messages {
-    max-height: 300px;
-  }
-}
-`;
-
-export { AITrainerSystem, aiTrainerStyles };
+export default AITrainerSystem;

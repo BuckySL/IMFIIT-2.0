@@ -5,7 +5,7 @@ import { MultiplayerLobby } from './components/battle/MultiplayerLobby';
 import { MultiplayerBattle } from './components/battle/MultiplayerBattle';
 // import { SmartWorkoutProcessor, smartWorkoutStyles } from './components/fitness/EnhancedOCRSystem';
 import SimpleAIBattle from './components/battle/SimpleAIBattle';
-import { AITrainerSystem, aiTrainerStyles } from './components/ai/AITrainerSystem';
+import AITrainerSystem from './components/ai/AITrainerSystem';
 import ProfileManagement from './components/profile/ProfileManagement';
 import SimplePVPSystem from './components/pvp/SimplePVPSystem';
 import WalletSystem from './components/web3/WalletSystem';
@@ -1582,7 +1582,7 @@ const handleWorkoutSaved = async (workoutData: any) => {
       color: 'white'
     }}>
       {/* <style>{enhancedOCRStyles}</style> */}
-      <style>{aiTrainerStyles}</style>
+      {/* <style>{aiTrainerStyles}</style> */}
       <style>{workoutScreenStyles}</style>
 {/* <style>{smartWorkoutStyles}</style> */}
       {/* Header */}
@@ -1743,13 +1743,18 @@ ${result.stats.reasoning.join('\n')}`);
               <p>Get personalized advice, motivation, and workout analysis from your AI trainers!</p>
             </div>
             
-            <AITrainerSystem 
+                        <AITrainerSystem
               userId={userProfile?.id || 'demo-user'}
-              socket={undefined} // You can add socket connection later
+              userAge={userProfile?.age}
+              userWeight={userProfile?.weight}
+              userHeight={userProfile?.height}
+              userGender={userProfile?.gender}
+              userActivityLevel={userProfile?.activityLevel}
+              userGoals={['general_fitness']}   // or map this from your app state
+              socket={undefined}                // wire your socket client here when ready
               onWorkoutRecommendation={(recommendation) => {
                 console.log('Got workout recommendation:', recommendation);
-                // You could show a notification or modal here
-                setCurrentScreen("dashboard"); // Navigate to apply recommendation
+                setCurrentScreen('dashboard');
               }}
             />
           </div>

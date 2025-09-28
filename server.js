@@ -13,6 +13,8 @@ import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import mongoose from 'mongoose';
+import mlChatbotService from './src/services/MLChatbotService.js';
+
 
 // Import your existing managers and utilities
 import { BattleManager } from './src/managers/BattleManager.js';
@@ -583,11 +585,34 @@ const connectDatabase = async () => {
   }
 };
 
+// Create user profile endpoint
+app.post('/api/chatbot/profile', async (req, res) => {
+  try {
+    const result = await mlChatbotService.createUserProfile(req.body);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Process message endpoint
+app.post('/api/chatbot/message', async (req, res) => {
+  try {
+    const { userId, message } = req.body;
+    const result = await mlChatbotService.processMessage(userId, message);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // ============================================================================
 // SERVER STARTUP
 // ============================================================================
 
 const PORT = process.env.PORT || 3001;
+await mlChatbotService.initialize();
+
 
 // Connect to database first, then start server
 connectDatabase().then((dbConnected) => {

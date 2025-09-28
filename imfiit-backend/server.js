@@ -9,6 +9,7 @@ import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import mongoose from 'mongoose';
+import mlChatbotService from './src/services/MLChatbotService.js';
 
 // Import managers (keep your existing imports)
 import { BattleManager } from './src/managers/BattleManager.js';
@@ -360,6 +361,27 @@ app.post('/api/upload/workout-image', async (req, res) => {
   }
 });
 
+// Create user profile endpoint
+app.post('/api/chatbot/profile', async (req, res) => {
+  try {
+    const result = await mlChatbotService.createUserProfile(req.body);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Process message endpoint
+app.post('/api/chatbot/message', async (req, res) => {
+  try {
+    const { userId, message } = req.body;
+    const result = await mlChatbotService.processMessage(userId, message);
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // ============================================================================
 // SOCKET.IO CONNECTION HANDLING
 // ============================================================================
@@ -470,6 +492,8 @@ app.use('*', (req, res) => {
 // ============================================================================
 
 const PORT = process.env.PORT || 3001;
+await mlChatbotService.initialize();
+
 
 // Connect to database first, then start server
 connectDatabase().then((connected) => {

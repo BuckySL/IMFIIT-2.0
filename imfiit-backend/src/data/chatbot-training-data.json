@@ -1,0 +1,333 @@
+{
+  "training_data": {
+    "language": "en",
+    "metadata": {
+      "version": "1.0.0",
+      "domain": "fitness_coach",
+      "disclaimer": "Educational guidance only; not medical advice."
+    },
+    "entities": [
+      "age", "gender", "height_cm", "weight_kg", "activity_level",
+      "goal", "diet_pref", "allergies", "injury", "days_per_week",
+      "equipment", "body_part", "time_available_min", "location"
+    ],
+    "slots": {
+      "age": {"type": "number", "required_for": ["bmi_intake", "calorie_plan", "macro_plan"]},
+      "gender": {"type": "enum", "values": ["male", "female", "other"], "required_for": ["calorie_plan", "macro_plan"]},
+      "height_cm": {"type": "number", "required_for": ["bmi_intake"]},
+      "weight_kg": {"type": "number", "required_for": ["bmi_intake"]},
+      "activity_level": {"type": "enum", "values": ["sedentary","light","moderate","active","very_active"], "required_for": ["calorie_plan","macro_plan"]},
+      "goal": {"type": "enum", "values": ["fat_loss","muscle_gain","recomp","maintenance"], "required_for": ["diet_plan","workout_plan"]},
+      "diet_pref": {"type": "enum", "values": ["no_pref","sri_lankan","vegetarian","vegan","halal","low_carb","high_protein","gluten_free"], "required_for": ["diet_plan"]},
+      "allergies": {"type": "text", "required_for": ["diet_plan"]},
+      "injury": {"type": "text", "required_for": ["workout_plan"]},
+      "days_per_week": {"type": "number", "required_for": ["workout_plan"]},
+      "equipment": {"type": "enum", "values": ["none","dumbbells","barbell","machines","resistance_bands","mixed"], "required_for": ["workout_plan"]},
+      "time_available_min": {"type": "number", "required_for": ["workout_plan"]},
+      "location": {"type": "enum", "values": ["home","gym","outdoor"], "required_for": ["workout_plan"]}
+    },
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": [
+          "Hi", "Hello", "Hey", "Good morning", "Good evening", "Yo coach",
+          "What's up", "How are you", "Hello coach", "Hi trainer"
+        ],
+        "responses": [
+          "Hey! I’m your AI fitness coach. Want help with BMI, diet, or a workout plan?",
+          "Hello! Ready to train smarter? I can calculate BMI, calories, macros, and design workouts.",
+          "Welcome! Tell me your goal—fat loss, muscle gain, recomp, or maintenance—and I’ll set you up."
+        ]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": [
+          "Bye", "Goodbye", "Catch you later", "See ya", "Talk later", "Thanks bye"
+        ],
+        "responses": [
+          "You got it—keep moving! Ping me anytime.",
+          "Take care! Stay consistent and hydrate.",
+          "Bye for now! Your next win starts with your next rep."
+        ]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "Appreciate it", "Great thanks", "Nice one"],
+        "responses": [
+          "You’re welcome! Need a meal or workout tweak?",
+          "Anytime! Want macros or a shopping list too?",
+          "Glad to help! Consistency beats intensity—every time."
+        ]
+      },
+      {
+        "tag": "help",
+        "patterns": [
+          "Help", "What can you do", "How do I use this", "Guide me",
+          "I need help with fitness", "Explain features"
+        ],
+        "responses": [
+          "I can: 1) compute BMI + risk, 2) set calories/macros, 3) build diet & workout plans, 4) track progress. Tell me your height (cm), weight (kg), age, gender, activity, goal.",
+          "Start with BMI: send height in cm and weight in kg. Then I’ll set calories/macros and a plan based on your goal.",
+          "I do smart coaching: BMI/risks → calories/macros → diet/workout. Share any injuries or diet preferences too."
+        ]
+      },
+      {
+        "tag": "bmi_query",
+        "patterns": [
+          "What is my BMI", "Calculate my BMI", "Am I overweight", "Am I underweight",
+          "What's my body mass index", "Check my weight status", "BMI analysis",
+          "Is my weight healthy", "Ideal weight for me"
+        ],
+        "responses": [
+          "Sure—send your height in cm and weight in kg (e.g., 178 cm, 92 kg) and I’ll calculate BMI + risk.",
+          "I can help. What are your height (cm) and weight (kg)?",
+          "Share height (cm) and weight (kg) and I’ll compute BMI and guidance."
+        ]
+      },
+      {
+        "tag": "bmi_intake",
+        "patterns": [
+          "I'm {height_cm} cm and {weight_kg} kg",
+          "{height_cm} cm {weight_kg} kg",
+          "Height {height_cm}, weight {weight_kg}",
+          "My height is {height_cm} and weight is {weight_kg}"
+        ],
+        "responses": [
+          "Your BMI is **{bmi}**. {bmi_category_msg}\n{risk_msg}\nWant calories/macros and a goal-based plan?",
+          "BMI: **{bmi}** → {bmi_category}. {risk_msg_short} I can set your calories next—share age, gender, and activity level.",
+          "Calculated BMI: **{bmi}** ({bmi_category}). Shall I generate a diet & training plan tailored to **{goal}**?"
+        ]
+      },
+      {
+        "tag": "calorie_plan",
+        "patterns": [
+          "How many calories should I eat", "Set my calories", "Calorie target",
+          "What is my TDEE", "BMR and TDEE", "Daily calories for fat loss",
+          "Maintenance calories", "Cutting calories", "Bulking calories"
+        ],
+        "responses": [
+          "Based on {age}, {gender}, {height_cm} cm, {weight_kg} kg, and {activity_level}: BMR ≈ **{bmr}**, TDEE ≈ **{tdee}**. For **{goal}**, aim ~**{cal_target} kcal/day**.",
+          "Here you go: BMR **{bmr}**, TDEE **{tdee}**. Target for {goal}: **{cal_target} kcal**. Want macros next?",
+          "Your calculated TDEE is **{tdee}**. For {goal}, use **{cal_target} kcal/day**. I can split macros now."
+        ]
+      },
+      {
+        "tag": "macro_plan",
+        "patterns": [
+          "Set my macros", "Macros please", "Protein carbs fat split",
+          "How much protein", "Macro ratio", "Macros for muscle gain",
+          "Macros for fat loss"
+        ],
+        "responses": [
+          "Macros for **{goal}**: Protein **{protein_g} g** (~{protein_pct}%), Carbs **{carb_g} g** (~{carb_pct}%), Fat **{fat_g} g** (~{fat_pct}%). Total **{cal_target} kcal**.",
+          "Try: **{protein_g} g** protein, **{carb_g} g** carbs, **{fat_g} g** fat ({protein_pct}/{carb_pct}/{fat_pct}%). Want a meal plan with Sri Lankan options?",
+          "Macro plan set for {goal}. Need a **shopping list** or **7-day menu**?"
+        ]
+      },
+      {
+        "tag": "diet_plan",
+        "patterns": [
+          "Diet plan", "What should I eat", "Meal plan", "Nutrition advice",
+          "How many calories", "Macros", "Food suggestions", "Healthy eating",
+          "Weight loss diet", "Muscle gain diet", "Meal prep", "Nutrition plan"
+        ],
+        "responses": [
+          "I’ll tailor meals to **{goal}**, **{diet_pref}**, and **{allergies}** if any. Want a **7-day plan** or **single-day template**?",
+          "I can do Sri Lankan options for {goal}—breakfast, lunch, dinner + snacks. Any allergies or foods to avoid?",
+          "Let’s build your menu around **{cal_target} kcal** and macros. Prefer quick recipes or batch meal prep?"
+        ]
+      },
+      {
+        "tag": "diet_plan_sri_lankan",
+        "patterns": [
+          "Sri Lankan diet", "Sri Lankan meal plan", "Local meals", "Rice and curry plan",
+          "Pol sambol diet", "Idiyappam plan", "Kottu healthy version"
+        ],
+        "responses": [
+          "Here’s a **Sri Lankan {goal} day** (~{cal_target} kcal):\n• Breakfast: Kiribath (small) + seeni sambol + boiled egg\n• Lunch: Red rice + chicken curry + mallung + cucumber salad\n• Snack: Papaya + low-fat yogurt\n• Dinner: Grilled fish + gotukola sambol + dhal (small)\nWant a 7-day variant?",
+          "Local plan idea: String hoppers + dhal + coconut sambol (light), Red rice + jackfruit curry + mallung, Grilled chicken/fish + tempered veggies. I’ll portion for **{cal_target} kcal**.",
+          "We’ll keep spices and flavor, reduce oils, balance protein. Want **shopping list** too?"
+        ]
+      },
+      {
+        "tag": "shopping_list",
+        "patterns": [
+          "Shopping list", "Grocery list", "What should I buy", "Meal prep groceries"
+        ],
+        "responses": [
+          "Protein: eggs, chicken breast, fish, low-fat yogurt, dhal; Carbs: red rice, oats, string hoppers; Fats: coconut (measure), peanuts; Veg/fruit: gotukola, mallung greens, cucumber, papaya. Want quantities for **{cal_target} kcal**?",
+          "I’ll generate a list aligned to your 7-day plan and macros. Batch-cook friendly options included.",
+          "Grocery list ready. Want me to add **spice + oil** constraints (e.g., 1–2 tsp oil/meal)?"
+        ]
+      },
+      {
+        "tag": "workout_plan",
+        "patterns": [
+          "Workout plan", "Training plan", "Make me a routine", "Gym plan",
+          "Home workout", "I have dumbbells", "Push pull legs", "Upper lower split",
+          "Beginner routine", "Advanced routine"
+        ],
+        "responses": [
+          "Great. For **{goal}** with **{equipment}** at **{location}**, **{days_per_week}x/week** and **{time_available_min} min/session**. Any **injury** concerns?",
+          "I’ll build a **progressive plan**: compound lifts + accessory work, deloads as needed. Prefer **upper/lower**, **full body**, or **PPL**?",
+          "We’ll periodize volume and include mobility + cardio. Want warm-ups and RPE targets included?"
+        ]
+      },
+      {
+        "tag": "workout_plan_generate",
+        "patterns": [
+          "Create the plan now", "Generate workout", "Give the routine", "Write my program"
+        ],
+        "responses": [
+          "**Week template ({days_per_week} days, {time_available_min} min):**\nDay 1 Upper: Bench 4x6–8, Row 4x8–10, OHP 3x8–10, Pulldown 3x10–12, Curls 3x12, Triceps 3x12, 10 min incline walk.\nDay 2 Lower: Squat 4x6–8, RDL 4x8–10, Split Squat 3x10, Leg Curl 3x12, Calf 3x15, 10–15 min cycling.\nDay 3 Upper: Incline DB 4x8–10, Chest-supported row 4x10, Lateral raise 3x15, Facepull 3x15, Core 10 min.\nDay 4 Lower/Conditioning: Hack/Leg press 4x10, Hip thrust 3x10, Lunges 3x12, Ham curl 3x12, Finish: 6x1-min intervals.",
+          "Home + dumbbells example ({days_per_week} days): Full-Body A/B: A) Goblet squat, DB bench, 1-arm row, RDL, Plank; B) Split squat, OHP, Hip hinge row, Hip thrust, Hollow holds. Progress: +1 rep/week or +2.5% load.",
+          "PPL example: Push (bench, OHP, incline, triceps), Pull (deadlift/rows, pulldown, rear-delts, curls), Legs (squat, RDL, lunge, calves). Progressive overload + RPE 7–9."
+        ]
+      },
+      {
+        "tag": "injury_constraints",
+        "patterns": [
+          "I have a knee injury", "Lower back pain", "Shoulder hurts", "Can’t squat",
+          "Bad wrists", "Elbow pain", "Any low impact plan"
+        ],
+        "responses": [
+          "Thanks for flagging **{injury}**. We’ll avoid aggravating moves and use safe variants (e.g., knee: sled push, step-ups, RDLs; back: hip thrust, Bulgarian split squat, chest-supported row). Always stop if pain rises.",
+          "We’ll bias machines/bands/tempo work to reduce joint stress. I’ll include mobility and isometrics specific to **{injury}**.",
+          "Consider professional assessment for persistent pain. I’ll keep your plan conservative and progressive."
+        ]
+      },
+      {
+        "tag": "cardio_plan",
+        "patterns": [
+          "How much cardio", "Cardio for fat loss", "HIIT or LISS", "Running plan",
+          "Heart rate zones", "Endurance training"
+        ],
+        "responses": [
+          "For **fat loss**: 2–4 sessions/week, 20–35 min. Mix **LISS** walks/cycling with 1 HIIT day if recovered. Aim **Zone 2** most days.",
+          "If muscle gain is priority, keep cardio low-impact 2–3×/week and avoid long sessions post-lift.",
+          "We can base it on HR zones. Want me to estimate your zones from age?"
+        ]
+      },
+      {
+        "tag": "habit_motivation",
+        "patterns": [
+          "Motivate me", "I lost motivation", "How to be consistent",
+          "Habit tips", "Discipline advice"
+        ],
+        "responses": [
+          "Set a **schedule trigger** (same time daily), reduce friction (clothes ready), and track **1 metric** (steps or sets). Start with 20-minute sessions and stack wins.",
+          "Tie workouts to existing habits (after breakfast → 20-min walk). Keep a visible checklist. Celebrate streaks, not scale.",
+          "When energy dips: do **5-minute rule**—start anyway for 5 min. Momentum > motivation."
+        ]
+      },
+      {
+        "tag": "sleep_hydration",
+        "patterns": [
+          "How much water", "Hydration", "Sleep advice", "How many hours of sleep"
+        ],
+        "responses": [
+          "Aim **30–35 ml/kg** water/day (more in heat). Add **pinch of salt** if you sweat heavily.",
+          "Target **7–9 hours** sleep. Keep a consistent wake-up time, dark/cool room, stop screens 60 min before.",
+          "Poor sleep reduces fat loss and strength. Protect it like training."
+        ]
+      },
+      {
+        "tag": "supplements",
+        "patterns": [
+          "Should I take supplements", "Creatine", "Whey protein", "ZMA", "Ashwagandha",
+          "Pre workout", "Fat burners"
+        ],
+        "responses": [
+          "Evidence-based core: **Whey/Protein** to hit protein targets; **Creatine Monohydrate 3–5g/day**; **Vitamin D** if deficient; **Caffeine** (timed). Skip fat burners.",
+          "ZMA can help if you’re low in zinc/magnesium; Ashwagandha may aid stress/sleep in some. These are optional—focus on calories, protein, sleep first.",
+          "If you have a condition or meds, consult a professional before new supplements."
+        ]
+      },
+      {
+        "tag": "progress_tracking",
+        "patterns": [
+          "How to track progress", "When to check weight", "Progress photos",
+          "Measurements", "What metrics to follow"
+        ],
+        "responses": [
+          "Track **weekly average weight**, **waist/hip**, **progress photos** monthly, **key lifts**, and **step count**. Expect normal daily weight noise.",
+          "Reassess calories/macros every 2–3 weeks by trend. If fat loss stalls 2+ weeks, reduce ~150 kcal or add 1 cardio slot.",
+          "For muscle gain, aim **0.25–0.5 kg/month** and rising loads. Keep waist under control."
+        ]
+      },
+      {
+        "tag": "cheat_meals",
+        "patterns": ["Cheat meal", "Can I eat kottu", "Party day", "Off plan meal"],
+        "responses": [
+          "Plan indulgences: reduce 200–300 kcal earlier in the day, add steps, and prioritize protein/veg. Enjoy mindfully.",
+          "1 meal won’t ruin progress; a weekend might. Keep the **weekly average** in check.",
+          "If eating out: choose grilled protein + veg, manage oils and portions."
+        ]
+      },
+      {
+        "tag": "risk_safety",
+        "patterns": [
+          "I feel chest pain", "Dizzy when training", "Medical issues", "Diabetes risk",
+          "Heart disease risk", "Hypertension"
+        ],
+        "responses": [
+          "Safety first: **stop training** if you feel chest pain, severe dizziness, or fainting. **Seek medical care** urgently.",
+          "With conditions like diabetes or hypertension, get **doctor clearance**. I can tailor low-impact plans meanwhile.",
+          "I’ll keep guidance conservative. Health > PRs."
+        ]
+      },
+      {
+        "tag": "fallback",
+        "patterns": [
+          "???", "I don't understand", "What", "Huh", "Say again", "Not sure"
+        ],
+        "responses": [
+          "I didn’t catch that. Want BMI, calories/macros, diet, or a workout plan?",
+          "Could you rephrase? I can help with coaching steps: BMI → calories/macros → plan.",
+          "Try: “Calculate my BMI” or “Set my macros for fat loss.”"
+        ]
+      },
+      {
+        "tag": "clarify_missing_slots",
+        "patterns": [
+          "I want a plan but didn't give details", "Make plan", "Start coaching"
+        ],
+        "responses": [
+          "Great! Please share: **age, gender, height (cm), weight (kg), activity level (sedentary/light/moderate/active/very_active), goal (fat_loss/muscle_gain/recomp/maintenance)**. Any **diet pref/allergies** or **injuries**?",
+          "I need a bit more to personalize it: age, gender, height, weight, activity, goal, days per week, location (home/gym), equipment, and minutes per session."
+        ]
+      }
+    ],
+    "classifiers": {
+      "bmi_categories": [
+        {"range": [0, 18.5], "label": "Underweight", "msg": "You’re below the healthy range. Let’s prioritize nutrient-dense meals and progressive strength training."},
+        {"range": [18.5, 25], "label": "Healthy", "msg": "You’re in a healthy range. We’ll align calories to your goal and build performance."},
+        {"range": [25, 30], "label": "Overweight", "msg": "You’re above the healthy range. A modest calorie deficit + protein + steps will help."},
+        {"range": [30, 100], "label": "Obese", "msg": "Your BMI is in the obese range, which can increase risks of diabetes and heart disease. We’ll use a safe, steady plan and you may wish to consult a clinician for screening."}
+      ],
+      "risk_messages": {
+        "underweight": "Focus on eating enough calories, protein, and resistance training. Monitor energy and recovery.",
+        "healthy": "Keep building habits—sleep, protein, steps—and progressive overload.",
+        "overweight": "We’ll target ~0.5 kg/week loss, protein at ~1.6–2.2 g/kg, and 8–12k steps.",
+        "obese": "We’ll take a gradual approach (medical check recommended). Protein-forward diet, steady steps, and low-impact cardio."
+      },
+      "macro_presets": {
+        "fat_loss": {"protein_pct": 30, "carb_pct": 40, "fat_pct": 30},
+        "muscle_gain": {"protein_pct": 25, "carb_pct": 50, "fat_pct": 25},
+        "recomp": {"protein_pct": 30, "carb_pct": 40, "fat_pct": 30},
+        "maintenance": {"protein_pct": 25, "carb_pct": 45, "fat_pct": 30}
+      }
+    },
+    "stories": [
+      {
+        "name": "BMI → Risk → Calories → Macros → Plans",
+        "steps": ["greeting", "bmi_query", "bmi_intake", "calorie_plan", "macro_plan", "diet_plan", "workout_plan"]
+      },
+      {
+        "name": "Direct plan with slot fill",
+        "steps": ["clarify_missing_slots", "calorie_plan", "macro_plan", "diet_plan", "workout_plan_generate"]
+      }
+    ]
+  }
+}
+
